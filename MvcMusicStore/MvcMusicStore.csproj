@@ -197,6 +197,17 @@
     <Content Include="Content\Images\home-showcaseSm.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\placeholder.gif" />
+    <Content Include="Content\themes\base\Default\editor.png" />
+    <Content Include="Content\themes\base\Default\imagebrowser.png" />
+    <Content Include="Content\themes\base\Default\loading-image.gif" />
+    <Content Include="Content\themes\base\Default\loading.gif" />
+    <Content Include="Content\themes\base\Default\slider-h.gif" />
+    <Content Include="Content\themes\base\Default\slider-v.gif" />
+    <Content Include="Content\themes\base\Default\sprite.png" />
+    <Content Include="Content\themes\base\images\android-sprite.png" />
+    <Content Include="Content\themes\base\images\iconmasks.svg" />
+    <Content Include="Content\themes\base\images\icons.png" />
+    <Content Include="Content\themes\base\images\ios-sprite.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -225,6 +236,9 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\kendo.common.min.css" />
+    <Content Include="Content\themes\base\kendo.default.min.css" />
+    <Content Include="Content\themes\base\kendo.mobile.all.min.css" />
     <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -251,6 +265,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\textures\glass.png" />
+    <Content Include="Content\themes\base\textures\highlight.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Images\Thumbs.db" />
@@ -266,6 +282,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
