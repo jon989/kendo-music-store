@@ -17,3 +17,5 @@ _ReSharper.*
 *.db
 *.sdf
 *.tmp
+~$*
+MvcMusicStore/App_Data/*
