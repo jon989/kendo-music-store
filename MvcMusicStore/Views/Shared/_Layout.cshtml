@@ -2,15 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <title>@ViewBag.Title - Kendo UI Music Store</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
+        <link href="~/Content/kendo.common.min.css" rel="stylesheet" />
+        <link href="~/Content/kendo.default.min.css" rel="stylesheet" />
+        <link href="~/Content/kendo.mobile.all.min.css" rel="stylesheet" />
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
         <header>
-            <div class="content-wrapper">
+            <div class="content-wrapper clear-fix">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("ASP.NET MVC Music Store", "Index", "Home")</p>
                 </div>
@@ -18,20 +21,32 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
+            <nav class="content-wrapper">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>Genres
+                        @{Html.RenderAction("GenreMenu", "Store");}
+                    </li>
+                    <li>About
+                        <ul>
+                            <li>
+                                <div class="k-content menu-content">
+                                    <img src="~/Images/kendo-logo.png" />
+                                    <p>Try Kendo UI yourself in the interactive Kendo UI Dojo!</p>
+                                    <p><a href="http://www.kendoui.com/dojo.aspx" target="_blank">Launch Kendo UI Dojo</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </nav>
         </header>
         <div id="body">
-            @{Html.RenderAction("GenreMenu", "Store");}
             @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+            <section class="content-wrapper main-content">
                 @RenderBody()
             </section>
         </div>
@@ -44,6 +59,12 @@
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
+        <script src="~/Scripts/kendo.all.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#menu").kendoMenu();
+            });
+        </script>
         @RenderSection("scripts", required: false)
     </body>
 </html>
