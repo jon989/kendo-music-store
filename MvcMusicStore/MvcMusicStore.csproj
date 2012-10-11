@@ -201,13 +201,6 @@
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\placeholder.gif" />
     <Content Include="Content\Images\placeholder.png" />
-    <Content Include="Content\themes\base\Default\editor.png" />
-    <Content Include="Content\themes\base\Default\imagebrowser.png" />
-    <Content Include="Content\themes\base\Default\loading-image.gif" />
-    <Content Include="Content\themes\base\Default\loading.gif" />
-    <Content Include="Content\themes\base\Default\slider-h.gif" />
-    <Content Include="Content\themes\base\Default\slider-v.gif" />
-    <Content Include="Content\themes\base\Default\sprite.png" />
     <Content Include="Content\Default\editor.png" />
     <Content Include="Content\Default\imagebrowser.png" />
     <Content Include="Content\Default\loading-image.gif" />
@@ -283,7 +276,6 @@
     <Content Include="Content\themes\base\textures\highlight.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Images\Thumbs.db" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\kendo-logo.png" />
     <Content Include="Scripts\jquery-1.7.1.js" />
