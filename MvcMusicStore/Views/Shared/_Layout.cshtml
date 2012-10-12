@@ -5,7 +5,7 @@
         <title>@ViewBag.Title - Kendo UI Music Store</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @*@Styles.Render("~/Content/css")*@
+        @Styles.Render("~/Content/css")
         <link href="~/Content/kendo.common.min.css" rel="stylesheet" />
         <link href="~/Content/kendo.default.min.css" rel="stylesheet" />
         <link href="~/Content/kendo.mobile.all.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </nav>
-            <input type="button" />
+            <input type="button" value="Cart"/>
             <input id="main-search"/>
         </header>
         <div id="body">
@@ -59,12 +59,28 @@
                     dataTextField: "Title",
                     placeholder: "Search music...",
                     dataSource: {
-                        serverFiltering: false,
-                        serverPaging: false,
+                        type: "odata",
+                        serverFiltering: true,
+                        serverPaging: true,
                         pageSize: 20,
                         transport: {
                             read: {
-                                url: "/Api/Albums"
+                                url: "/Api/Albums",
+                                dataType: "json"
+                            },
+                            parameterMap: function (options, type) {
+                                var paramMap = kendo.data.transports.odata.parameterMap(options);
+                                delete paramMap.$inlinecount;
+                                delete paramMap.$format;
+                                return paramMap;
+                            }
+                        },
+                        schema: {
+                            data: function (data) {
+                                return data;
+                            },
+                            total: function (data) {
+                                return data.length;
                             }
                         }
                     },
