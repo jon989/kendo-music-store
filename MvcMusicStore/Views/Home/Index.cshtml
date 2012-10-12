@@ -1,23 +1,26 @@
-﻿@model List<MvcMusicStore.Models.Album>
-@{
-    ViewBag.Title = "ASP.NET MVC Music Store";
+﻿@section scripts
+{
+    <script src="~/Scripts/home-index.js"></script>
 }
+
+<script id="album-template" type="text/x-kendo-template">
+    <img src="#: AlbumArtUrl #" />
+    <span>#: Title #</span>
+    <span>#: Artist.Name #</span>
+</script>
+
 <div id="promotion">
-    <img src="~/Content/Images/home-showcase.png" />
+    <img src="/Content/Images/home-showcase.png" />
 </div>
 
-<section id="top-albums">
-    <h3><em>Fresh</em> off the grill</h3>
+<section>
+    <h3>Featured Artist: <span data-bind="text: featuredArtistName"></span></h3>
+    <div data-role="listview" data-bind="source: featuredArtistAlbums" data-template="album-template">
+    </div>
+</section>
 
-    <ul id="album-list">
-        @foreach (var album in Model)
-        {
-            <li><a href="@Url.Action("Details", "Store",
-                new { id = album.AlbumId })">
-
-                <img alt="@album.Title" src="@Url.Content(@album.AlbumArtUrl)" />
-                <span>@album.Title</span> </a>
-            </li>
-        }
-    </ul>
+<section>
+    <h3>Top Selling Albums:</h3>
+    <div data-role="listview" data-bind="source: topSellingAlbums" data-template="album-template">
+    </div>
 </section>

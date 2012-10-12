@@ -13,10 +13,17 @@ namespace MvcMusicStore.Controllers.Api
         MusicStoreEntities storeDB = new MusicStoreEntities();
 
         // GET api/albums
-        public IEnumerable<Album> Get()
+        [Queryable]
+        public IQueryable<Album> Get()
         {
             storeDB.Configuration.ProxyCreationEnabled = false;
-            return storeDB.Albums;
+
+            var query = storeDB.Albums.Include("Artist").AsQueryable();
+            var showPopular = Request.GetQueryNameValuePairs().Where(x => x.Key == "popular").Select(x => x.Value).FirstOrDefault();
+            if (showPopular != null)
+                query = query.OrderByDescending(a => a.OrderDetails.Count())
+                    .Take(Int32.Parse(showPopular));
+            return query;
         }
 
         // GET api/albums/5

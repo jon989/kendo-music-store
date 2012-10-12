@@ -5,7 +5,7 @@
         <title>@ViewBag.Title - Kendo UI Music Store</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
+        @*@Styles.Render("~/Content/css")*@
         <link href="~/Content/kendo.common.min.css" rel="stylesheet" />
         <link href="~/Content/kendo.default.min.css" rel="stylesheet" />
         <link href="~/Content/kendo.mobile.all.min.css" rel="stylesheet" />
@@ -13,21 +13,16 @@
     </head>
     <body>
         <header>
-            <div class="content-wrapper clear-fix">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("ASP.NET MVC Music Store", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                </div>
-            </div>
-            <nav class="content-wrapper">
+            <section>
+                @Html.Partial("_LoginPartial")
+            </section>
+            <nav>
                 <ul id="menu">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>Genres
-                        @{Html.RenderAction("GenreMenu", "Store");}
+                        <ul>
+                            @{Html.RenderAction("GenreMenu", "Store");}
+                        </ul>
                     </li>
                     <li>About
                         <ul>
@@ -43,19 +38,14 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </nav>
+            <input type="button" />
+            <input id="main-search"/>
         </header>
         <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content">
-                @RenderBody()
-            </section>
+            @RenderBody()
         </div>
         <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p><a href="http://mvcmusicstore.codeplex.com">mvcmusicstore.codeplex.com</a></p>
-                </div>
-            </div>
+            <p><a href="http://mvcmusicstore.codeplex.com">mvcmusicstore.codeplex.com</a></p>
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
@@ -63,6 +53,23 @@
         <script>
             $(document).ready(function () {
                 $("#menu").kendoMenu();
+                $("#main-search").kendoAutoComplete({
+                    filter: 'contains',
+                    minLength: 3,
+                    dataTextField: "Title",
+                    placeholder: "Search music...",
+                    dataSource: {
+                        serverFiltering: false,
+                        serverPaging: false,
+                        pageSize: 20,
+                        transport: {
+                            read: {
+                                url: "/Api/Albums"
+                            }
+                        }
+                    },
+                    template: "<img src='${data.AlbumArtUrl}' /><span>${data.Title}</span><span>${data.Artist.Name}</span>"
+                });
             });
         </script>
         @RenderSection("scripts", required: false)
