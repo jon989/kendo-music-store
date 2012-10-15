@@ -40,7 +40,12 @@
             transport: {
                 read: "/Api/Albums?popular=5"
             }
-        })
+        }),
+
+        bannerImages: [
+            "/Content/Images/banner1.png",
+            "/Content/Images/banner2.png"
+        ]
     });
 
     kendo.bind("#body", viewModel);
