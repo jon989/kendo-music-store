@@ -6,14 +6,14 @@
 <script id="album-template" type="text/x-kendo-template">
     <div class="album">
         <img src="#: AlbumArtUrl #" />
-        <span>#: Title #</span>
-        <span>#: Artist.Name #</span>
-        <span>#: Price #</span>
+        <span data-bind="text: Title"></span>
+        <span data-bind="text: Artist.Name"></span>
+        <span data-bind="textFormatted: Price" data-format="c"></span>
     </div>
 </script>
 
 <div id="promotion">
-    <img src="/Content/Images/home-showcase.png" data-bind="rotateImages: bannerImages" data-rotate-delay="5000" />
+    <img data-bind="rotateImages: bannerImages" data-rotate-delay="5000" />
 </div>
 
 <section>

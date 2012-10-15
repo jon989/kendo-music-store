@@ -234,13 +234,9 @@
     <Content Include="Content\Images\AlbumArt\CD7.png" />
     <Content Include="Content\Images\AlbumArt\CD8.png" />
     <Content Include="Content\Images\AlbumArt\CD9.png" />
-    <Content Include="Content\Images\banner2.png" />
-    <Content Include="Content\Images\banner1.png" />
-    <Content Include="Content\Images\home-showcaseSm.png" />
-    <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\Images\logo.svg" />
-    <Content Include="Content\Images\placeholder.gif" />
-    <Content Include="Content\Images\placeholder.png" />
+    <Content Include="Content\Images\Feature1.png" />
+    <Content Include="Content\Images\Feature2.png" />
+    <Content Include="Content\Images\Feature3.png" />
     <Content Include="Content\Default\editor.png" />
     <Content Include="Content\Default\imagebrowser.png" />
     <Content Include="Content\Default\loading-image.gif" />

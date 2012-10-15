@@ -1,23 +1,41 @@
 ﻿kendo.data.binders.rotateImages = kendo.data.Binder.extend({
     init: function (element, bindings, options) {
         kendo.data.Binder.fn.init.call(this, element, bindings, options);
-        var binding = this.bindings["rotateImages"];
+        var binding = this.bindings.rotateImages;
         var target = $(element);
         binding.rotateDelay = target.data("rotate-delay");
         binding.imageIndex = 0;
-        binding.setRotationTimeout = function () {
+        binding.doImageRotation = function () {
             var imageArray = binding.get();
-            target.attr("src", imageArray[binding.imageIndex]);
-            binding.imageIndex = binding.imageIndex + 1;
+            var nextImageUrl = imageArray[binding.imageIndex];
+            target.fadeTo('slow', 0, function () { target.attr('src', nextImageUrl).fadeTo('slow', 1); });
+            binding.imageIndex++;
             if (binding.imageIndex >= imageArray.length) {
                 binding.imageIndex = 0;
             }
-            setTimeout(binding.setRotationTimeout, binding.rotateDelay);
         };
-        binding.setRotationTimeout();
     },
     refresh: function () {
-        var binding = this.bindings["rotateImages"];
+        var binding = this.bindings.rotateImages;
         binding.imageIndex = 0;
+        binding.doImageRotation();
+        binding.interval = setInterval(binding.doImageRotation, binding.rotateDelay);
     },
+    destroy: function () {
+        var binding = this.bindings.rotateImages;
+        clearInterval(binding.interval);
+    }
+});
+
+kendo.data.binders.textFormatted = kendo.data.Binder.extend({
+    refresh: function () {
+        var format = $(this.element).data("format");
+        var text = this.bindings.textFormatted.get();
+
+        if (text == null) {
+            text = "";
+        }
+
+        this.element["innerText"] = format ? kendo.toString(text, format) : text;
+    }
 });

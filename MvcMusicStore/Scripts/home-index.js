@@ -43,8 +43,9 @@
         }),
 
         bannerImages: [
-            "/Content/Images/banner1.png",
-            "/Content/Images/banner2.png"
+            "/Content/Images/Feature1.png",
+            "/Content/Images/Feature2.png",
+            "/Content/Images/Feature3.png"
         ]
     });
 
