@@ -14,16 +14,16 @@
     </head>
     <body>
         <header>
-            <section class="login">
+            <div class="container">
+            <h1><a href="/">Awesome Sauce Music Store</a></h1>
+
+
+            <section class="login-button">
                 @Html.Partial("_LoginPartial")
             </section>
 
-            <section>
-                <h1>Awesome Sauce Music Store</h1>
-            </section>
-           
             <nav>
-                <ul id="menu" class="nav">
+                <ul id="menu">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>Genres
                         <ul>
@@ -51,13 +51,19 @@
                     <li>Cart<ul><li>Stuff goes here...</li></ul></li>
             </ul>
             </section>
+                </div>
         </header>
 
         <div id="body">
             @RenderBody()
         </div>
         <footer>
-            <p><a href="http://mvcmusicstore.codeplex.com">mvcmusicstore.codeplex.com</a></p>
+            <section class="container">
+                <h1>Telerik</h1>
+            <p>&copy; 2012 Telerik</p>
+
+            
+                </section>
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
@@ -72,6 +78,7 @@
                     minLength: 3,
                     dataTextField: "Title",
                     placeholder: "Search music...",
+                    height: 300,
                     dataSource: {
                         type: "odata",
                         serverFiltering: true,
@@ -98,7 +105,7 @@
                             }
                         }
                     },
-                    template: "<img src='${data.AlbumArtUrl}' /><span>${data.Title}</span><span>${data.Artist.Name}</span>"
+                    template: "<img src='${data.AlbumArtUrl}' /><div><span>${data.Title}</span><span>${data.Artist.Name}</span></div>"
                 });
             });
         </script>

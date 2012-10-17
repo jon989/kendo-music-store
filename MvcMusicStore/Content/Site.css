@@ -12,6 +12,19 @@
     *zoom: 1;
 }
 
+*
+{
+    font-family: "lucida grande", sans-serif;
+}
+
+a:link
+{
+    text-decoration: none;
+}
+
+
+
+
 #wrapper
 {
     width: 100%;
@@ -19,13 +32,15 @@
     margin: 0 auto;
 }
 
+
+/* Header */
 header
 {
     z-index: 99;
     position: fixed;
     background: #fff;
     display:block;
-    padding-bottom: 20px;
+    padding: 10px;
     -moz-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
     -o-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
@@ -33,10 +48,16 @@ header
     top:0;
     right:0;
     left:0;
-
+    min-width: 1200px;
 }
 
-    header h1
+.container
+{
+    margin: 0 auto;
+    width: 944px;
+}
+
+    header h1 a
     {
         width: 174px;
         height: 77px;
@@ -44,15 +65,62 @@ header
         display: block;
         background: url(/content/images/awesomesauce-logo.png) no-repeat;
         margin: 0 auto;
-        margin-left:25px;
         margin-right: 25px;
         float: left;
+         
     }
+
+        header h1 a:hover
+        {
+            opacity: 0.5;
+            -moz-opacity: 0.5;
+            -webkit-opacity: 0.5;
+        }
 
     header .k-autocomplete
     {
         float: right;
-        margin-top:45px;
+        width: 250px;
+        margin-top: 15px;
+    }
+
+.k-list-container
+{
+    background-color: #FFFFFF;
+}
+
+#main-search-list .k-item
+{
+    margin: 5px 0;
+}
+
+#main-search-list img
+{
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin-right: 5px;
+}
+
+#main-search-list div
+{
+    display: block;
+    min-height: 60px;
+}
+
+#main-search-list span
+{
+    font-size: .8em;
+    vertical-align: top;
+    margin: 0;
+    padding: 4px;
+    display: block;
+    line-height: 1em;
+}
+
+    #main-search-list span:first-child
+    {
+        font-weight: bold;
     }
 
 h3
@@ -60,41 +128,62 @@ h3
     margin-bottom: 5px;
 }
 
-.login
+.login-button
 {
-    display: inline;
-    float: right;
-    clear: both;
+    text-align: right;
 }
 
-       .login ul
+    .login-button ul
     {
-           list-style-type: none;
+        list-style-type: none;
     }
 
-        .login ul li
+    .login-button ul li
         {
             display: inline;
+            
         }
 
-.nav
-{
-    float: left;
-}
+    .login-button ul li a
+            {
+                background-color: #d88e2f;
+            color: #fff;
+            font-size: 11px;
+            padding: 5px;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            text-decoration: none;    
+        }
+
+    .login-button ul li a:hover
+            {
+                background-color: #d88e2f;
+            color: #fff;
+            font-size: 11px;
+            padding: 5px;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            text-decoration: none; 
+            opacity:0.5;
+            -moz-opacity:0.5;   
+        }
+
 
 .k-menu
 {
-    margin-top: 45px;
     background-color: transparent;
     border: none;
+    float: left;
+    margin-top: 15px;
 }
 
     .k-menu > .k-item, .k-widget.k-menu-horizontal > .k-item
     {
         border: none;
-        margin-right: 40px;
+        font: 200 15px;
         color: #999;
-        font-weight: bold;
         text-transform: uppercase;
     }
 
@@ -108,14 +197,21 @@ h3
             color: #999;
         }
 
+.k-state-hover
+{
+    color: #000;
+}
+
+
     .k-menu .k-state-hover
     {
-        background-color: rgba(251, 176, 59, 0.90);
+        background-color: transparent;
     }
 
     .k-menu .k-item .k-item
     {
       background-color: rgba(251, 176, 59, 0.90);
+       
     }
 
     .k-menu .k-item .k-item:hover
@@ -125,13 +221,15 @@ h3
 
     .k-menu .k-popup
     {
+         
         background-color: transparent;
-        font-weight: normal;
         text-transform: none;
+        border:0;
     }
 
         .k-menu .k-popup .k-item
         {
+            font: 100 13px "lucida grande", arial, verdana;
             font-weight: normal;
             text-transform: none;
             color: #fff;
@@ -158,10 +256,27 @@ h3
     float: right;
 }
 
+
+
+/* Home Page Content */
+
 #body
 {
     margin: 0 auto;
-    margin-top:140px;
+    margin-top: 130px;
+    padding: 10px;
+}
+
+    #body h3
+    {
+        font: 100 20px "lucida grande", arial, verdana;
+        color: #999;
+        text-transform:uppercase;
+    }
+
+.featureartist-text
+{
+    color: #000;
 }
 
 .menu-content
@@ -169,16 +284,36 @@ h3
     padding: 10px;
 }
 
+.album-list
+{
+    padding-bottom: 50px;
+}
+
 .album
 {
     float: left;
-    margin: 30px;
+    padding:0px 48px 30px 0px;
+    width: 150px;
+     font: 100 14px "lucida grande", arial, verdana;
+    
 }
+
+    .album:nth-child(5n+5)
+    {
+        padding-right: 0;
+  }
+
+      .album:nth-child(5n+6)
+    {
+        clear: left;
+  }
 
     .album img
     {
-        height: 100px;
-        width: 100px;
+        height: 150px;
+        width: 150px;
+        border: 1px solid #999;
+        padding: 4px;
     }
 
     .album span
@@ -194,5 +329,110 @@ h3
     .album .price
     {
         font-style: italic;
-        color: #ababab
+        color: #ababab;
     }
+
+#body
+{
+    margin: 0 auto;
+    width: 944px;
+    margin-top: 150px;
+}
+
+#promotion
+{
+    margin-bottom: 70px;
+}
+
+#body h3
+{
+    text-transform: uppercase;
+    color: #999;
+    font-weight: normal;
+}
+
+#body .k-listview
+{
+    border: none;
+}
+
+/* Login Page */
+
+.login
+{
+    margin: 0;
+}
+
+.login ul
+{
+    list-style-type: none;
+    display: block;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+    .login ul li
+    {
+        padding-bottom: 15px;
+    }
+
+.login-bigbutton
+{
+background-color: #D88E2F;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.login-small
+{
+    font:  100 11px "lucida grande", arial, verdana;
+    color: #888;
+}
+
+.login-small a:link
+{
+  color:#D88E2F;
+}
+
+
+/* Footer */
+
+footer
+{
+    
+    background: #ccc;
+    display:block;
+    padding: 10px;
+    bottom:0;
+    right:0;
+    left:0;
+    min-width: 1200px;
+}
+
+    footer h1
+    {
+        width: 100%;
+     
+        text-indent: -9999px;
+        display: block;
+        background: url(/content/images/telerik-logo.png) no-repeat;
+        margin: 0 auto;
+        margin-right: 25px;
+        float: left;
+    }
+
+    footer p
+    {
+        font: 100 10px "lucida grande", arial, verdana;
+        color: #888;
+    }
+
+
+.k-header,.k-grid-header,.k-toolbar,.k-dropdown-wrap,.k-picker-wrap,.k-grouping-header,.k-tooltip,.k-pager-wrap,.k-button,.k-draghandle,.k-tile,.k-textbox,.k-autocomplete,.k-state-hover,.k-state-selected,.k-state-focused,.k-state-highlight,.k-tabstrip-items .k-item
+{
+    background-image: none;
+}

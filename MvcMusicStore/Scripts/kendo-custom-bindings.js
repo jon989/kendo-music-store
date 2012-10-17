@@ -36,6 +36,6 @@ kendo.data.binders.textFormatted = kendo.data.Binder.extend({
             text = "";
         }
 
-        this.element["innerText"] = format ? kendo.toString(text, format) : text;
+        $(this.element).text(format ? kendo.toString(text, format) : text);
     }
 });

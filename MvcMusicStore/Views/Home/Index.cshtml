@@ -16,12 +16,12 @@
     <img data-bind="rotateImages: bannerImages" data-rotate-delay="5000" />
 </div>
 
-<section>
-    <h3>Featured Artist: <span data-bind="text: featuredArtistName"></span></h3>
+<section class="album-list">
+    <h3>Featured Artist: <span data-bind="text: featuredArtistName" class="featureartist-text"></span></h3>
     <div class="clearfix" data-role="listview" data-bind="source: featuredArtistAlbums" data-template="album-template"></div>
 </section>
 
-<section>
-    <h3>Top Selling Albums:</h3>
+<section class="album-list">
+    <h3>Top Selling Albums</h3>
     <div class="clearfix" data-role="listview" data-bind="source: topSellingAlbums" data-template="album-template"></div>
 </section>

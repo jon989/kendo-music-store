@@ -4,17 +4,19 @@
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
+    <h1>@ViewBag.Title</h1>
     <h2>Create a new account.</h2>
 </hgroup>
 
+
+<section class="login">
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
 
-    <fieldset>
-        <legend>Registration Form</legend>
-        <ol>
+ 
+    
+        <ul>
             <li>
                 @Html.LabelFor(m => m.UserName)
                 @Html.TextBoxFor(m => m.UserName)
@@ -27,10 +29,14 @@
                 @Html.LabelFor(m => m.ConfirmPassword)
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
-        </ol>
-        <input type="submit" value="Register" />
-    </fieldset>
+        </ul>
+        <input type="submit" value="Register" class="login-bigbutton" />
+    
+
+
 }
+
+    </section>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
