@@ -13,6 +13,7 @@ namespace MvcMusicStore
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("*.html");
 
             routes.MapRoute(
                 name: "Default",

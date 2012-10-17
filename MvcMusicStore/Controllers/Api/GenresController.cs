@@ -13,15 +13,18 @@ namespace MvcMusicStore.Controllers.Api
         MusicStoreEntities storeDB = new MusicStoreEntities();
 
         // GET api/genres
-        public HttpResponseMessage Get()
+        [Queryable]
+        public IQueryable<Genre> Get()
         {
-            return Request.CreateResponse<IEnumerable<Genre>>(HttpStatusCode.OK, storeDB.Genres);
+            storeDB.Configuration.ProxyCreationEnabled = false;
+            return storeDB.Genres;
         }
 
         // GET api/genres/5
-        public HttpResponseMessage Get(int id)
+        public Genre Get(int id)
         {
-            return Request.CreateResponse<Genre>(HttpStatusCode.OK, storeDB.Genres.Single(x => x.GenreId == id));
+            storeDB.Configuration.ProxyCreationEnabled = false;
+            return storeDB.Genres.Single(x => x.GenreId == id);
         }
 
         // POST api/genres

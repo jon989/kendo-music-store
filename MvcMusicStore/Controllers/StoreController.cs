@@ -11,22 +11,13 @@ namespace MvcMusicStore.Controllers {
         //
         // GET: /Store/
 
-        public ActionResult Details(int id) 
+        public ActionResult Details() 
         {
-            var album = storeDB.Albums.Find(id);
-            if (album == null) {
-                return HttpNotFound();
-            }
-
-            return View(album);
+            return View();
         }
 
-        public ActionResult Browse(string genre) {
-            // Retrieve Genre and its Associated Albums from database
-            var genreModel = storeDB.Genres.Include("Albums")
-                .Single(g => g.Name == genre);
-
-            return View(genreModel);
+        public ActionResult Browse() {
+            return View();
         }
 
         public ActionResult Index() 

@@ -5,19 +5,25 @@
         <title>@ViewBag.Title - Kendo UI Music Store</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
+        <link href="~/Content/normalize.css" rel="stylesheet" />
+        <link href="~/Content/themes/base/kendo.common.min.css" rel="stylesheet" />
+        <link href="~/Content/themes/base/kendo.default.min.css" rel="stylesheet" />
+        <link href="~/Content/themes/base/kendo.mobile.all.min.css" rel="stylesheet" />
         @Styles.Render("~/Content/css")
-        <link href="~/Content/kendo.common.min.css" rel="stylesheet" />
-        <link href="~/Content/kendo.default.min.css" rel="stylesheet" />
-        <link href="~/Content/kendo.mobile.all.min.css" rel="stylesheet" />
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
         <header>
-            <section>
+            <section class="login">
                 @Html.Partial("_LoginPartial")
             </section>
+
+            <section>
+                <h1>Awesome Sauce Music Store</h1>
+            </section>
+           
             <nav>
-                <ul id="menu">
+                <ul id="menu" class="nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>Genres
                         <ul>
@@ -38,9 +44,15 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </nav>
-            <input type="button" value="Cart"/>
-            <input id="main-search"/>
+           
+            <section class="cart-search">
+                <input id="main-search"/>
+                 <ul id="cart-menu">
+                    <li>Cart<ul><li>Stuff goes here...</li></ul></li>
+            </ul>
+            </section>
         </header>
+
         <div id="body">
             @RenderBody()
         </div>
@@ -54,6 +66,7 @@
         <script>
             $(document).ready(function () {
                 $("#menu").kendoMenu();
+                $("#cart-menu").kendoMenu();
                 $("#main-search").kendoAutoComplete({
                     filter: 'contains',
                     minLength: 3,

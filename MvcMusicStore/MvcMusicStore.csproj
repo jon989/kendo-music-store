@@ -237,13 +237,14 @@
     <Content Include="Content\Images\Feature1.png" />
     <Content Include="Content\Images\Feature2.png" />
     <Content Include="Content\Images\Feature3.png" />
-    <Content Include="Content\Default\editor.png" />
-    <Content Include="Content\Default\imagebrowser.png" />
-    <Content Include="Content\Default\loading-image.gif" />
-    <Content Include="Content\Default\loading.gif" />
-    <Content Include="Content\Default\slider-h.gif" />
-    <Content Include="Content\Default\slider-v.gif" />
-    <Content Include="Content\Default\sprite.png" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\themes\base\Default\editor.png" />
+    <Content Include="Content\themes\base\Default\imagebrowser.png" />
+    <Content Include="Content\themes\base\Default\loading-image.gif" />
+    <Content Include="Content\themes\base\Default\loading.gif" />
+    <Content Include="Content\themes\base\Default\slider-h.gif" />
+    <Content Include="Content\themes\base\Default\slider-v.gif" />
+    <Content Include="Content\themes\base\Default\sprite.png" />
     <Content Include="Content\themes\base\images\android-sprite.png" />
     <Content Include="Content\themes\base\images\iconmasks.svg" />
     <Content Include="Content\themes\base\images\icons.png" />
@@ -276,9 +277,6 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="Content\kendo.common.min.css" />
-    <Content Include="Content\kendo.default.min.css" />
-    <Content Include="Content\kendo.mobile.all.min.css" />
     <Content Include="Content\themes\base\kendo.common.min.css" />
     <Content Include="Content\themes\base\kendo.default.min.css" />
     <Content Include="Content\themes\base\kendo.mobile.all.min.css" />
@@ -328,6 +326,7 @@
     <Content Include="Scripts\kendo-custom-bindings.js" />
     <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\store-browse.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

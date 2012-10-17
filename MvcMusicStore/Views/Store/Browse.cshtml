@@ -1,18 +1,16 @@
-﻿@model MvcMusicStore.Models.Genre
-@{
-    ViewBag.Title = "Browse Albums";
+﻿@section scripts
+{
+    <script src="~/Scripts/store-browse.js"></script>
 }
-<div class="genre">
-    <h3>
-        <em>@Model.Name</em> Albums</h3>
 
-    <ul id="album-list">
-        @foreach (var album in Model.Albums) {
-            <li><a href="@Url.Action("Details", new { id = album.AlbumId })">
-            @if (!string.IsNullOrEmpty(album.AlbumArtUrl)){
-                <img alt="@album.Title" src="@Url.Content(@album.AlbumArtUrl)" />
-                }
-                <span>@album.Title</span> </a></li>
-        }
-    </ul>
-</div>
+<script id="album-template" type="text/x-kendo-template">
+    <div class="album">
+        <img src="#: AlbumArtUrl #" />
+        <span data-bind="text: Title"></span>
+        <span data-bind="text: Artist.Name"></span>
+        <span data-bind="textFormatted: Price" data-format="c"></span>
+    </div>
+</script>
+
+<h3 data-bind="text: genre.Name"></h3>
+<div data-role="listview" data-bind="source: albums" data-template="album-template"></div>

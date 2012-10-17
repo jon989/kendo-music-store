@@ -1,1 +1,198 @@
-﻿
+﻿.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+#wrapper
+{
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+header
+{
+    z-index: 99;
+    position: fixed;
+    background: #fff;
+    display:block;
+    padding-bottom: 20px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
+    -o-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
+    box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
+    top:0;
+    right:0;
+    left:0;
+
+}
+
+    header h1
+    {
+        width: 174px;
+        height: 77px;
+        text-indent: -9999px;
+        display: block;
+        background: url(/content/images/awesomesauce-logo.png) no-repeat;
+        margin: 0 auto;
+        margin-left:25px;
+        margin-right: 25px;
+        float: left;
+    }
+
+    header .k-autocomplete
+    {
+        float: right;
+        margin-top:45px;
+    }
+
+h3
+{
+    margin-bottom: 5px;
+}
+
+.login
+{
+    display: inline;
+    float: right;
+    clear: both;
+}
+
+       .login ul
+    {
+           list-style-type: none;
+    }
+
+        .login ul li
+        {
+            display: inline;
+        }
+
+.nav
+{
+    float: left;
+}
+
+.k-menu
+{
+    margin-top: 45px;
+    background-color: transparent;
+    border: none;
+}
+
+    .k-menu > .k-item, .k-widget.k-menu-horizontal > .k-item
+    {
+        border: none;
+        margin-right: 40px;
+        color: #999;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .k-menu .k-link
+    {
+        color: #999;
+    }
+
+        .k-menu .k-link:visited
+        {
+            color: #999;
+        }
+
+    .k-menu .k-state-hover
+    {
+        background-color: rgba(251, 176, 59, 0.90);
+    }
+
+    .k-menu .k-item .k-item
+    {
+      background-color: rgba(251, 176, 59, 0.90);
+    }
+
+    .k-menu .k-item .k-item:hover
+    {
+      background-color: rgb(237, 200, 155);
+    }
+
+    .k-menu .k-popup
+    {
+        background-color: transparent;
+        font-weight: normal;
+        text-transform: none;
+    }
+
+        .k-menu .k-popup .k-item
+        {
+            font-weight: normal;
+            text-transform: none;
+            color: #fff;
+        }
+
+            .k-menu .k-popup .k-item .k-link
+            {
+                color: #fff;
+            }
+
+                .k-menu .k-popup .k-item .k-link:hover
+                {
+                    color: #d88e2f;
+                }
+
+.cart-search
+{
+    display: inline-block;
+    float: right;
+}
+
+#cart-menu
+{
+    float: right;
+}
+
+#body
+{
+    margin: 0 auto;
+    margin-top:140px;
+}
+
+.menu-content
+{
+    padding: 10px;
+}
+
+.album
+{
+    float: left;
+    margin: 30px;
+}
+
+    .album img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    .album span
+    {
+        display: block;
+    }
+
+    .album .title
+    {
+        font-weight: bold;
+    }
+
+    .album .price
+    {
+        font-style: italic;
+        color: #ababab
+    }

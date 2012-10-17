@@ -6,9 +6,9 @@
 <script id="album-template" type="text/x-kendo-template">
     <div class="album">
         <img src="#: AlbumArtUrl #" />
-        <span data-bind="text: Title"></span>
-        <span data-bind="text: Artist.Name"></span>
-        <span data-bind="textFormatted: Price" data-format="c"></span>
+        <span class="title" data-bind="text: Title"></span>
+        <span class="artist" data-bind="text: Artist.Name"></span>
+        <span class="price" data-bind="textFormatted: Price" data-format="c"></span>
     </div>
 </script>
 
@@ -18,12 +18,10 @@
 
 <section>
     <h3>Featured Artist: <span data-bind="text: featuredArtistName"></span></h3>
-    <div data-role="listview" data-bind="source: featuredArtistAlbums" data-template="album-template">
-    </div>
+    <div class="clearfix" data-role="listview" data-bind="source: featuredArtistAlbums" data-template="album-template"></div>
 </section>
 
 <section>
     <h3>Top Selling Albums:</h3>
-    <div data-role="listview" data-bind="source: topSellingAlbums" data-template="album-template">
-    </div>
+    <div class="clearfix" data-role="listview" data-bind="source: topSellingAlbums" data-template="album-template"></div>
 </section>
