@@ -21,7 +21,9 @@
     var viewModel = kendo.observable({
         albums: new kendo.data.DataSource({
             type: "odata",
+            pageSize: 20,
             serverFiltering: true,
+            serverPaging: false,
             filter: {
                 field: "GenreId",
                 operator: "eq",

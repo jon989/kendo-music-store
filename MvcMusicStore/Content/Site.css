@@ -292,7 +292,7 @@ h3
 .album
 {
     float: left;
-    padding:0px 48px 30px 0px;
+    padding:0px 48px 20px 0px;
     width: 150px;
      font: 100 14px "lucida grande", arial, verdana;
     
@@ -301,12 +301,12 @@ h3
     .album:nth-child(5n+5)
     {
         padding-right: 0;
-  }
+    }
 
-      .album:nth-child(5n+6)
+    .album:nth-child(5n+6)
     {
         clear: left;
-  }
+    }
 
     .album img
     {
@@ -436,3 +436,18 @@ footer
 {
     background-image: none;
 }
+
+.k-pager-wrap
+{
+    margin: 20px 0;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    color:#999;
+}
+
+    .k-pager-wrap .k-state-selected
+    {
+        background-color: #fbb03b;
+        border-color: transparent;
+    }
