@@ -24,7 +24,7 @@
 
             <nav>
                 <ul id="menu">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+             
                     <li>Genres
                         <ul>
                             @{Html.RenderAction("GenreMenu", "Store");}
@@ -59,16 +59,21 @@
         </div>
         <footer>
             <section class="container">
-                <h1>Telerik</h1>
-            <p>&copy; 2012 Telerik</p>
+                <ul>
+                    <li><a href="http://www.telerik.com"><img src="/content/images/telerik-logo.png" /></a></li>
+                    <li><a  href="http://www.kendoui.com"><img src="/images/kendo-logo.png" /></a></li>
+                </ul>
 
             
                 </section>
         </footer>
 
+        @Html.Partial("_AlbumDetailsTemplatePartial")
+
         @Scripts.Render("~/bundles/jquery")
         <script src="~/Scripts/kendo.all.min.js"></script>
         <script src="~/Scripts/kendo-custom-bindings.js"></script>
+        <script src="~/Scripts/shared.js"></script>
         <script>
             $(document).ready(function () {
                 $("#menu").kendoMenu();

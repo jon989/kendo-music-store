@@ -208,6 +208,7 @@ h3
         background-color: transparent;
     }
 
+
     .k-menu .k-item .k-item
     {
       background-color: rgba(251, 176, 59, 0.90);
@@ -294,8 +295,8 @@ h3
     float: left;
     padding:0px 48px 20px 0px;
     width: 150px;
-     font: 100 14px "lucida grande", arial, verdana;
-    
+    font: 100 14px "lucida grande", arial, verdana;
+    cursor: pointer;
 }
 
     .album:nth-child(5n+5)
@@ -332,6 +333,70 @@ h3
         color: #ababab;
     }
 
+.album-details
+{
+}
+
+    .album-details .image-container
+    {
+        float: left;
+        height: 100%;
+        margin-right: 20px;
+    }
+
+    .album-details img
+    {
+        height: 200px;
+        width: 200px;
+        border: 1px solid #999;
+        padding: 4px;
+    }
+
+    .album-details .artist
+    {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .album-details .price
+    {
+        padding-left: 1em;
+        font-size: 1.2em;
+    }
+
+    .album-details .price-currency
+    {
+        font-size: .6em;
+        padding-left: 4px;
+    }
+
+    .album-details .k-numerictextbox
+    {
+        width: 80px;
+        margin-left: 4px;
+    }
+
+    .album-details .total
+    {
+        margin-top: 4px;
+        padding-top: 4px;
+        padding-left: 1em;
+        border-top: 1px solid #999;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+.k-header
+{
+    background-color: transparent;
+}
+
+
+.k-state-hover .k-link
+{
+    color:#d88e2f;
+}
+
 #body
 {
     margin: 0 auto;
@@ -361,6 +426,7 @@ h3
 .login
 {
     margin: 0;
+    font-size: 14px;
 }
 
 .login ul
@@ -377,20 +443,41 @@ h3
         padding-bottom: 15px;
     }
 
-.login-bigbutton
+.submit
 {
-background-color: #D88E2F;
-    border-radius: 4px 4px 4px 4px;
-    color: #FFFFFF;
-    font-size: 14px;
-    padding: 5px;
-    text-decoration: none;
+    background-color: #D88E2F;
+    background-color: #FFB94B;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #D69E31 #E3A037 #D5982D #E3A037;
+    height: 35px;
+    padding: 0;
+    width: 120px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8F5A0A;
 }
+
+    .submit:hover
+    {
+         opacity: 0.7;
+        -moz-opacity: 0.7;
+        -webkit-opacity: 0.7;
+    }
 
 .login-small
 {
+   
     font:  100 11px "lucida grande", arial, verdana;
     color: #888;
+
 }
 
 .login-small a:link
@@ -411,26 +498,37 @@ footer
     right:0;
     left:0;
     min-width: 1200px;
+    -moz-box-shadow: inset 0 15px 20px -20px #333;
+    -webkit-box-shadow: inset 0 15px 20px -20px #333;
+    -o-box-shadow: inset 0 15px 20px -20px #333;
+    box-shadow: inset 0 15px 20px -20px #333;
+   
+    
 }
 
-    footer h1
+    footer ul
     {
-        width: 100%;
-     
-        text-indent: -9999px;
-        display: block;
-        background: url(/content/images/telerik-logo.png) no-repeat;
         margin: 0 auto;
-        margin-right: 25px;
-        float: left;
+        list-style-type: none;
     }
 
-    footer p
-    {
-        font: 100 10px "lucida grande", arial, verdana;
-        color: #888;
-    }
+        footer ul li
+        {
+            display: inline;
+            padding-right: 15px;
+        }
 
+            footer ul li a img:last-child
+            {
+                width: 100px;
+            }
+
+            footer ul li a:hover
+            {
+                opacity: 0.5;
+                -moz-opacity: 0.5;
+                -webkit-opacity: 0.5;
+            }
 
 .k-header,.k-grid-header,.k-toolbar,.k-dropdown-wrap,.k-picker-wrap,.k-grouping-header,.k-tooltip,.k-pager-wrap,.k-button,.k-draghandle,.k-tile,.k-textbox,.k-autocomplete,.k-state-hover,.k-state-selected,.k-state-focused,.k-state-highlight,.k-tabstrip-items .k-item
 {

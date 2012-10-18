@@ -1,0 +1,15 @@
+﻿<script id="album-details-template" type="text/x-kendo-template">
+    <div class="album-details">
+        <div class="image-container">
+            <img src="" data-bind="attr: { src: AlbumArtUrl }" />
+        </div>
+        <div class="album-info-container">
+            
+            <div class="artist" data-bind="text: Artist.Name"></div>
+            <div><span class="price" data-bind="textFormatted: Price" data-format="c"></span><span class="price-currency">USD</span></div>
+            <div>X<input type="number" value="1" min="1" max="100" data-role="numerictextbox" data-decimals="0" data-format="n0" /><span class="price-currency">qty</span></div>
+            <div class="total">$100.00</div>
+            <input type="button" class="submit" value="Add to Cart" />
+        </div>
+    </div>
+</script>

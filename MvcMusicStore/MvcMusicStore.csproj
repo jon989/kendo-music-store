@@ -234,9 +234,11 @@
     <Content Include="Content\Images\AlbumArt\CD7.png" />
     <Content Include="Content\Images\AlbumArt\CD8.png" />
     <Content Include="Content\Images\AlbumArt\CD9.png" />
+    <Content Include="Content\Images\awesomesauce-logo.png" />
     <Content Include="Content\Images\Feature1.png" />
     <Content Include="Content\Images\Feature2.png" />
     <Content Include="Content\Images\Feature3.png" />
+    <Content Include="Content\Images\telerik-logo.png" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\themes\base\Default\editor.png" />
     <Content Include="Content\themes\base\Default\imagebrowser.png" />
@@ -326,6 +328,7 @@
     <Content Include="Scripts\kendo-custom-bindings.js" />
     <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\shared.js" />
     <Content Include="Scripts\store-browse.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -380,6 +383,8 @@
     <Content Include="Views\StoreManager\Details.cshtml" />
     <Content Include="Views\StoreManager\Edit.cshtml" />
     <Content Include="Views\StoreManager\Index.cshtml" />
+    <Content Include="Views\Shared\_AlbumDetailsTemplatePartial.cshtml" />
+    <Content Include="Views\Shared\_AlbumListTemplatePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

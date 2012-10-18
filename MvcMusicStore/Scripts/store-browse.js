@@ -50,16 +50,29 @@
                 }
             }
         }),
-        genre: null
+        genre: null, // <-- this will hold our Genre object, once loaded.
+
+        viewAlbumDetails: function (e) {
+            $.ajax({
+                url: "/Api/Albums/" + 7,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    openWindow("album-details-template", data);
+                }
+            });
+        }
     });
 
+    // Load the Genre data from the server.
     $.ajax({
         url: "/Api/Genres/" + genreId,
         type: "GET",
         dataType: "json",
         success: function (data) {
-            viewModel.genre = data
-            kendo.bind("#body", viewModel);
+            viewModel.set("genre", data);
         }
     });
+
+    kendo.bind("#body", viewModel);
 });

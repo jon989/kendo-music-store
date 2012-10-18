@@ -30,7 +30,7 @@ namespace MvcMusicStore.Controllers.Api
         public Album Get(int id)
         {
             storeDB.Configuration.ProxyCreationEnabled = false;
-            return storeDB.Albums.Single(x => x.AlbumId == id);
+            return storeDB.Albums.Include("Artist").Single(x => x.AlbumId == id);
         }
 
         // POST api/albums
