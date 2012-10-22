@@ -1,20 +1,22 @@
 ﻿$(document).ready(function () {
-    var featuredArtist = "Metallica";
     var store = new Store();
+    $("#menu").kendoMenu();
+    $("#cart-menu").kendoCartMenu({
+        dataSource: store.getCart()
+    });
+    $("#main-search").kendoAutoComplete({
+        filter: 'contains',
+        minLength: 3,
+        dataTextField: "Title",
+        placeholder: "Search music...",
+        height: 300,
+        template: "<img src='${data.AlbumArtUrl}' /><div data-album-id='${data.AlbumId}'><span>${data.Title}</span><span>${data.Artist.Name}</span></div>",
 
-    var viewModel = kendo.observable({
-        featuredArtistName: featuredArtist,
-        
-        featuredArtistAlbums: new kendo.data.DataSource({
+        dataSource: {
             type: "odata",
             serverFiltering: true,
             serverPaging: true,
-            pageSize: 5,
-            filter: {
-                field: "Artist/Name",
-                operator: "eq",
-                value: featuredArtist
-            },
+            pageSize: 20,
             transport: {
                 read: {
                     url: "/Api/Albums",
@@ -35,24 +37,13 @@
                     return data.length;
                 }
             }
-        }),
+        },
 
-        topSellingAlbums: new kendo.data.DataSource({
-            transport: {
-                read: "/Api/Albums?popular=5"
-            }
-        }),
-
-        bannerImages: [
-            "/Content/Images/Feature1.png",
-            "/Content/Images/Feature2.png",
-            "/Content/Images/Feature3.png"
-        ],
-
-        viewAlbumDetails: function (e) {
-            store.viewAlbumDetails(e.data.AlbumId);
+        select: function (e) {
+            e.preventDefault(); // Stop the selected item text from moving up to the AutoComplete.
+            e.sender.value(""); // clear the user entered search term.
+            var albumId = e.item.children("div").data("album-id");
+            store.viewAlbumDetails(albumId);
         }
     });
-
-    kendo.bind("#body", viewModel);
 });

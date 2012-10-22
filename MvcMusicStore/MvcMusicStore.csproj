@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="Controllers\Api\AlbumsController.cs" />
     <Compile Include="Controllers\Api\GenresController.cs" />
+    <Compile Include="Controllers\Api\ShoppingCartApiController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
@@ -214,6 +215,7 @@
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\fonts\icomoon.svg" />
     <Content Include="Content\Images\AlbumArt\CD1.png" />
     <Content Include="Content\Images\AlbumArt\CD10.png" />
     <Content Include="Content\Images\AlbumArt\CD11.png" />
@@ -316,6 +318,9 @@
     <Content Include="Scripts\home-index.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Content\fonts\icomoon.eot" />
+    <Content Include="Content\fonts\icomoon.ttf" />
+    <Content Include="Content\fonts\icomoon.woff" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
@@ -325,10 +330,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\kendo-cart-menu-widget.js" />
     <Content Include="Scripts\kendo-custom-bindings.js" />
     <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Scripts\shared.js" />
+    <Content Include="Scripts\shared-layout.js" />
+    <Content Include="Scripts\store.js" />
     <Content Include="Scripts\store-browse.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

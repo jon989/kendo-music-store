@@ -1,4 +1,15 @@
-﻿.clearfix:before,
+﻿@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.svg#icomoon') format('svg'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.clearfix:before,
 .clearfix:after {
     content: " ";
     display: table;
@@ -22,9 +33,6 @@ a:link
     text-decoration: none;
 }
 
-
-
-
 #wrapper
 {
     width: 100%;
@@ -32,6 +40,11 @@ a:link
     margin: 0 auto;
 }
 
+.container
+{
+    margin: 0 auto;
+    width: 944px;
+}
 
 /* Header */
 header
@@ -51,12 +64,6 @@ header
     min-width: 1200px;
 }
 
-.container
-{
-    margin: 0 auto;
-    width: 944px;
-}
-
     header h1 a
     {
         width: 174px;
@@ -67,7 +74,6 @@ header
         margin: 0 auto;
         margin-right: 25px;
         float: left;
-         
     }
 
         header h1 a:hover
@@ -139,37 +145,35 @@ h3
     }
 
     .login-button ul li
-        {
-            display: inline;
-            
-        }
+    {
+        display: inline;
+    }
 
     .login-button ul li a
-            {
-                background-color: #d88e2f;
-            color: #fff;
-            font-size: 11px;
-            padding: 5px;
-            border-radius: 4px;
-            -moz-border-radius: 4px;
-            -webkit-border-radius: 4px;
-            text-decoration: none;    
-        }
+    {
+        background-color: #d88e2f;
+        color: #fff;
+        font-size: 11px;
+        padding: 5px;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        text-decoration: none;    
+    }
 
     .login-button ul li a:hover
-            {
-                background-color: #d88e2f;
-            color: #fff;
-            font-size: 11px;
-            padding: 5px;
-            border-radius: 4px;
-            -moz-border-radius: 4px;
-            -webkit-border-radius: 4px;
-            text-decoration: none; 
-            opacity:0.5;
-            -moz-opacity:0.5;   
-        }
-
+    {
+        background-color: #d88e2f;
+        color: #fff;
+        font-size: 11px;
+        padding: 5px;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        text-decoration: none; 
+        opacity:0.5;
+        -moz-opacity:0.5;   
+    }
 
 .k-menu
 {
@@ -202,27 +206,23 @@ h3
     color: #000;
 }
 
-
     .k-menu .k-state-hover
     {
         background-color: transparent;
     }
 
-
     .k-menu .k-item .k-item
     {
-      background-color: rgba(251, 176, 59, 0.90);
-       
+        background-color: rgba(251, 176, 59, 0.90);
     }
 
     .k-menu .k-item .k-item:hover
     {
-      background-color: rgb(237, 200, 155);
+        background-color: rgb(237, 200, 155);
     }
 
     .k-menu .k-popup
     {
-         
         background-color: transparent;
         text-transform: none;
         border:0;
@@ -252,11 +252,75 @@ h3
     float: right;
 }
 
+
+/* Shopping Cart Menu */
+
 #cart-menu
 {
     float: right;
 }
 
+    #cart-menu .k-i-close
+    {
+        float: right;
+        cursor: pointer;
+        opacity: .3;
+    }
+
+    #cart-menu .k-i-close:hover
+    {
+        float: right;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    #cart-menu .k-content
+    {
+        padding: 10px;
+    }
+
+        #cart-menu .k-content li span:first-child
+        {
+            padding-right: 8px;
+        }
+
+        #cart-menu .k-content ul
+        {
+            list-style-type: none;
+            margin:0;
+            padding: 0;
+            border: none;
+        }
+
+            #cart-menu .k-content ul li
+            {
+                display: block;
+                padding-bottom: 8px;
+            }
+
+    #cart-menu .cm-checkout
+    {
+        border-top: thin solid #999;
+        padding-top: 10px;
+    }
+
+    #cart-menu .cm-total
+    {
+        text-transform: uppercase;
+    }
+
+    #cart-menu .cm-amount
+    {
+        padding-right: 10px;
+        font-weight: bold;
+    }
+
+    #cart-menu .cm-count:before
+    {
+        font-family: 'icomoon';
+        content: "#";
+        padding-right: 4px;
+    }
 
 
 /* Home Page Content */
@@ -313,9 +377,16 @@ h3
     {
         height: 150px;
         width: 150px;
-        border: 1px solid #999;
+        border: 1px solid #c7c7c7;
         padding: 4px;
     }
+
+        .album img:hover
+        {
+            -moz-box-shadow: 0px 0px 5px 2px #ccc;
+            -webkit-box-shadow: 0px 0px 5px 2px #ccc;
+            box-shadow: 0px 0px 5px 2px #ccc;
+        }
 
     .album span
     {
@@ -386,10 +457,16 @@ h3
         margin-bottom: 20px;
     }
 
-.k-header
+.k-window .k-header, .k-window .k-header .k-state-hover:hover
 {
     background-color: transparent;
+    
 }
+
+    .k-window .k-header .k-state-hover:hover
+    {
+        border: thin solid transparent;
+    }
 
 
 .k-state-hover .k-link
@@ -446,23 +523,13 @@ h3
 .submit
 {
     background-color: #D88E2F;
-    background-color: #FFB94B;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #D69E31 #E3A037 #D5982D #E3A037;
-    height: 35px;
-    padding: 0;
-    width: 120px;
-    cursor: pointer;
-    font: bold 15px Arial, Helvetica;
-    color: #8F5A0A;
+    color: white;
+    font-size: 11px;
+    padding: 5px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    text-decoration: none;
 }
 
     .submit:hover
@@ -510,6 +577,8 @@ footer
     {
         margin: 0 auto;
         list-style-type: none;
+        width: 944px;
+        text-align: center;
     }
 
         footer ul li

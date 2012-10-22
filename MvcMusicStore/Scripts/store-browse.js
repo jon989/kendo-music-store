@@ -1,21 +1,6 @@
 ﻿$(document).ready(function () {
-    var getUrlParams = function () {
-        // this function was borrowed from StackOverflow:
-        // http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
-        var urlParams = {};
-        var match,
-            pl     = /\+/g,
-            search = /([^&=]+)=?([^&]*)/g,
-            decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-            query  = window.location.search.substring(1);
-
-        while (match = search.exec(query))
-            urlParams[decode(match[1])] = decode(match[2]);
-
-        return urlParams;
-    };
-
-    var urlParams = getUrlParams();
+    var store = new Store();
+    var urlParams = store.getUrlParams();
     var genreId = parseInt(urlParams.Genre);
 
     var viewModel = kendo.observable({
@@ -53,14 +38,7 @@
         genre: null, // <-- this will hold our Genre object, once loaded.
 
         viewAlbumDetails: function (e) {
-            $.ajax({
-                url: "/Api/Albums/" + 7,
-                type: "GET",
-                dataType: "json",
-                success: function (data) {
-                    openWindow("album-details-template", data);
-                }
-            });
+            store.viewAlbumDetails(e.data.AlbumId);
         }
     });
 

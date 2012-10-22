@@ -27,7 +27,7 @@ namespace MvcMusicStore.Controllers {
         //
         // GET: /Store/AddToCart/5
 
-        public ActionResult AddToCart(int id) {
+        public ActionResult AddToCart(int id, int quantity) {
 
             // Retrieve the album from the database
             var addedAlbum = storeDB.Albums
@@ -36,7 +36,7 @@ namespace MvcMusicStore.Controllers {
             // Add it to the shopping cart
             var cart = ShoppingCart.GetCart(storeDB, this.HttpContext);
 
-            cart.AddToCart(addedAlbum);
+            cart.AddToCart(addedAlbum, quantity);
 
             storeDB.SaveChanges();
 

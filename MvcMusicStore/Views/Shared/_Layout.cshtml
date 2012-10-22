@@ -15,43 +15,41 @@
     <body>
         <header>
             <div class="container">
-            <h1><a href="/">Awesome Sauce Music Store</a></h1>
+                <h1><a href="/">Awesome Sauce Music Store</a></h1>
 
 
-            <section class="login-button">
-                @Html.Partial("_LoginPartial")
-            </section>
+                <section class="login-button">
+                    @Html.Partial("_LoginPartial")
+                </section>
 
-            <nav>
-                <ul id="menu">
+                <nav>
+                    <ul id="menu">
              
-                    <li>Genres
-                        <ul>
-                            @{Html.RenderAction("GenreMenu", "Store");}
-                        </ul>
-                    </li>
-                    <li>About
-                        <ul>
-                            <li>
-                                <div class="k-content menu-content">
-                                    <img src="~/Images/kendo-logo.png" />
-                                    <p>Try Kendo UI yourself in the interactive Kendo UI Dojo!</p>
-                                    <p><a href="http://www.kendoui.com/dojo.aspx" target="_blank">Launch Kendo UI Dojo</a></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </nav>
+                        <li>Genres
+                            <ul>
+                                @{Html.RenderAction("GenreMenu", "Store");}
+                            </ul>
+                        </li>
+                        <li>About
+                            <ul>
+                                <li>
+                                    <div class="k-content menu-content">
+                                        <img src="~/Images/kendo-logo.png" />
+                                        <p>Try Kendo UI yourself in the interactive Kendo UI Dojo!</p>
+                                        <p><a href="http://www.kendoui.com/dojo.aspx" target="_blank">Launch Kendo UI Dojo</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </nav>
            
-            <section class="cart-search">
-                <input id="main-search"/>
-                 <ul id="cart-menu">
-                    <li>Cart<ul><li>Stuff goes here...</li></ul></li>
-            </ul>
-            </section>
-                </div>
+                <section class="cart-search">
+                    <input id="main-search"/>
+                    <ul id="cart-menu"></ul>
+                </section>
+            </div>
         </header>
 
         <div id="body">
@@ -61,11 +59,9 @@
             <section class="container">
                 <ul>
                     <li><a href="http://www.telerik.com"><img src="/content/images/telerik-logo.png" /></a></li>
-                    <li><a  href="http://www.kendoui.com"><img src="/images/kendo-logo.png" /></a></li>
+                    <li><a href="http://www.kendoui.com"><img src="/images/kendo-logo.png" /></a></li>
                 </ul>
-
-            
-                </section>
+            </section>
         </footer>
 
         @Html.Partial("_AlbumDetailsTemplatePartial")
@@ -73,47 +69,9 @@
         @Scripts.Render("~/bundles/jquery")
         <script src="~/Scripts/kendo.all.min.js"></script>
         <script src="~/Scripts/kendo-custom-bindings.js"></script>
-        <script src="~/Scripts/shared.js"></script>
-        <script>
-            $(document).ready(function () {
-                $("#menu").kendoMenu();
-                $("#cart-menu").kendoMenu();
-                $("#main-search").kendoAutoComplete({
-                    filter: 'contains',
-                    minLength: 3,
-                    dataTextField: "Title",
-                    placeholder: "Search music...",
-                    height: 300,
-                    dataSource: {
-                        type: "odata",
-                        serverFiltering: true,
-                        serverPaging: true,
-                        pageSize: 20,
-                        transport: {
-                            read: {
-                                url: "/Api/Albums",
-                                dataType: "json"
-                            },
-                            parameterMap: function (options, type) {
-                                var paramMap = kendo.data.transports.odata.parameterMap(options);
-                                delete paramMap.$inlinecount;
-                                delete paramMap.$format;
-                                return paramMap;
-                            }
-                        },
-                        schema: {
-                            data: function (data) {
-                                return data;
-                            },
-                            total: function (data) {
-                                return data.length;
-                            }
-                        }
-                    },
-                    template: "<img src='${data.AlbumArtUrl}' /><div><span>${data.Title}</span><span>${data.Artist.Name}</span></div>"
-                });
-            });
-        </script>
+        <script src="~/Scripts/kendo-cart-menu-widget.js"></script>
+        <script src="~/Scripts/store.js"></script>
+        <script src="~/Scripts/shared-layout.js"></script>
         @RenderSection("scripts", required: false)
     </body>
 </html>
