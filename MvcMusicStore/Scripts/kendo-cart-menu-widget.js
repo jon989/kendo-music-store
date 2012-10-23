@@ -23,7 +23,7 @@
         menu: {},
         listView: {},
 
-        // method called when a new kendoYouTube widget is created
+        // method called when a new widget is created
         init: function (element, options) {
             var that = this;
             Widget.fn.init.call(that, element, options);
@@ -34,7 +34,7 @@
 
             // append menu elements
             that._menu = $(element);
-            var subMenu = $("<li><span class='cm-count'></span><ul><li><div class='k-content'><ul></ul><div class='cm-checkout'><span class='cm-total'>Total: <span class='cm-amount'></span></span><a href='##' class='submit'>Checkout</a></div></div></li></ul></li>");
+            var subMenu = $("<li><span class='cm-count'></span><ul><li><div class='k-content'><ul></ul><div class='cm-checkout'><span class='cm-total'>Total: <span class='cm-amount'></span></span><a href='/ShoppingCart/' class='submit'>Checkout</a></div></div></li></ul></li>");
             that._menu.append(subMenu);
 
             // initialize or create dataSource
@@ -49,7 +49,7 @@
             });
         },
 
-        // options that are avaiable to the user when initializing the widget
+        // options that are available to the user when initializing the widget
         options: {
             name: "CartMenu",
             autoBind: true,

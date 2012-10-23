@@ -100,7 +100,8 @@ header
     margin: 5px 0;
 }
 
-#main-search-list img
+/*#main-search-list img*/
+.album-wide img
 {
     height: 60px;
     width: 60px;
@@ -108,13 +109,13 @@ header
     margin-right: 5px;
 }
 
-#main-search-list div
+.album-wide div
 {
     display: block;
     min-height: 60px;
 }
 
-#main-search-list span
+.album-wide span
 {
     font-size: .8em;
     vertical-align: top;
@@ -124,7 +125,7 @@ header
     line-height: 1em;
 }
 
-    #main-search-list span:first-child
+    .album-wide span:first-child
     {
         font-weight: bold;
     }
@@ -498,6 +499,7 @@ h3
     border: none;
 }
 
+
 /* Login Page */
 
 .login
@@ -598,6 +600,64 @@ footer
                 -moz-opacity: 0.5;
                 -webkit-opacity: 0.5;
             }
+
+
+/* Shopping Cart Review */
+
+#cart-grid
+{
+        border-width: 0 0 1px 0;
+        border-color: #999;
+}
+
+    #cart-grid .k-grid-header-wrap, #cart-grid td
+    {
+        border: none;
+    }
+
+    #cart-grid .k-grid-header
+    {
+        font-size: 1.1em;
+        background-color: transparent;
+        border: none;
+    }
+
+    #cart-grid .k-header
+    {
+        background-color: transparent;
+        border-width: 0 0 1px 0;
+        border-color: #999;
+    }
+
+    #cart-grid .k-numerictextbox
+    {
+        width: 80px;
+    }
+
+    #cart-grid th:last-child, #cart-grid td:last-child
+    {
+        text-align: right;
+    }
+
+.grid-footer
+{
+    font-size: 1.1em;
+    padding: 10px 10px 0px 10px;
+    text-align: right;
+}
+
+    .grid-footer:last-child
+    {
+        margin-bottom: 70px;
+    }
+
+    .grid-footer .submit
+    {
+        font-size: 1.1em;
+    }
+
+
+/* Override some general Kendo things */
 
 .k-header,.k-grid-header,.k-toolbar,.k-dropdown-wrap,.k-picker-wrap,.k-grouping-header,.k-tooltip,.k-pager-wrap,.k-button,.k-draghandle,.k-tile,.k-textbox,.k-autocomplete,.k-state-hover,.k-state-selected,.k-state-focused,.k-state-highlight,.k-tabstrip-items .k-item
 {

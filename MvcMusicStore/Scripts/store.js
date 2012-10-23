@@ -36,7 +36,14 @@ var Store = function Store() {
         if (!cartData) {
             cartData = new kendo.data.DataSource({
                 data: that._getCartJson(),
-                change: that._setCartJson
+                change: function (data) {
+                    for (var i = 0; i < data.items.length; i++) {
+                        var item = data.items[i];
+                        item.set("Total", item.Quantity * item.Album.Price);
+                    }
+                    that._setCartJson();
+                },
+                aggregate: [{field: "Total", aggregate: "sum"}]
             });
         }
         return cartData;
@@ -45,7 +52,8 @@ var Store = function Store() {
     this.addToCart = function (album, qty) {
         that.getCart().add({
             Album: album,
-            Quantity: qty
+            Quantity: qty,
+            Total: 0
         });
         that._setCartJson();
     };

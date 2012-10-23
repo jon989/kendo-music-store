@@ -10,7 +10,7 @@
         dataTextField: "Title",
         placeholder: "Search music...",
         height: 300,
-        template: "<img src='${data.AlbumArtUrl}' /><div data-album-id='${data.AlbumId}'><span>${data.Title}</span><span>${data.Artist.Name}</span></div>",
+        template: '<div class="album-wide" data-album-id="${data.AlbumId}"><img src="${data.AlbumArtUrl}" /><div><span>${data.Title}</span><span>${data.Artist.Name}</span></div></div>',
 
         dataSource: {
             type: "odata",
