@@ -13,14 +13,14 @@
         total: 0
     });
 
-    var calcTotal = function (e) {
+    var calcTotal = function(e) {
         var totalPrice = 0.0;
         var albums = viewModel.cartItems.view();
         for (var i = 0; i < albums.length; i++) {
             totalPrice += albums[i].get("Album.Price") * albums[i].get("Quantity");
         }
         viewModel.set("total", totalPrice);
-    }
+    };
 
     cartDataSource.bind("change", calcTotal);
     kendo.bind($("#body"), viewModel);
