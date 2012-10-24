@@ -18,7 +18,11 @@ namespace MvcMusicStore.Controllers.Api
         {
             storeDB.Configuration.ProxyCreationEnabled = false;
 
-            var query = storeDB.Albums.Include("Artist").AsQueryable();
+            var query = storeDB.Albums.AsQueryable();
+            if (!Request.GetQueryNameValuePairs().Any(x => x.Key == "noartist"))
+            {
+                query = storeDB.Albums.Include("Artist").AsQueryable();
+            }
             var showPopular = Request.GetQueryNameValuePairs().Where(x => x.Key == "popular").Select(x => x.Value).FirstOrDefault();
             if (showPopular != null)
                 query = query.OrderByDescending(a => a.OrderDetails.Count())

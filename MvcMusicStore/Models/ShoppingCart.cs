@@ -129,14 +129,15 @@ namespace MvcMusicStore.Models
             return total ?? decimal.Zero;
         }
 
-
-
-
         public int CreateOrder(Order order)
         {
-            decimal orderTotal = 0;
-
             var cartItems = GetCartItems();
+            return CreateOrder(order, cartItems);
+        }
+
+        public int CreateOrder(Order order, List<Cart> cartItems)
+        {
+            decimal orderTotal = 0;
 
             // Iterate over the items in the cart, adding the order details for each
             foreach (var item in cartItems)
@@ -152,7 +153,7 @@ namespace MvcMusicStore.Models
                 };
 
                 // Set the order total of the shopping cart
-                orderTotal += (item.Count * item.Album.Price);
+                orderTotal += (item.Count * album.Price);
 
                 _db.OrderDetails.Add(orderDetail);
             }

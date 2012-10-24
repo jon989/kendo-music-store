@@ -150,31 +150,10 @@ h3
         display: inline;
     }
 
-    .login-button ul li a
-    {
-        background-color: #d88e2f;
-        color: #fff;
-        font-size: 11px;
-        padding: 5px;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        text-decoration: none;    
-    }
-
-    .login-button ul li a:hover
-    {
-        background-color: #d88e2f;
-        color: #fff;
-        font-size: 11px;
-        padding: 5px;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        text-decoration: none; 
-        opacity:0.5;
-        -moz-opacity:0.5;   
-    }
+.editor-field
+{
+    padding-bottom: 10px;
+}
 
 .k-menu
 {
@@ -350,11 +329,6 @@ h3
     padding: 10px;
 }
 
-.album-list
-{
-    padding-bottom: 50px;
-}
-
 .album
 {
     float: left;
@@ -522,7 +496,7 @@ h3
         padding-bottom: 15px;
     }
 
-.submit
+.k-button
 {
     background-color: #D88E2F;
     color: white;
@@ -532,10 +506,14 @@ h3
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     text-decoration: none;
+    cursor: pointer;
+    border: none;
 }
 
-    .submit:hover
+    .k-button:hover
     {
+        background-color: #D88E2F;
+        color: white;
          opacity: 0.7;
         -moz-opacity: 0.7;
         -webkit-opacity: 0.7;
@@ -559,20 +537,15 @@ h3
 
 footer
 {
-    
+    margin-top: 60px;
     background: #ccc;
     display:block;
     padding: 10px;
-    bottom:0;
-    right:0;
-    left:0;
     min-width: 1200px;
     -moz-box-shadow: inset 0 15px 20px -20px #333;
     -webkit-box-shadow: inset 0 15px 20px -20px #333;
     -o-box-shadow: inset 0 15px 20px -20px #333;
     box-shadow: inset 0 15px 20px -20px #333;
-   
-    
 }
 
     footer ul
@@ -646,15 +619,10 @@ footer
     text-align: right;
 }
 
-    .grid-footer:last-child
-    {
-        margin-bottom: 70px;
-    }
-
-    .grid-footer .submit
+    /*.grid-footer .submit
     {
         font-size: 1.1em;
-    }
+    }*/
 
 
 /* Override some general Kendo things */
@@ -678,3 +646,42 @@ footer
         background-color: #fbb03b;
         border-color: transparent;
     }
+
+
+/* Contact page */
+
+.contact .label
+{
+    display: inline-block;
+    margin-left: 10px;
+    width: 120px;
+}
+
+.contact a
+{
+    text-decoration: none;
+    color: blue;
+}
+
+.contact a:hover
+{
+    text-decoration: underline;
+    color: blue;
+}
+
+.contact a:visited
+{
+    text-decoration: none;
+    color: blue;
+}
+
+.demo-information
+{
+    font-style: italic;
+    color: #999;
+    padding: 4px;
+    margin: 4px;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    display: inline-block;
+}

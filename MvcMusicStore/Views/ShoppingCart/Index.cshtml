@@ -18,7 +18,7 @@
             <input type="number" value="1" min="1" max="100" data-role="numerictextbox" data-decimals="0" data-format="n0" data-bind="value: Quantity, events: { spin: updateQty }" /></div>
         </td>
         <td>
-            <span class="submit" data-bind="click: remove">Remove</span>
+            <span class="k-button" data-bind="click: remove">Remove</span>
         </td>
         <td data-bind="textFormatted: Total" data-format="c"></td>
     </tr>
@@ -36,5 +36,5 @@
     Subtotal: <span data-bind="textFormatted: total" data-format="c"></span>
 </div>
 <div class="grid-footer">
-    @Html.ActionLink("Checkout", "AddressAndPayment", "Checkout", new { @class = "submit" })
+    @Html.ActionLink("Checkout", "AddressAndPayment", "Checkout", null, new { @class = "k-button" })
 </div>

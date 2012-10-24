@@ -9,7 +9,7 @@
             <div><span class="price" data-bind="textFormatted: data.Price" data-format="c"></span><span class="price-currency">USD</span></div>
             <div>X<input type="number" value="1" min="1" max="100" data-role="numerictextbox" data-decimals="0" data-format="n0" data-bind="value: quantity, events: { spin: updateQty }" /><span class="price-currency">qty</span></div>
             <div class="total" data-bind="textFormatted: total" data-format="c"></div>
-            <input type="button" class="submit" value="Add to Cart" data-bind="click: addToCart" />
+            <a class="k-button" data-bind="click: addToCart">Add to Cart</a>
         </div>
     </div>
 </script>

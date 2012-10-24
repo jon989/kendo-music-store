@@ -74,7 +74,11 @@ var Store = function Store() {
 
     this._setCartJson = function () {
         try {
-            localStorage[cartLocalStorageName] = JSON.stringify(cartData.data());
+            if (cartData.data().length == 0) {
+                localStorage.removeItem(cartLocalStorageName);
+            } else {
+                localStorage[cartLocalStorageName] = JSON.stringify(cartData.data());
+            }
         } catch (e) {
             alert("There was a problem saving your shopping cart to the browser local storage.");
         }

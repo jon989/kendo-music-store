@@ -4,16 +4,17 @@
     ViewBag.Title = "Log in";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title</h1>
-</hgroup>
+<div class="demo-information">
+    For demonstration purposes, the "administrative" login for the music store is: User Name "Owner", Password "p@ssword123".
+</div>
+
+<h3>@ViewBag.Title</h3>
 
 <section id="loginForm" class="login">
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-        
         <ul>
             <li>
                 @Html.LabelFor(m => m.UserName)
@@ -31,7 +32,7 @@
             </li>
         </ul>
       
-        <input type="submit" value="Log in" class="submit" />
+        <input type="submit" value="Log in" class="k-button" />
     
     <p class="login-small">
         @Html.ActionLink("Register", "Register") if you don't have an account.

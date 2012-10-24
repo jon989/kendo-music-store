@@ -5,28 +5,19 @@
 }
 
 @section scripts {
-<script src="@Url.Content("~/bundles/jqueryval")"></script>
+    <script src="@Url.Content("~/bundles/jqueryval")"></script>
+    <script src="~/Scripts/checkout-addressandpayment.js"></script>
 }
 
+<script id="cartItemTemplate" type="text/x-kendo-template">
+    <input type="hidden" name="a#= Album.AlbumId #" value="#= Quantity #" />
+</script>
+
 @using (Html.BeginForm()) {
-    
-    <h2>Address And Payment</h2>
-    <fieldset>
-        <legend>Shipping Information</legend>
-
+    <section class="login">
+        <h3>Address And Payment</h3>
         @Html.EditorForModel()
-    </fieldset>
-    <fieldset>
-        <legend>Payment</legend>
-        <p>We're running a promotion: all music is free with the promo code: "FREE"</p>
-
-        <div class="editor-label">
-            @Html.Label("Promo Code")
-        </div>
-        <div class="editor-field">
-            @Html.TextBox("PromoCode")
-        </div>
-    </fieldset>
-    
-    <input type="submit" value="Submit Order" />
+        <div data-bind="source: cartItems" data-template="cartItemTemplate"></div>
+        <input type="submit" value="Submit Order" class="k-button" />
+    </section>
 }

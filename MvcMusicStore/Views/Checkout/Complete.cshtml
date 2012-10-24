@@ -4,10 +4,11 @@
     ViewBag.Title = "Checkout Complete";
 }
 
-<h2>Checkout Complete</h2>
+@section scripts
+{
+    <script src="~/Scripts/checkout-complete.js"></script>
+}
 
+<h3>Checkout Complete</h3>
 <p>Thanks for your order! Your order number is: @Model</p>
-
-<p>How about shopping for some more music in our 
-    @Html.ActionLink("store", "Index", "Home")
-</p>
+<a href="/" class="k-button">Return to the store.</a>
