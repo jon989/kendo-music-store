@@ -50,5 +50,11 @@ namespace MvcMusicStore.Controllers.Api
             storeDB.Genres.Remove(toDelete);
             storeDB.SaveChanges();
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            storeDB.Dispose();
+        }
     }
 }

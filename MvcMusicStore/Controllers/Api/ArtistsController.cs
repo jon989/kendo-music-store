@@ -19,5 +19,11 @@ namespace MvcMusicStore.Controllers.Api
             storeDB.Configuration.ProxyCreationEnabled = false;
             return storeDB.Artists;
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            storeDB.Dispose();
+        }
     }
 }

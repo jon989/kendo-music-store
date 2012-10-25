@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.Threading;
 
 namespace MvcMusicStore.Models
 {
@@ -25,8 +26,10 @@ namespace MvcMusicStore.Models
             var genres = AddGenres(context);
             var artists = AddArtists(context);
             AddAlbums(context, genres, artists);
-
             context.SaveChanges();
+
+            // Handle the historic orders load on a seperate thread, so the user can start using the app while this backfills historic orders.
+            ThreadPool.QueueUserWorkItem(x => AddOrders(context));
         }
 
         private static void AddAlbums(MusicStoreEntities context, List<Genre> genres, List<Artist> artists)
@@ -602,6 +605,59 @@ namespace MvcMusicStore.Models
             genres.ForEach(s => context.Genres.Add(s));
             context.SaveChanges();
             return genres;
+        }
+
+        private static void AddOrders(MusicStoreEntities context)
+        {
+            var now = DateTime.Now;
+            for (var day = now - TimeSpan.FromDays(366); day < now; day += TimeSpan.FromDays(1))
+            {
+                AddOrdersForDay(context, day);
+            }
+        }
+
+        private static void AddOrdersForDay(MusicStoreEntities context, DateTime day)
+        {
+            var ordersToMake = random.Next(3, 7);
+            for (int i = 0; i < ordersToMake; i++)
+            {
+                AddFakeOrder(context, day);
+            }
+            context.SaveChanges();
+        }
+
+        private static void AddFakeOrder(MusicStoreEntities context, DateTime day)
+        {
+            var order = FakeO.Create.Fake<Order>(x => x.Address = FakeO.Address.StreetAddress(),
+                x => x.City = FakeO.Address.City(),
+                x => x.Country = "US",
+                x => x.Email = FakeO.Internet.Email(),
+                x => x.FirstName = FakeO.Name.First(),
+                x => x.LastName = FakeO.Name.Last(),
+                x => x.OrderDate = day + TimeSpan.FromHours(random.NextDouble() * 23),
+                x => x.Phone = FakeO.Phone.Number(),
+                x => x.PostalCode = FakeO.Address.ZipCode(),
+                x => x.State = FakeO.Address.UsStateAbbr(),
+                x => x.Username = "foo",
+                x => x.OrderDetails = null);
+
+            context.Orders.Add(order);
+
+            var details = AddFakeOrderDetails(context, order);
+
+            order.Total = details.Sum(x => x.UnitPrice * x.Quantity);
+        }
+
+        private static List<OrderDetail> AddFakeOrderDetails(MusicStoreEntities context, Order order)
+        {
+            var albumsInOrder = random.Next(1, 2);
+            var details = FakeO.Create.Fake<OrderDetail>(albumsInOrder,
+                x => x.AlbumId = FakeO.Number.Next(1, 200),
+                x => x.OrderId = order.OrderId,
+                x => x.Quantity = 1,
+                x => x.UnitPrice = Price()).ToList();
+            details.ForEach(x => context.OrderDetails.Add(x));
+            return details;
         }
     }
 }

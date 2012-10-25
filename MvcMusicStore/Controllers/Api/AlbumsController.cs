@@ -63,5 +63,11 @@ namespace MvcMusicStore.Controllers.Api
             storeDB.Albums.Remove(albumToRemove);
             storeDB.SaveChanges();
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            storeDB.Dispose();
+        }
     }
 }

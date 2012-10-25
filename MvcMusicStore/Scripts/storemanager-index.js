@@ -44,6 +44,15 @@
         }
     };
 
+    var artistEditor = function (container, options) {
+        $('<input data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '" />')
+            .appendTo(container)
+            .kendoDropDownList({
+                autoBind: false,
+                dataSource: artists
+            });
+    };
+
     var initGrid = function() {
         $("#albumsGrid").kendoGrid({
             sortable: "true",
@@ -62,7 +71,7 @@
 
             columns: [
                 { title: "Genre", field: "GenreId", values: genres },
-                { title: "Artist", field: "ArtistId", values: artists2 },
+                { title: "Artist", field: "ArtistId", values: artists, editor: artistEditor },
                 { field: "Title" },
                 { field: "Price", template: "#= kendo.toString(Price, 'c') #" },
                 { command: ["edit", "destroy"], title: "&nbsp;", width: "160px" }

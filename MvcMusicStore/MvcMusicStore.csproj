@@ -41,6 +41,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FakeO">
+      <HintPath>..\packages\FakeO.1.0.4447.26941\lib\net40\FakeO.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -189,6 +192,7 @@
     <Compile Include="Controllers\Api\AlbumsController.cs" />
     <Compile Include="Controllers\Api\ArtistsController.cs" />
     <Compile Include="Controllers\Api\GenresController.cs" />
+    <Compile Include="Controllers\Api\StoreSalesRevenueController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
@@ -208,6 +212,7 @@
     <Compile Include="Models\MusicStoreEntities.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\SalesRevenue.cs" />
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -318,6 +323,7 @@
     <Content Include="Images\kendo-logo.png" />
     <Content Include="Scripts\checkout-addressandpayment.js" />
     <Content Include="Scripts\checkout-complete.js" />
+    <Content Include="Scripts\date.js" />
     <Content Include="Scripts\home-index.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -341,6 +347,7 @@
     <Content Include="Scripts\shoppingcart-index.js" />
     <Content Include="Scripts\store.js" />
     <Content Include="Scripts\store-browse.js" />
+    <Content Include="Scripts\storemanager-graphs.js" />
     <Content Include="Scripts\storemanager-index.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -389,13 +396,10 @@
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
-    <Content Include="Views\StoreManager\Create.cshtml" />
-    <Content Include="Views\StoreManager\Delete.cshtml" />
-    <Content Include="Views\StoreManager\Details.cshtml" />
-    <Content Include="Views\StoreManager\Edit.cshtml" />
     <Content Include="Views\StoreManager\Index.cshtml" />
     <Content Include="Views\Shared\_AlbumDetailsTemplatePartial.cshtml" />
     <Content Include="Views\Shared\_AlbumListTemplatePartial.cshtml" />
+    <Content Include="Views\StoreManager\Graphs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
