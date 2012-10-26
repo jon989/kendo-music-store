@@ -9,10 +9,12 @@
         <link href="~/Content/themes/base/kendo.common.min.css" rel="stylesheet" />
         <link href="~/Content/themes/base/kendo.default.min.css" rel="stylesheet" />
         <link href="~/Content/themes/base/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
+        <div id="wrapper">
         <header>
             <div class="container">
                 <h1><a href="/">Awesome Sauce Music Store</a></h1>
@@ -36,7 +38,7 @@
                                     <div class="k-content menu-content">
                                         <img src="~/Images/kendo-logo.png" />
                                         <p>Try Kendo UI yourself in the interactive Kendo UI Dojo!</p>
-                                        <p><a href="http://www.kendoui.com/dojo.aspx" target="_blank">Launch Kendo UI Dojo</a></p>
+                                        <p><a href="http://www.kendoui.com/dojo.aspx" target="_blank" class="k-button">Launch Kendo UI Dojo</a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -55,11 +57,12 @@
         <div id="body">
             @RenderBody()
         </div>
+    </div>
         <footer>
             <section class="container">
                 <ul>
                     <li><a href="http://www.telerik.com"><img src="/content/images/telerik-logo.png" /></a></li>
-                    <li><a href="http://www.kendoui.com"><img src="/images/kendo-logo.png" /></a></li>
+                    <li><a href="http://www.kendoui.com"><img src="/images/kendo-logo.png" class="smallerlogo" /></a></li>
                 </ul>
             </section>
         </footer>

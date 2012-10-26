@@ -1,4 +1,7 @@
-﻿@font-face {
+﻿/*	Global Specifications
+	------------------------------------------------------- */
+
+@font-face {
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot');
 	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
@@ -7,6 +10,16 @@
 		url('fonts/icomoon.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+}
+
+*
+    {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a:link
+{
+    text-decoration: none;
 }
 
 .clearfix:before,
@@ -23,15 +36,8 @@
     *zoom: 1;
 }
 
-*
-{
-    font-family: "lucida grande", sans-serif;
-}
-
-a:link
-{
-    text-decoration: none;
-}
+/*	Layout
+	------------------------------------------------------- */
 
 #wrapper
 {
@@ -44,227 +50,270 @@ a:link
 {
     margin: 0 auto;
     width: 944px;
+
 }
 
-/* Header */
+h3
+    {
+        margin: 0;    
+        padding-bottom: 8px;
+        color: #999;
+        text-transform:uppercase;
+        font-weight: normal;
+        font-size:22px;
+    }
+
+/*	Customer View Header + Logo
+	------------------------------------------------------- */
 header
-{
-    z-index: 99;
-    position: fixed;
-    background: #fff;
-    display:block;
-    padding: 10px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
-    -o-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
-    box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
-    top:0;
-    right:0;
-    left:0;
-    min-width: 1200px;
+    {
+        z-index: 99;
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.9);
+        display:block;
+        padding: 15px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
+        -o-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
+        box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
+        top:0;
+        right:0;
+        left:0;
 }
 
-    header h1 a
+header h1
+    {
+        margin: -5px 0 0 0;
+        float: left;
+        
+    }
+
+header h1 a
     {
         width: 174px;
         height: 77px;
         text-indent: -9999px;
         display: block;
         background: url(/content/images/awesomesauce-logo.png) no-repeat;
-        margin: 0 auto;
-        margin-right: 25px;
-        float: left;
+        -webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
     }
 
-        header h1 a:hover
-        {
-            opacity: 0.5;
-            -moz-opacity: 0.5;
-            -webkit-opacity: 0.5;
-        }
-
-    header .k-autocomplete
+header h1 a:hover
     {
-        float: right;
-        width: 250px;
-        margin-top: 15px;
+        opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
     }
 
-.k-list-container
-{
-    background-color: #FFFFFF;
-}
 
-#main-search-list .k-item
-{
-    margin: 5px 0;
-}
-
-/*#main-search-list img*/
-.album-wide img
-{
-    height: 60px;
-    width: 60px;
-    float: left;
-    margin-right: 5px;
-}
-
-.album-wide div
-{
-    display: block;
-    min-height: 60px;
-}
-
-.album-wide span
-{
-    font-size: .8em;
-    vertical-align: top;
-    margin: 0;
-    padding: 4px;
-    display: block;
-    line-height: 1em;
-}
-
-    .album-wide span:first-child
+/*	Global Rounded Buttons
+	------------------------------------------------------- */
+.k-button
     {
-        font-weight: bold;
+        background-color: #D88E2F;
+        color: #fff;
+        font-size: 10px;
+        padding: 3px 6px;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        text-decoration: none;
+        opacity: 0.7;
+        -moz-opacity: 0.7;
+        -webkit-opacity: 0.7;
+        -webkit-transition: all 0.3s ease-in-out;
+	    -moz-transition: all 0.3s ease-in-out;
+	    -o-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        border: none;
     }
 
-h3
-{
-    margin-bottom: 5px;
-}
+.k-button:hover
+    {
+        background-color: #D88E2F;
+        color: #fff;
+        opacity: 1;
+        -moz-opacity: 1;
+        -webkit-opacity: 1;
+    }
+
+/*	Login Button
+	------------------------------------------------------- */
 
 .login-button
-{
-    text-align: right;
-}
+    {
+        text-align: right;
+       
+    }
 
-    .login-button ul
+.login-button ul
     {
         list-style-type: none;
+        margin: 0;
+
     }
 
-    .login-button ul li
+.login-button ul li
     {
         display: inline;
+         
     }
 
-.editor-field
+.hellouser
 {
-    padding-bottom: 10px;
+    font-size: 13px;
+    color:#999;
+    padding-right: 15px;
 }
 
+
+
+
+/*	Customer View Global Nav + Kendo Overrides
+	------------------------------------------------------- */
 .k-menu
-{
-    background-color: transparent;
-    border: none;
-    float: left;
-    margin-top: 15px;
-}
+    {
+        background-color: transparent;
+        border: none;
+        float: left;
+        margin: 13px 0 0 20px;
+    }
 
-    .k-menu > .k-item, .k-widget.k-menu-horizontal > .k-item
+.k-menu > .k-item, .k-widget.k-menu-horizontal > .k-item
     {
         border: none;
         font: 200 15px;
         color: #999;
         text-transform: uppercase;
+        
     }
 
-    .k-menu .k-link
+.k-menu .k-link
     {
         color: #999;
+        background:transparent;
+        -webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+
     }
 
-        .k-menu .k-link:visited
-        {
-            color: #999;
-        }
+.k-menu .k-link:hover
+    {
+        color:#d88e2f;
+    }
 
-.k-state-hover
+
+
+.k-menu .k-state-hover
+    {
+        background-color: transparent;
+    }
+
+.k-state-hover .k-link
 {
-    color: #000;
+    background:transparent;
+
 }
 
-    .k-menu .k-state-hover
+
+.k-menu .k-item .k-item a
+   {
+       -webkit-transition: all 0.3s ease-in-out;
+       -moz-transition: all 0.3s ease-in-out;
+	   -o-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+   }
+
+.k-menu .k-item .k-item a:hover
     {
-        background-color: transparent;
+        background-color:rgba(216, 142, 47, 0.7); 
     }
 
-    .k-menu .k-item .k-item
+.k-menu .k-popup
     {
-        background-color: rgba(251, 176, 59, 0.90);
-    }
-
-    .k-menu .k-item .k-item:hover
-    {
-        background-color: rgb(237, 200, 155);
-    }
-
-    .k-menu .k-popup
-    {
-        background-color: transparent;
+        background-color: rgba(255, 255, 255, 0.8);
         text-transform: none;
         border:0;
+        
     }
 
-        .k-menu .k-popup .k-item
-        {
-            font: 100 13px "lucida grande", arial, verdana;
-            font-weight: normal;
-            text-transform: none;
-            color: #fff;
-        }
+.k-menu .k-popup .k-item
+   {
+       font-size: 13px;
+       font-weight: normal;
+       text-transform: none;
+       color: #2e2e2e;
+       -webkit-transition: all 0.3s ease-in-out;
+       -moz-transition: all 0.3s ease-in-out;
+	   -o-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+   }
 
-            .k-menu .k-popup .k-item .k-link
-            {
-                color: #fff;
-            }
 
-                .k-menu .k-popup .k-item .k-link:hover
-                {
-                    color: #d88e2f;
-                }
 
-.cart-search
+.k-menu .k-popup .k-item .k-link:hover
+   {
+       color: #fff;
+   }
+
+.k-menu .k-popup .k-content
+    {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+.k-menu .k-popup .k-content img
+    {
+    width: 50%;
+    }
+
+.menu-content
 {
-    display: inline-block;
-    float: right;
+    padding: 10px;
 }
 
+.editor-field /* where does this go? */
+{
+    padding-bottom: 10px;
+}
 
 /* Shopping Cart Menu */
 
 #cart-menu
-{
-    float: right;
-}
+    {
+        float: right;
+    }
 
-    #cart-menu .k-i-close
+#cart-menu .k-i-close
     {
         float: right;
         cursor: pointer;
         opacity: .3;
     }
 
-    #cart-menu .k-i-close:hover
+#cart-menu .k-i-close:hover
     {
         float: right;
         cursor: pointer;
         opacity: 1;
     }
 
-    #cart-menu .k-content
+#cart-menu .k-content
     {
         padding: 10px;
     }
 
-        #cart-menu .k-content li span:first-child
+#cart-menu .k-content li span:first-child
         {
             padding-right: 8px;
         }
 
-        #cart-menu .k-content ul
+#cart-menu .k-content ul
         {
             list-style-type: none;
             margin:0;
@@ -272,157 +321,295 @@ h3
             border: none;
         }
 
-            #cart-menu .k-content ul li
-            {
-                display: block;
-                padding-bottom: 8px;
-            }
+#cart-menu .k-content ul li
+    {
+        display: block;
+        padding-bottom: 8px;
+    }
 
-    #cart-menu .cm-checkout
+#cart-menu .cm-checkout
     {
         border-top: thin solid #999;
         padding-top: 10px;
     }
 
-    #cart-menu .cm-total
+#cart-menu .cm-total
     {
         text-transform: uppercase;
     }
 
-    #cart-menu .cm-amount
+#cart-menu .cm-amount
     {
         padding-right: 10px;
         font-weight: bold;
     }
 
-    #cart-menu .cm-count:before
+#cart-menu .cm-count:before
     {
         font-family: 'icomoon';
         content: "#";
         padding-right: 4px;
     }
 
+#cart-menu .k-block,  #cart-menu .k-widget
+    {
+        background-color: transparent;
+    }
 
-/* Home Page Content */
+
+/*	Global Search
+	------------------------------------------------------- */
+
+.k-autocomplete
+    {
+        float: right;
+        width: 250px;
+        margin-top: 15px;
+        -webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+    }
+
+.k-autocomplete.k-state-hover
+{
+    border-color:#D88E2F;
+    background-color: #D88E2F;
+}
+
+.k-list-container
+    {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+#main-search-list .k-item
+    {
+        margin: 5px 0;
+        -webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+    }
+
+#main-search-list .k-state-hover
+    {
+        background-color:rgba(216, 142, 47, 0.7); 
+        border: none;
+        color: #f6f6f6;
+        cursor: pointer;
+    }
+
+/*#main-search-list img*/
+.album-wide img
+    {
+        height: 60px;
+        width: 60px;
+        float: left;
+        margin-right: 5px;
+    }
+
+.album-wide div
+    {
+        display: block;
+        min-height: 60px;
+    }
+
+.album-wide span
+    {
+        font-size: .8em;
+        vertical-align: top;
+        margin: 0;
+        padding: 4px;
+        display: block;
+        line-height: 1em;
+    }
+
+.album-wide span:first-child
+    {
+        font-weight: bold;
+    }
+
+
+
+
+/*	Home Page Content
+	------------------------------------------------------- */
 
 #body
 {
-    margin: 0 auto;
-    margin-top: 130px;
-    padding: 10px;
+    margin-top: 150px;
 }
 
-    #body h3
-    {
-        font: 100 20px "lucida grande", arial, verdana;
-        color: #999;
-        text-transform:uppercase;
-    }
+#promotion
+{
+    margin-bottom: 50px;
+}
+
+
+#body .k-listview
+{
+    border: none;
+}
 
 .featureartist-text
-{
-    color: #000;
-}
+    {
+        color: #000;
+    }
 
-.menu-content
-{
-    padding: 10px;
-}
+/*	Footer
+	------------------------------------------------------- */
+
+footer
+    {
+        margin-top: 80px;
+        clear: both;
+        display:block;
+        padding: 20px 0;
+        border-top: 1px solid #c7c7c7;
+    }
+
+
+footer ul
+    {
+        padding: 0;
+        list-style-type: none;
+        margin: 0 auto;
+        width: 220px;
+        padding-bottom: 40px;
+        
+     
+    }
+
+footer ul li
+    {
+        display: inline;
+        padding-right: 20px;
+        float: left;
+        -webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+        opacity: 0.7;
+        -moz-opacity: 0.7;
+        -webkit-opacity: 0.7;
+    }
+
+footer .smallerlogo
+    {
+       width: 88px;
+    }
+
+          
+
+footer ul li:hover
+    {
+        opacity: 1;
+        -moz-opacity: 1;
+        -webkit-opacity: 1;
+    }
+
+
+/*	Albums
+	------------------------------------------------------- */
 
 .album
-{
-    float: left;
-    padding:0px 48px 20px 0px;
-    width: 150px;
-    font: 100 14px "lucida grande", arial, verdana;
-    cursor: pointer;
-}
+    {
+        float: left;
+        padding:0px 48px 20px 0px;
+        width: 150px;
+        cursor: pointer;
+        font-size:14px;
+    }
 
-    .album:nth-child(5n+5)
+.album:nth-child(5n+5)
     {
         padding-right: 0;
     }
 
-    .album:nth-child(5n+6)
+.album:nth-child(5n+6)
     {
         clear: left;
     }
 
-    .album img
+.album img
     {
         height: 150px;
         width: 150px;
         border: 1px solid #c7c7c7;
         padding: 4px;
+        -webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
     }
 
-        .album img:hover
-        {
-            -moz-box-shadow: 0px 0px 5px 2px #ccc;
-            -webkit-box-shadow: 0px 0px 5px 2px #ccc;
-            box-shadow: 0px 0px 5px 2px #ccc;
-        }
+.album img:hover
+    {
+        opacity: 0.7;
+        -moz-opacity: 0.7;
+        -webkit-opacity: 0.7;    
+    }
 
-    .album span
+.album span
     {
         display: block;
     }
 
-    .album .title
+.album .title
     {
         font-weight: bold;
     }
 
-    .album .price
+.album .price
     {
         font-style: italic;
         color: #ababab;
     }
 
-.album-details
-{
-}
 
-    .album-details .image-container
+/*	Album Popup Window
+	------------------------------------------------------- */
+
+.album-details .image-container
     {
         float: left;
         height: 100%;
         margin-right: 20px;
     }
 
-    .album-details img
+.album-details img
     {
         height: 200px;
         width: 200px;
-        border: 1px solid #999;
+        border: 1px solid #c7c7c7;
         padding: 4px;
     }
 
-    .album-details .artist
+.album-details .artist
     {
         font-size: 1.2em;
         margin-bottom: 20px;
     }
 
-    .album-details .price
+.album-details .price
     {
         padding-left: 1em;
-        font-size: 1.2em;
+        font-size: 15px;
     }
 
-    .album-details .price-currency
+.album-details .price-currency
     {
         font-size: .6em;
         padding-left: 4px;
     }
 
-    .album-details .k-numerictextbox
+.album-details .k-numerictextbox
     {
         width: 80px;
         margin-left: 4px;
     }
 
-    .album-details .total
+.album-details .total
     {
         margin-top: 4px;
         padding-top: 4px;
@@ -430,152 +617,106 @@ h3
         border-top: 1px solid #999;
         overflow: hidden;
         margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+.k-numeric-wrap
+    {
+        border-color: none;
+        background-color: #E9E9E9;
+        -webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+    }
+
+.k-numeric-wrap.k-state-hover
+    {
+        border-color: none;
+        background-color: #D88E2F;
+    }
+
+.album-details .k-button
+    {
+        font-size: 17px;
     }
 
 .k-window .k-header, .k-window .k-header .k-state-hover:hover
-{
-    background-color: transparent;
+    {
+        background-color: transparent;
     
-}
+    }
 
-    .k-window .k-header .k-state-hover:hover
+.k-window .k-header .k-state-hover:hover
     {
         border: thin solid transparent;
     }
 
 
-.k-state-hover .k-link
-{
-    color:#d88e2f;
-}
-
-#body
-{
-    margin: 0 auto;
-    width: 944px;
-    margin-top: 150px;
-}
-
-#promotion
-{
-    margin-bottom: 70px;
-}
-
-#body h3
-{
-    text-transform: uppercase;
-    color: #999;
-    font-weight: normal;
-}
-
-#body .k-listview
-{
-    border: none;
-}
 
 
-/* Login Page */
+
+
+
+/*	Login Page
+	------------------------------------------------------- */
 
 .login
-{
-    margin: 0;
-    font-size: 14px;
-}
+    {
+        margin: 0;
+        font-size: 14px;
+    }
 
 .login ul
-{
-    list-style-type: none;
-    display: block;
-    text-align: left;
-    padding: 0;
-    margin: 0;
-}
+    {
+        list-style-type: none;
+        display: block;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
 
-    .login ul li
+.login ul li
     {
         padding-bottom: 15px;
     }
 
-.k-button
-{
-    background-color: #D88E2F;
-    color: white;
-    font-size: 11px;
-    padding: 5px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-}
 
-    .k-button:hover
-    {
-        background-color: #D88E2F;
-        color: white;
-         opacity: 0.7;
-        -moz-opacity: 0.7;
-        -webkit-opacity: 0.7;
-    }
 
 .login-small
-{
-   
-    font:  100 11px "lucida grande", arial, verdana;
-    color: #888;
-
-}
-
-.login-small a:link
-{
-  color:#D88E2F;
-}
-
-
-/* Footer */
-
-footer
-{
-    margin-top: 60px;
-    background: #ccc;
-    display:block;
-    padding: 10px;
-    min-width: 1200px;
-    -moz-box-shadow: inset 0 15px 20px -20px #333;
-    -webkit-box-shadow: inset 0 15px 20px -20px #333;
-    -o-box-shadow: inset 0 15px 20px -20px #333;
-    box-shadow: inset 0 15px 20px -20px #333;
-}
-
-    footer ul
     {
-        margin: 0 auto;
-        list-style-type: none;
-        width: 944px;
-        text-align: center;
+        font: 11px;
+        color: #888;
     }
 
-        footer ul li
-        {
-            display: inline;
-            padding-right: 15px;
-        }
+.login-small a:link
+    {
+       color:#D88E2F;
+       opacity: 0.7;
+       -moz-opacity: 0.7;
+       -webkit-opacity: 0.7;
+       -webkit-transition: all 0.3s ease-in-out;
+	   -moz-transition: all 0.3s ease-in-out;
+	   -o-transition: all 0.3s ease-in-out;
+	   transition: all 0.3s ease-in-out;
+    }
 
-            footer ul li a img:last-child
-            {
-                width: 100px;
-            }
-
-            footer ul li a:hover
-            {
-                opacity: 0.5;
-                -moz-opacity: 0.5;
-                -webkit-opacity: 0.5;
-            }
+.login-small a:hover
+    {
+      color:#D88E2F;
+    }
 
 
-/* Shopping Cart Review */
+
+
+
+/*	Shopping Cart Review
+	------------------------------------------------------- */
+.cart-search
+{
+    display: inline-block;
+    float: right;
+}
 
 #cart-grid
 {
@@ -583,31 +724,31 @@ footer
         border-color: #999;
 }
 
-    #cart-grid .k-grid-header-wrap, #cart-grid td
+#cart-grid .k-grid-header-wrap, #cart-grid td
     {
         border: none;
     }
 
-    #cart-grid .k-grid-header
+#cart-grid .k-grid-header
     {
         font-size: 1.1em;
         background-color: transparent;
         border: none;
     }
 
-    #cart-grid .k-header
+#cart-grid .k-header
     {
         background-color: transparent;
         border-width: 0 0 1px 0;
         border-color: #999;
     }
 
-    #cart-grid .k-numerictextbox
+#cart-grid .k-numerictextbox
     {
         width: 80px;
     }
 
-    #cart-grid th:last-child, #cart-grid td:last-child
+#cart-grid th:last-child, #cart-grid td:last-child
     {
         text-align: right;
     }
@@ -625,27 +766,7 @@ footer
     }*/
 
 
-/* Override some general Kendo things */
 
-.k-header,.k-grid-header,.k-toolbar,.k-dropdown-wrap,.k-picker-wrap,.k-grouping-header,.k-tooltip,.k-pager-wrap,.k-button,.k-draghandle,.k-tile,.k-textbox,.k-autocomplete,.k-state-hover,.k-state-selected,.k-state-focused,.k-state-highlight,.k-tabstrip-items .k-item
-{
-    background-image: none;
-}
-
-.k-pager-wrap
-{
-    margin: 20px 0;
-    border: none;
-    background-color: transparent;
-    font-size: 12px;
-    color:#999;
-}
-
-    .k-pager-wrap .k-state-selected
-    {
-        background-color: #fbb03b;
-        border-color: transparent;
-    }
 
 
 /* Contact page */
@@ -677,14 +798,33 @@ footer
 
 .demo-information
 {
-    font-style: italic;
     color: #999;
-    padding: 4px;
-    margin: 4px;
-    border-left: 1px solid #999;
-    border-right: 1px solid #999;
-    display: inline-block;
+    padding-bottom: 10px;
 }
+
+
+
+/* Override some general Kendo things */
+
+.k-header,.k-grid-header,.k-toolbar,.k-dropdown-wrap,.k-picker-wrap,.k-grouping-header,.k-tooltip,.k-pager-wrap,.k-button,.k-draghandle,.k-tile,.k-textbox,.k-autocomplete,.k-state-hover,.k-state-selected,.k-state-focused,.k-state-highlight,.k-tabstrip-items .k-item
+{
+    background-image: none;
+}
+
+.k-pager-wrap
+{
+    margin: 20px 0;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    color:#999;
+}
+
+.k-pager-wrap .k-state-selected
+    {
+        background-color: #fbb03b;
+        border-color: transparent;
+    }
 
 /* Genre Chart */
 
