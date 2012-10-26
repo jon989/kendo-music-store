@@ -42,12 +42,12 @@
                 text: data.items[i].Name
             });
         }
-    };
+    };     
 
     var artistEditor = function (container, options) {
         $('<input data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '" />')
             .appendTo(container)
-            .kendoDropDownList({
+            .kendoComboBox({
                 autoBind: false,
                 dataSource: artists
             });
@@ -66,14 +66,28 @@
                     read: {
                         url: "/Api/Albums?noartist=true"
                     }
+                },
+                schema: {
+                    model:{
+                        id: "AlbumId",
+                        fields: {
+                            AlbumId: {},
+                            GenreId: {},
+                            ArtistId: {},
+                            Title: {},
+                            Price: { type: "number" },
+                            AlbumArtUrl: {}
+                        }
+                    }
                 }
             },
 
             columns: [
-                { title: "Genre", field: "GenreId", values: genres },
-                { title: "Artist", field: "ArtistId", values: artists, editor: artistEditor },
+  
+                  { title: "Genre", field: "GenreId", values: genres },
+                { title: "Artist", field: "ArtistId", editor: artistEditor },
                 { field: "Title" },
-                { field: "Price", template: "#= kendo.toString(Price, 'c') #" },
+                { field: "Price", format:"{0:c}" },
                 { command: ["edit", "destroy"], title: "&nbsp;", width: "160px" }
             ]
         });
