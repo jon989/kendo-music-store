@@ -45,15 +45,27 @@ namespace MvcMusicStore.Controllers.Api
         }
 
         // PUT api/albums/5
-        public void Put(int id, [FromBody]Album value)
+        public HttpResponseMessage Put(AlbumUpdateModel value)
         {
-            var albumToUpdate = storeDB.Albums.Single(x => x.AlbumId == id);
-            albumToUpdate.AlbumArtUrl = value.AlbumArtUrl;
-            albumToUpdate.ArtistId = value.ArtistId;
-            albumToUpdate.GenreId = value.GenreId;
-            albumToUpdate.Price = value.Price;
-            albumToUpdate.Title = value.Title;
-            storeDB.SaveChanges();
+            HttpResponseMessage message = new HttpResponseMessage();
+
+            if (ModelState.IsValid)
+            {
+                var albumToUpdate = storeDB.Albums.Single(x => x.AlbumId == value.AlbumId);
+                albumToUpdate.AlbumArtUrl = value.AlbumArtUrl;
+                albumToUpdate.ArtistId = value.ArtistId;
+                albumToUpdate.GenreId = value.GenreId;
+                albumToUpdate.Price = value.Price;
+                albumToUpdate.Title = value.Title;
+                storeDB.SaveChanges();
+                message.StatusCode = HttpStatusCode.NoContent;
+            }
+            else
+            {
+                message.StatusCode = (HttpStatusCode) 419;
+            }
+
+            return message;
         }
 
         // DELETE api/albums/5

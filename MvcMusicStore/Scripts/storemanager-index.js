@@ -64,7 +64,29 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/Api/Albums?noartist=true"
+                        url: "/Api/Albums?noartist=true",
+                        type: "GET"
+                    },
+                    update: {
+                        //url: function (data) {
+                        //    return "/Api/Albums/" + data.AlbumId;
+                        //},
+                        url: "/Api/Albums",
+                        type: "PUT",
+                        //data: function (data) {
+                        //},
+                        //contentType: "application/json",
+                        //dataType: "json"
+                    },
+                    destroy: {
+                        url: function (data) {
+                            return "/Api/Albums/" + data.AlbumId;
+                        },
+                        type: "DELETE"
+                    },
+                    create: {
+                        url: "/Api/Albums",
+                        type: "POST"
                     }
                 },
                 schema: {
@@ -85,7 +107,7 @@
             columns: [
   
                   { title: "Genre", field: "GenreId", values: genres },
-                { title: "Artist", field: "ArtistId", editor: artistEditor },
+                { title: "Artist", field: "ArtistId", values: artists, editor: artistEditor },
                 { field: "Title" },
                 { field: "Price", format:"{0:c}" },
                 { command: ["edit", "destroy"], title: "&nbsp;", width: "160px" }
