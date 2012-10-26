@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="Controllers\Api\AlbumsController.cs" />
     <Compile Include="Controllers\Api\ArtistsController.cs" />
+    <Compile Include="Controllers\Api\StoreSalesGenreController.cs" />
     <Compile Include="Controllers\Api\GenresController.cs" />
     <Compile Include="Controllers\Api\StoreSalesRevenueController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Models\MusicStoreEntities.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\SalesByGenre.cs" />
     <Compile Include="Models\SalesRevenue.cs" />
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\ShoppingCart.cs" />

@@ -685,3 +685,54 @@ footer
     border-right: 1px solid #999;
     display: inline-block;
 }
+
+/* Genre Chart */
+
+.selector
+{
+    background: #EEE;
+    border: solid #DADADA;
+    border-width: 0 1px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.selector li
+{
+    list-style-type: none;
+    display: inline-block;
+    padding: 4px 10px;
+    cursor: pointer;
+    border-left: 1px solid #999;
+}
+
+    .selector li:last-child
+    {
+        border-right: 1px solid #999;
+    }
+
+#genre-chart
+{
+    clear: none;
+    min-height: 400px;
+    font-size: 2em;
+    text-align: center;
+    color: #a33636;
+}
+
+    #genre-chart a
+    {
+        color: #a33636;
+    }
+
+        #genre-chart a:visited
+        {
+            color: #a33636;
+        }
+
+        #genre-chart a:hover
+        {
+            color: #a86464;
+        }
