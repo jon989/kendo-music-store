@@ -117,22 +117,38 @@
                     model:{
                         id: "AlbumId",
                         fields: {
-                            AlbumId: { defaultValue: 0 },
-                            GenreId: { defaultValue: 1 },
-                            ArtistId: { defaultValue: 1 },
-                            Title: {},
-                            Price: { type: "number" },
-                            AlbumArtUrl: {}
+                            AlbumId: { type: "number", defaultValue: 0 },
+                            GenreId: { type: "number", defaultValue: 1 },
+                            ArtistId: { type: "number", defaultValue: 1 },
+                            Title: {
+                                validation: {
+                                    required: true
+                                }
+                            },
+                            Price: {
+                                type: "number",
+                                defaultValue: 9.99,
+                                validation: {
+                                    required: true,
+                                    min: 0.01,
+                                    max: 100.00
+                                }
+                            },
+                            AlbumArtUrl: {
+                                validation: {
+                                    required: true
+                                }
+                            }
                         }
                     }
                 }
             },
 
             columns: [
-                { title: "Album Art", field: "AlbumArtUrl", template: '<img src="#= AlbumArtUrl #" />', editor: albumArtEditor },
+                { title: "Album Art", field: "AlbumArtUrl", template: '<img src="#= AlbumArtUrl #" />', width: "110px", editor: albumArtEditor, filterable: false, sortable: false, groupable: false },
                 { title: "Genre", field: "GenreId", values: genres },
                 { title: "Artist", field: "ArtistId", values: artists, editor: artistEditor },
-                { field: "Title" },
+                { field: "Title", groupable: false },
                 { field: "Price", format:"{0:c}" },
                 { command: ["edit", "destroy"], title: "&nbsp;", width: "160px" }
             ]
