@@ -835,6 +835,60 @@ footer ul li:hover
         padding: 0;
     }
 
+/*	Sales Graphs
+	------------------------------------------------------- */
+
+#date-range, #genre-chart-type
+{
+    background:none;
+    margin: 0;
+    padding: 0;
+}
+
+#date-range li, #genre-chart-type li
+    {
+        border: none;
+        background-color: #b4b4b4;
+        color: #fff;
+        margin-right: 8px;
+        padding: 3px 6px;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        text-decoration: none;
+        -webkit-transition: all 0.3s ease-in-out;
+	     -moz-transition: all 0.3s ease-in-out;
+	     -o-transition: all 0.3s ease-in-out;
+	     transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        border: none;
+    }
+
+
+
+ #date-range li:hover, #date-range li.k-state-selected, #genre-chart-type li:hover, #genre-chart-type li.k-state-selected
+    {
+        background-color: #D88E2F;
+        color: #fff;
+    }
+
+#date-range
+    {
+        padding-bottom: 30px;
+        font-size: 15px;
+    }
+
+#genre-chart-type
+    {
+        font-size: 11px;
+    }
+
+#revenue-chart
+    {
+        margin-bottom: 50px;
+    }
+
+
 /* Genre Chart */
 
 .selector
