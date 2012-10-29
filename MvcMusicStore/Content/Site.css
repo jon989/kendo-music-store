@@ -69,7 +69,7 @@ header
     {
         z-index: 99;
         position: fixed;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: #fff;
         display:block;
         padding: 15px;
         -moz-box-shadow: rgba(0, 0, 0, 0.5) -1px 1px 9px;
@@ -121,25 +121,20 @@ header h1 a:hover
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         text-decoration: none;
-        opacity: 0.7;
-        -moz-opacity: 0.7;
-        -webkit-opacity: 0.7;
         -webkit-transition: all 0.3s ease-in-out;
-	    -moz-transition: all 0.3s ease-in-out;
-	    -o-transition: all 0.3s ease-in-out;
-	    transition: all 0.3s ease-in-out;
+	 -moz-transition: all 0.3s ease-in-out;
+	 -o-transition: all 0.3s ease-in-out;
+	  transition: all 0.3s ease-in-out;
         cursor: pointer;
         border: none;
     }
 
 .k-button:hover
     {
-        background-color: #D88E2F;
+        background-color: #5a5959;
         color: #fff;
-        opacity: 1;
-        -moz-opacity: 1;
-        -webkit-opacity: 1;
     }
+
 
 /*	Login Button
 	------------------------------------------------------- */
@@ -222,18 +217,19 @@ header h1 a:hover
 }
 
 
-.k-menu .k-item .k-item a
+.k-menu .k-item .k-item a.k-link
    {
        -webkit-transition: all 0.3s ease-in-out;
        -moz-transition: all 0.3s ease-in-out;
-	   -o-transition: all 0.3s ease-in-out;
-	    transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
    }
 
-.k-menu .k-item .k-item a:hover
+.k-menu .k-item .k-item a.k-link:hover
     {
         background-color:rgba(216, 142, 47, 0.7); 
     }
+
 
 .k-menu .k-popup
     {
@@ -289,7 +285,7 @@ header h1 a:hover
         float: right;
     }
 
-#cart-menu .k-i-close
+ #cart-menu .k-i-close
     {
         float: right;
         cursor: pointer;
@@ -310,27 +306,33 @@ header h1 a:hover
 
 #cart-menu .k-content li span:first-child
         {
-            padding-right: 8px;
+            float: left;
         }
 
 #cart-menu .k-content ul
         {
             list-style-type: none;
-            margin:0;
             padding: 0;
             border: none;
         }
 
+
 #cart-menu .k-content ul li
     {
         display: block;
-        padding-bottom: 8px;
+        clear: left;
     }
+
+#cart-menu .k-content ul li:last-child
+        {
+            border-bottom: thin solid #999;
+            padding-bottom: 25px;
+        }
 
 #cart-menu .cm-checkout
     {
-        border-top: thin solid #999;
-        padding-top: 10px;
+        clear: both;
+        padding-top: 12px;
     }
 
 #cart-menu .cm-total
@@ -355,6 +357,7 @@ header h1 a:hover
     {
         background-color: transparent;
     }
+
 
 
 /*	Global Search
@@ -652,6 +655,13 @@ footer ul li:hover
         border: thin solid transparent;
     }
 
+.k-window-title
+{
+    overflow: visible;
+    font-weight:700;
+}
+
+
 
 
 
@@ -692,19 +702,17 @@ footer ul li:hover
 .login-small a:link
     {
        color:#D88E2F;
-       opacity: 0.7;
-       -moz-opacity: 0.7;
-       -webkit-opacity: 0.7;
        -webkit-transition: all 0.3s ease-in-out;
-	   -moz-transition: all 0.3s ease-in-out;
-	   -o-transition: all 0.3s ease-in-out;
-	   transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	 -o-transition: all 0.3s ease-in-out;
+	  transition: all 0.3s ease-in-out;
     }
 
 .login-small a:hover
     {
-      color:#D88E2F;
+      color:#5a5959;
     }
+
 
 
 
@@ -811,6 +819,8 @@ footer ul li:hover
     background-image: none;
 }
 
+/*	List-View (Albums)
+	------------------------------------------------------- */
 .k-pager-wrap
 {
     margin: 20px 0;
@@ -822,8 +832,14 @@ footer ul li:hover
 
 .k-pager-wrap .k-state-selected
     {
-        background-color: #fbb03b;
-        border-color: transparent;
+        background-color: #D88E2F;
+        border:none;
+    }
+
+.k-pager-info 
+    {
+        float: right;
+        padding: 0;
     }
 
 /* Genre Chart */
