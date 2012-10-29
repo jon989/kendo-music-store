@@ -53,6 +53,25 @@
             });
     };
 
+    var albumArtEditor = function (container, options) {
+        if (options.model.AlbumArtUrl) {
+            $('<img src="' + options.model.AlbumArtUrl + '" />').appendTo(container);
+        }
+
+        $('<input name="files" type="file" />').appendTo(container).kendoUpload({
+            multiple: false,
+            showFileList: false,
+            async: {
+                saveUrl: "/Api/Images",
+                autoUpload: true
+            },
+            success: function (e) {
+                container.html('<img src="' + e.response + '" />');
+                options.model.set(options.field, e.response);
+            }
+        });
+    };
+
     var initGrid = function() {
         $("#albumsGrid").kendoGrid({
             sortable: true,
@@ -99,8 +118,8 @@
                         id: "AlbumId",
                         fields: {
                             AlbumId: { defaultValue: 0 },
-                            GenreId: {},
-                            ArtistId: {},
+                            GenreId: { defaultValue: 1 },
+                            ArtistId: { defaultValue: 1 },
                             Title: {},
                             Price: { type: "number" },
                             AlbumArtUrl: {}
@@ -110,12 +129,29 @@
             },
 
             columns: [
+                { title: "Album Art", field: "AlbumArtUrl", template: '<img src="#= AlbumArtUrl #" />', editor: albumArtEditor },
                 { title: "Genre", field: "GenreId", values: genres },
                 { title: "Artist", field: "ArtistId", values: artists, editor: artistEditor },
                 { field: "Title" },
                 { field: "Price", format:"{0:c}" },
                 { command: ["edit", "destroy"], title: "&nbsp;", width: "160px" }
             ]
+        });
+
+        $("#albumArtUploadWindow").kendoWindow({
+            modal: true,
+            resizable: false,
+            visible: false,
+            title: "Choose a file to upload."
+        });
+
+        $("#upload").kendoUpload({
+            multiple: false,
+            showFileList: false,
+            async: {
+                saveUrl: "/Api/Images",
+                autoUpload: true
+            }
         });
     };
 

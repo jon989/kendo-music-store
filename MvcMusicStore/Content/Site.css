@@ -876,3 +876,14 @@ footer ul li:hover
         {
             color: #a86464;
         }
+
+#albumsGrid img
+{
+    height: 60px;
+    width: 60px;
+}
+
+#albumArtUploadWindow
+{
+    display: none;
+}
