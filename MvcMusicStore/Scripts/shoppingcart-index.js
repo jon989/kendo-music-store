@@ -1,6 +1,5 @@
-﻿$(document).ready(function () {
-    var store = new Store();
-    var cartDataSource = store.getCart();
+﻿(function ($, kendo, store) {
+    var cartDataSource = store.cart.getCart();
 
     var viewModel = kendo.observable({
         cartItems: cartDataSource,
@@ -24,4 +23,4 @@
 
     cartDataSource.bind("change", calcTotal);
     kendo.bind($("#body"), viewModel);
-});
+})(jQuery, kendo, store);

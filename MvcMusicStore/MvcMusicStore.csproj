@@ -325,6 +325,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\kendo-logo.png" />
+    <Content Include="Scripts\cart.js" />
     <Content Include="Scripts\checkout-addressandpayment.js" />
     <Content Include="Scripts\checkout-complete.js" />
     <Content Include="Scripts\date.js" />
@@ -345,7 +346,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\kendo-cart-menu-widget.js" />
     <Content Include="Scripts\kendo-custom-bindings.js" />
-    <Content Include="Scripts\kendo.all.js" />
     <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\shared-layout.js" />
@@ -354,7 +354,6 @@
     <Content Include="Scripts\store-browse.js" />
     <Content Include="Scripts\storemanager-graphs.js" />
     <Content Include="Scripts\storemanager-index.js" />
-    <Content Include="Scripts\underscore-min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

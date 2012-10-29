@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿(function ($, kendo) {
     var genres = [];
     var artists = [];
 
@@ -153,23 +153,7 @@
                 { command: ["edit", "destroy"], title: "&nbsp;", width: "160px" }
             ]
         });
-
-        $("#albumArtUploadWindow").kendoWindow({
-            modal: true,
-            resizable: false,
-            visible: false,
-            title: "Choose a file to upload."
-        });
-
-        $("#upload").kendoUpload({
-            multiple: false,
-            showFileList: false,
-            async: {
-                saveUrl: "/Api/Images",
-                autoUpload: true
-            }
-        });
     };
 
     loadGenres();
-});
+})(jQuery, kendo);

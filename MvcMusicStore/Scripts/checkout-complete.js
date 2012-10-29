@@ -1,4 +1,3 @@
-﻿$(document).ready(function () {
-    var store = new Store();
-    store.clearCart();
-});
+﻿(function (store) {
+    store.cart.clearCart();
+})(store);

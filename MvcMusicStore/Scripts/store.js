@@ -1,134 +1,84 @@
-﻿
-var cartData = null;
+﻿var store = (function ($, kendo) {
+    var cart = new Cart($, kendo),
 
-var Store = function Store() {
-    var that = this;
-    var cartLocalStorageName = "KendoMusicStoreCart";
+        _openWindow = function (template, viewModel) {
+            // Create a placeholder element.
+            var window = $(document.createElement('div'));
 
-    this.viewAlbumDetails = function (albumId) {
-        $.ajax({
-            url: "/Api/Albums/" + albumId,
-            type: "GET",
-            dataType: "json",
-            success: function (data) {
-                that._openWindow("album-details-template", that._getAlbumDetailsViewModel(data));
-            }
-        });
-    };
+            // Apply template to the placeholder element, and bind the viewmodel.
+            var templateHtml = $(document.getElementById(template)).html()
+            window.html(kendo.template(templateHtml)(viewModel));
+            kendo.bind(window, viewModel);
 
-    this.getUrlParams = function () {
-        // this function was borrowed from StackOverflow:
-        // http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
-        var urlParams = {};
-        var match,
-            pl = /\+/g,
-            search = /([^&=]+)=?([^&]*)/g,
-            decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-            query = window.location.search.substring(1);
+            // Add window placeholder to the body.
+            $('body').append(window);
 
-        while (match = search.exec(query))
-            urlParams[decode(match[1])] = decode(match[2]);
-
-        return urlParams;
-    };
-
-    this.getCart = function () {
-        if (!cartData) {
-            cartData = new kendo.data.DataSource({
-                data: that._getCartJson(),
-                change: function (data) {
-                    for (var i = 0; i < data.items.length; i++) {
-                        var item = data.items[i];
-                        item.set("Total", item.Quantity * item.Album.Price);
-                    }
-                    that._setCartJson();
-                },
-                aggregate: [{field: "Total", aggregate: "sum"}]
-            });
-        }
-        return cartData;
-    };
-
-    this.addToCart = function (album, qty) {
-        that.getCart().add({
-            Album: album,
-            Quantity: qty,
-            Total: 0
-        });
-        that._setCartJson();
-    };
-
-    this.clearCart = function () {
-        that.getCart().data([]);
-        that._setCartJson();
-    };
-
-    this._getCartJson = function () {
-        try {
-            if(localStorage && localStorage[cartLocalStorageName] && localStorage[cartLocalStorageName].length > 0) {
-                return JSON.parse(localStorage[cartLocalStorageName]);
-            }
-        } catch (e) {}
-        return [];
-    };
-
-    this._setCartJson = function () {
-        try {
-            if (cartData.data().length == 0) {
-                localStorage.removeItem(cartLocalStorageName);
-            } else {
-                localStorage[cartLocalStorageName] = JSON.stringify(cartData.data());
-            }
-        } catch (e) {
-            alert("There was a problem saving your shopping cart to the browser local storage.");
-        }
-    };
-
-    this._openWindow = function (template, viewModel) {
-        // Create a placeholder element.
-        var window = $(document.createElement('div'));
-
-        // Apply template to the placeholder element, and bind the viewmodel.
-        var templateHtml = $(document.getElementById(template)).html()
-        window.html(kendo.template(templateHtml)(viewModel));
-        kendo.bind(window, viewModel);
-
-        // Add window placeholder to the body.
-        $('body').append(window);
-
-        // Turn placeholder into a Window widget.
-        window.kendoWindow({
-            width: "400px",
-            title: viewModel.data.Title,
-            resizable: false,
-            close: function () {
-                // When the window is closed, remove the element from the document.
-                window.parents(".k-window").remove();
-            }
-        });
-
-        // Center and show the Window.
-        window.data("kendoWindow").center();
-        window.data("kendoWindow").open();
-    };
-
-    this._getAlbumDetailsViewModel = function (data) {
-        return kendo.observable({
-            quantity: 1,
-            data: data,
-            total: function () {
-                return this.get("data.Price") * this.get("quantity");
-            },
-            updateQty: function (e) {
-                this.set("quantity", e.sender.value());
-            },
-            addToCart: function (e) {
-                that.addToCart(this.data, this.quantity);
-                var window = $(e.target).parents(".k-window-content").data("kendoWindow");
-                if (window) {
-                    window.close();
+            // Turn placeholder into a Window widget.
+            window.kendoWindow({
+                width: "400px",
+                title: viewModel.data.Title,
+                resizable: false,
+                close: function () {
+                    // When the window is closed, remove the element from the document.
+                    window.parents(".k-window").remove();
                 }
-            }
-        });
+            });
+
+            // Center and show the Window.
+            window.data("kendoWindow").center();
+            window.data("kendoWindow").open();
+        },
+
+        _getAlbumDetailsViewModel = function (data) {
+            return kendo.observable({
+                quantity: 1,
+                data: data,
+                total: function () {
+                    return this.get("data.Price") * this.get("quantity");
+                },
+                updateQty: function (e) {
+                    this.set("quantity", e.sender.value());
+                },
+                addToCart: function (e) {
+                    cart.addToCart(this.data, this.quantity);
+                    var window = $(e.target).parents(".k-window-content").data("kendoWindow");
+                    if (window) {
+                        window.close();
+                    }
+                }
+            })
+        },
+
+        viewAlbumDetails = function (albumId) {
+            $.ajax({
+                url: "/Api/Albums/" + albumId,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    _openWindow("album-details-template", _getAlbumDetailsViewModel(data));
+                }
+            });
+        },
+
+        getUrlParams = function () {
+            // this function was borrowed from StackOverflow:
+            // http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
+            var urlParams = {};
+            var match,
+                pl = /\+/g,
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                query = window.location.search.substring(1);
+
+            while (match = search.exec(query))
+                urlParams[decode(match[1])] = decode(match[2]);
+
+            return urlParams;
+        };
+
+    return {
+        cart: cart,
+        viewAlbumDetails: viewAlbumDetails,
+        getUrlParams: getUrlParams
     };
-};
+})(jQuery, kendo);

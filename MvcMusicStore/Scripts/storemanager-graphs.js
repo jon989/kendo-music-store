@@ -1,4 +1,4 @@
-﻿(function ($) {
+﻿(function ($, kendo, Date) {
     var initComplete = false;
     var dateRanges = [{
         name: "Day",
@@ -217,4 +217,4 @@
     });
     genreChartTypeSelector.data("kendoListView").select(genreChartTypeSelector.children()[0]);
     initComplete = true;
-})(jQuery);
+})(jQuery, kendo, Date);

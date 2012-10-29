@@ -1,5 +1,4 @@
-﻿$(document).ready(function () {
-    var store = new Store();
+﻿(function ($, kendo, store) {
     var urlParams = store.getUrlParams();
     var genreId = parseInt(urlParams.Genre);
 
@@ -53,4 +52,4 @@
     });
 
     kendo.bind("#body", viewModel);
-});
+})(jQuery, kendo, store);

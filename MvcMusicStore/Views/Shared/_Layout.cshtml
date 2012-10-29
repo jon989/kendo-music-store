@@ -70,12 +70,8 @@
         @Html.Partial("_AlbumDetailsTemplatePartial")
 
         @Scripts.Render("~/bundles/jquery")
-        <script src="~/Scripts/kendo.all.js"></script>
-        <script src="~/Scripts/kendo-custom-bindings.js"></script>
-        <script src="~/Scripts/kendo-cart-menu-widget.js"></script>
-        <script src="~/Scripts/store.js"></script>
-        <script src="~/Scripts/shared-layout.js"></script>
-        <script src="~/Scripts/underscore-min.js"></script>
+        <script src="~/Scripts/kendo.all.min.js"></script>
+        @Scripts.Render("~/bundles/app")
         @RenderSection("scripts", required: false)
     </body>
 </html>

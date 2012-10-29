@@ -39,6 +39,13 @@ namespace MvcMusicStore
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/kendo-custom-bindings.js",
+                "~/Scripts/kendo-cart-menu-widget.js",
+                "~/Scripts/cart.js",
+                "~/Scripts/store.js",
+                "~/Scripts/shared-layout.js"));
         }
     }
 }

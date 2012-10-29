@@ -1,8 +1,7 @@
-﻿$(document).ready(function () {
-    var store = new Store();
+﻿(function ($, kendo, store) {
     $("#menu").kendoMenu();
     $("#cart-menu").kendoCartMenu({
-        dataSource: store.getCart()
+        dataSource: store.cart.getCart()
     });
     $("#main-search").kendoAutoComplete({
         filter: 'contains',
@@ -46,4 +45,4 @@
             store.viewAlbumDetails(albumId);
         }
     });
-});
+})(jQuery, kendo, store);

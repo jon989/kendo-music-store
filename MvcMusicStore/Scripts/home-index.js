@@ -1,6 +1,5 @@
-﻿$(document).ready(function () {
+﻿(function ($, kendo, store) {
     var featuredArtist = "Metallica";
-    var store = new Store();
 
     var viewModel = kendo.observable({
         featuredArtistName: featuredArtist,
@@ -55,4 +54,4 @@
     });
 
     kendo.bind("#body", viewModel);
-});
+})(jQuery, kendo, store);
