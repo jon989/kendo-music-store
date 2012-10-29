@@ -55,28 +55,26 @@
 
     var initGrid = function() {
         $("#albumsGrid").kendoGrid({
-            sortable: "true",
-            groupable: "true",
-            filterable: "true",
+            sortable: true,
+            groupable: true,
+            filterable: true,
+            pageable: true,
             editable: "inline",
             toolbar: ["create"],
 
             dataSource: {
+                pageSize: 50,
+                serverPaging: false,
                 transport: {
+                    type: "odata",
                     read: {
                         url: "/Api/Albums?noartist=true",
                         type: "GET"
                     },
                     update: {
-                        //url: function (data) {
-                        //    return "/Api/Albums/" + data.AlbumId;
-                        //},
                         url: "/Api/Albums",
                         type: "PUT",
-                        //data: function (data) {
-                        //},
-                        //contentType: "application/json",
-                        //dataType: "json"
+                        contentType: "application/json",
                     },
                     destroy: {
                         url: function (data) {
@@ -86,14 +84,21 @@
                     },
                     create: {
                         url: "/Api/Albums",
-                        type: "POST"
+                        type: "POST",
+                        contentType: "application/json"
+                    },
+                    parameterMap: function (options, type) {
+                        if (type === "update" || type === "create") {
+                            return kendo.stringify(options);
+                        }
+                        return options;
                     }
                 },
                 schema: {
                     model:{
                         id: "AlbumId",
                         fields: {
-                            AlbumId: {},
+                            AlbumId: { defaultValue: 0 },
                             GenreId: {},
                             ArtistId: {},
                             Title: {},
@@ -105,8 +110,7 @@
             },
 
             columns: [
-  
-                  { title: "Genre", field: "GenreId", values: genres },
+                { title: "Genre", field: "GenreId", values: genres },
                 { title: "Artist", field: "ArtistId", values: artists, editor: artistEditor },
                 { field: "Title" },
                 { field: "Price", format:"{0:c}" },

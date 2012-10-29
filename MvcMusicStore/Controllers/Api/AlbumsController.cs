@@ -38,16 +38,28 @@ namespace MvcMusicStore.Controllers.Api
         }
 
         // POST api/albums
-        public void Post([FromBody]Album value)
+        public HttpResponseMessage Post([FromBody]Album value)
         {
-            storeDB.Albums.Add(value);
-            storeDB.SaveChanges();
+            var message = new HttpResponseMessage();
+
+            if (ModelState.IsValid)
+            {
+                storeDB.Albums.Add(value);
+                storeDB.SaveChanges();
+                message.StatusCode = HttpStatusCode.NoContent;
+            }
+            else
+            {
+                message.StatusCode = HttpStatusCode.BadRequest;
+            }
+
+            return message;
         }
 
         // PUT api/albums/5
-        public HttpResponseMessage Put(AlbumUpdateModel value)
+        public HttpResponseMessage Put(Album value)
         {
-            HttpResponseMessage message = new HttpResponseMessage();
+            var message = new HttpResponseMessage();
 
             if (ModelState.IsValid)
             {
@@ -62,7 +74,7 @@ namespace MvcMusicStore.Controllers.Api
             }
             else
             {
-                message.StatusCode = (HttpStatusCode) 419;
+                message.StatusCode = HttpStatusCode.BadRequest;
             }
 
             return message;
