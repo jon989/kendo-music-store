@@ -1,78 +1,57 @@
-﻿(function ($, kendo) {
-    var genres = [];
-    var artists = [];
+﻿(function (window, $, kendo) {
+    var getGenresAsync = function () {
+        var deferred = $.Deferred(),
 
-    var loadGenres = function() {
-        new kendo.data.DataSource({
-            transport: {
-                read: "/Api/Genres"
-            }
-        })
-        .fetch(function (data) {
-            translateGenres(data);
-            loadArtists();
-        });
-    };
-
-    var translateGenres = function(data) {
-        for (var i = 0; i < data.items.length; i++) {
-            genres.push({
-                value: data.items[i].GenreId,
-                text: data.items[i].Name
-            });
-        }
-    };
-
-    var loadArtists = function() {
-        new kendo.data.DataSource({
-            transport: {
-                read: "/Api/Artists"
-            }
-        })
-        .fetch(function (data) {
-            translateArtists(data);
-            initGrid();
-        });
-    };
-
-    var translateArtists = function (data) {
-        for (var i = 0; i < data.items.length; i++) {
-            artists.push({
-                value: data.items[i].ArtistId,
-                text: data.items[i].Name
-            });
-        }
-    };     
-
-    var artistEditor = function (container, options) {
-        $('<input data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '" />')
-            .appendTo(container)
-            .kendoComboBox({
-                autoBind: false,
-                dataSource: artists
-            });
-    };
-
-    var albumArtEditor = function (container, options) {
-        if (options.model.AlbumArtUrl) {
-            $('<img src="' + options.model.AlbumArtUrl + '" />').appendTo(container);
-        }
-
-        $('<input name="files" type="file" />').appendTo(container).kendoUpload({
-            multiple: false,
-            showFileList: false,
-            async: {
-                saveUrl: "/Api/Images",
-                autoUpload: true
+            translateGenres = function (data) {
+                deferred.resolve($.map(data.items, function(item) {
+                    return {
+                        value: item.GenreId,
+                        text: item.Name
+                    };
+                }));
             },
-            success: function (e) {
-                container.html('<img src="' + e.response + '" />');
-                options.model.set(options.field, e.response);
-            }
-        });
+
+            loadGenres = function () {
+                new kendo.data.DataSource({
+                    transport: {
+                        read: "/Api/Genres"
+                    }
+                }).fetch(function (data) {
+                    translateGenres(data);
+                });
+            };
+
+        window.setTimeout(loadGenres, 1);
+        return deferred.promise();
     };
 
-    var initGrid = function() {
+    var getArtistsAsync = function() {
+        var deferred = $.Deferred(),
+            
+            translateArtists = function(data) {
+                deferred.resolve($.map(data.items, function(item) {
+                    return {
+                        value: item.ArtistId,
+                        text: item.Name
+                    };
+                }));
+            },
+            
+            loadArtists = function() {
+                new kendo.data.DataSource({
+                    transport: {
+                        read: "/Api/Artists"
+                    }
+                }).fetch(function(data) {
+                    translateArtists(data);
+                });
+            };
+
+        window.setTimeout(loadArtists, 1);
+        return deferred.promise();
+    };
+
+    var initGrid = function (genres, artists, artistEditor, albumArtEditor) {
         $("#albumsGrid").kendoGrid({
             sortable: true,
             groupable: true,
@@ -155,5 +134,37 @@
         });
     };
 
-    loadGenres();
-})(jQuery, kendo);
+    // Wait for both the genres and artists lists to load.
+    $.when(getGenresAsync(), getArtistsAsync())
+        .done(function(genres, artists) {
+            var artistEditor = function (container, options) {
+                $('<input data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '" />')
+                    .appendTo(container)
+                    .kendoComboBox({
+                        autoBind: false,
+                        dataSource: artists
+                    });
+            };
+            
+            var albumArtEditor = function (container, options) {
+                if (options.model.AlbumArtUrl) {
+                    $('<img src="' + options.model.AlbumArtUrl + '" />').appendTo(container);
+                }
+
+                $('<input name="files" type="file" />').appendTo(container).kendoUpload({
+                    multiple: false,
+                    showFileList: false,
+                    async: {
+                        saveUrl: "/Api/Images",
+                        autoUpload: true
+                    },
+                    success: function (e) {
+                        container.html('<img src="' + e.response + '" />');
+                        options.model.set(options.field, e.response);
+                    }
+                });
+            };
+
+            initGrid(genres, artists, artistEditor, albumArtEditor);
+        });
+})(window, jQuery, kendo);
