@@ -30,7 +30,7 @@
 
             // create default template
             // Note that the element with class="k-delete-button" will automatically be wired by Kendo to delete the corresponding item from the dataSource.
-            that.template = kendo.template(that.options.template || '<li><span>#=Album.Title#</span><span class="k-icon k-i-close k-delete-button"></span></li>')
+            that.template = kendo.template(that.options.template || '<li><span>#=Album.Title#</span><span class="k-icon k-i-close k-delete-button"></span></li>');
 
             // append menu elements
             that._menu = $(element);
@@ -80,7 +80,7 @@
             from -= .05;
             ele.css("background-color", "rgba(251, 176, 59, " + from + ")");
             if (from > 0) {
-                setTimeout(function () { anim(ele, from, anim) }, 30);
+                setTimeout(function () { anim(ele, from, anim); }, 30);
             } else {
                 ele.css("background-color", "transparent");
             }

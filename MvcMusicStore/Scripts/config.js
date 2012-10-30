@@ -17,6 +17,7 @@
     ];
     this.browseGenrePageSize = 20;
     this.manageAlbumsGridPageSize = 50;
+    this.searchMaxResults = 20;
     
     // Default values for new Albums added through management screen
     this.newAlbumDefaultGenre = 1;

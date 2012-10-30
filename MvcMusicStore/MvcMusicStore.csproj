@@ -406,6 +406,7 @@
     <Content Include="Views\Shared\_AlbumDetailsTemplatePartial.cshtml" />
     <Content Include="Views\Shared\_AlbumListTemplatePartial.cshtml" />
     <Content Include="Views\StoreManager\Graphs.cshtml" />
+    <Content Include="Views\Shared\_SearchResultTemplatePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

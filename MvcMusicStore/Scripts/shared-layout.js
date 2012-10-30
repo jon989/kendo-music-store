@@ -11,13 +11,13 @@
         dataTextField: "Title",
         placeholder: "Search music...",
         height: 300,
-        template: '<div class="album-wide" data-album-id="${data.AlbumId}"><img src="${data.AlbumArtUrl}" /><div><span>${data.Title}</span><span>${data.Artist.Name}</span></div></div>',
+        template: kendo.template($("#search-result-template").html()),
 
         dataSource: {
             type: "odata",
             serverFiltering: true,
             serverPaging: true,
-            pageSize: 20,
+            pageSize: store.config.searchMaxResults,
             transport: {
                 read: {
                     url: store.config.albumsUrl,
