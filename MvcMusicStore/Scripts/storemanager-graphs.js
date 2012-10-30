@@ -1,4 +1,4 @@
-﻿(function ($, kendo, Date) {
+﻿(function ($, kendo, Date, store) {
     var initComplete = false;
     var dateRanges = [{
         name: "Day",
@@ -44,7 +44,7 @@
     var revenueChartDataSource = new kendo.data.DataSource({
         transport: {
             read: {
-                url: "/Api/StoreSalesRevenue",
+                url: store.config.salesAndRevenueUrl,
                 dataType: "json"
             },
             parameterMap: function (options, type) {
@@ -63,7 +63,7 @@
     var genreChartDataSource = new kendo.data.DataSource({
         transport: {
             read: {
-                url: "/Api/StoreSalesGenre",
+                url: store.config.salesByGenreUrl,
                 dataType: "json"
             },
             parameterMap: function (options, type) {
@@ -217,4 +217,4 @@
     });
     genreChartTypeSelector.data("kendoListView").select(genreChartTypeSelector.children()[0]);
     initComplete = true;
-})(jQuery, kendo, Date);
+})(jQuery, kendo, Date, store);

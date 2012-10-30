@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace MvcMusicStore
 {
@@ -43,6 +42,7 @@ namespace MvcMusicStore
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/kendo-custom-bindings.js",
                 "~/Scripts/kendo-cart-menu-widget.js",
+                "~/Scripts/config.js",
                 "~/Scripts/cart.js",
                 "~/Scripts/store.js",
                 "~/Scripts/shared-layout.js"));

@@ -328,6 +328,7 @@
     <Content Include="Scripts\cart.js" />
     <Content Include="Scripts\checkout-addressandpayment.js" />
     <Content Include="Scripts\checkout-complete.js" />
+    <Content Include="Scripts\config.js" />
     <Content Include="Scripts\date.js" />
     <Content Include="Scripts\home-index.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

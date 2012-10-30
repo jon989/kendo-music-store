@@ -1,8 +1,10 @@
 ﻿(function ($, kendo, store) {
     $("#menu").kendoMenu();
+    
     $("#cart-menu").kendoCartMenu({
         dataSource: store.cart.getCart()
     });
+    
     $("#main-search").kendoAutoComplete({
         filter: 'contains',
         minLength: 3,
@@ -18,7 +20,7 @@
             pageSize: 20,
             transport: {
                 read: {
-                    url: "/Api/Albums",
+                    url: store.config.albumsUrl,
                     dataType: "json"
                 },
                 parameterMap: function (options, type) {

@@ -5,7 +5,7 @@
     var viewModel = kendo.observable({
         albums: new kendo.data.DataSource({
             type: "odata",
-            pageSize: 20,
+            pageSize: store.config.browseGenrePageSize,
             serverFiltering: true,
             serverPaging: false,
             filter: {
@@ -15,7 +15,7 @@
             },
             transport: {
                 read: {
-                    url: "/Api/Albums",
+                    url: store.config.albumsUrl,
                     dataType: "json"
                 },
                 parameterMap: function (options, type) {
@@ -34,7 +34,7 @@
                 }
             }
         }),
-        genre: null, // <-- this will hold our Genre object, once loaded.
+        genre: null, // this will hold our Genre object, once loaded.
 
         viewAlbumDetails: function (e) {
             store.viewAlbumDetails(e.data.AlbumId);
@@ -43,7 +43,7 @@
 
     // Load the Genre data from the server.
     $.ajax({
-        url: "/Api/Genres/" + genreId,
+        url: store.config.genresUrl + "/" + genreId,
         type: "GET",
         dataType: "json",
         success: function (data) {

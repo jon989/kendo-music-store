@@ -1,8 +1,6 @@
 ﻿(function ($, kendo, store) {
-    var featuredArtist = "Metallica";
-
     var viewModel = kendo.observable({
-        featuredArtistName: featuredArtist,
+        featuredArtistName: store.config.featuredArtist,
         
         featuredArtistAlbums: new kendo.data.DataSource({
             type: "odata",
@@ -12,11 +10,11 @@
             filter: {
                 field: "Artist/Name",
                 operator: "eq",
-                value: featuredArtist
+                value: store.config.featuredArtist
             },
             transport: {
                 read: {
-                    url: "/Api/Albums",
+                    url: store.config.albumsUrl,
                     dataType: "json"
                 },
                 parameterMap: function (options, type) {
@@ -38,15 +36,11 @@
 
         topSellingAlbums: new kendo.data.DataSource({
             transport: {
-                read: "/Api/Albums?popular=5"
+                read: store.config.albumsUrl + "?popular=5"
             }
         }),
 
-        bannerImages: [
-            "/Content/Images/Feature1.png",
-            "/Content/Images/Feature2.png",
-            "/Content/Images/Feature3.png"
-        ],
+        bannerImages: store.config.bannerImages,
 
         viewAlbumDetails: function (e) {
             store.viewAlbumDetails(e.data.AlbumId);

@@ -1,12 +1,13 @@
 ﻿var store = (function ($, kendo) {
     var cart = new Cart($, kendo),
+        config = new Config(),
 
         _openWindow = function (template, viewModel) {
             // Create a placeholder element.
             var window = $(document.createElement('div'));
 
             // Apply template to the placeholder element, and bind the viewmodel.
-            var templateHtml = $(document.getElementById(template)).html()
+            var templateHtml = $(document.getElementById(template)).html();
             window.html(kendo.template(templateHtml)(viewModel));
             kendo.bind(window, viewModel);
 
@@ -15,7 +16,7 @@
 
             // Turn placeholder into a Window widget.
             window.kendoWindow({
-                width: "400px",
+                width: config.albumDetailsWindowWidth,
                 title: viewModel.data.Title,
                 resizable: false,
                 close: function () {
@@ -33,25 +34,25 @@
             return kendo.observable({
                 quantity: 1,
                 data: data,
-                total: function () {
+                total: function() {
                     return this.get("data.Price") * this.get("quantity");
                 },
-                updateQty: function (e) {
+                updateQty: function(e) {
                     this.set("quantity", e.sender.value());
                 },
-                addToCart: function (e) {
+                addToCart: function(e) {
                     cart.addToCart(this.data, this.quantity);
                     var window = $(e.target).parents(".k-window-content").data("kendoWindow");
                     if (window) {
                         window.close();
                     }
                 }
-            })
+            });
         },
 
         viewAlbumDetails = function (albumId) {
             $.ajax({
-                url: "/Api/Albums/" + albumId,
+                url: config.albumsUrl + "/" + albumId,
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
@@ -79,6 +80,7 @@
     return {
         cart: cart,
         viewAlbumDetails: viewAlbumDetails,
-        getUrlParams: getUrlParams
+        getUrlParams: getUrlParams,
+        config: config
     };
 })(jQuery, kendo);

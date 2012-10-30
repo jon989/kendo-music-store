@@ -1,4 +1,4 @@
-﻿(function (window, $, kendo) {
+﻿(function (window, $, kendo, store) {
     var getGenresAsync = function () {
         var deferred = $.Deferred(),
 
@@ -14,7 +14,7 @@
             loadGenres = function () {
                 new kendo.data.DataSource({
                     transport: {
-                        read: "/Api/Genres"
+                        read: store.config.genresUrl
                     }
                 }).fetch(function (data) {
                     translateGenres(data);
@@ -40,7 +40,7 @@
             loadArtists = function() {
                 new kendo.data.DataSource({
                     transport: {
-                        read: "/Api/Artists"
+                        read: store.config.artistsUrl
                     }
                 }).fetch(function(data) {
                     translateArtists(data);
@@ -61,27 +61,27 @@
             toolbar: ["create"],
 
             dataSource: {
-                pageSize: 50,
+                pageSize: store.config.manageAlbumsGridPageSize,
                 serverPaging: false,
                 transport: {
                     type: "odata",
                     read: {
-                        url: "/Api/Albums?noartist=true",
+                        url: store.config.albumsUrl + "?noartist=true",
                         type: "GET"
                     },
                     update: {
-                        url: "/Api/Albums",
+                        url: store.config.albumsUrl,
                         type: "PUT",
                         contentType: "application/json",
                     },
                     destroy: {
                         url: function (data) {
-                            return "/Api/Albums/" + data.AlbumId;
+                            return store.config.albumsUrl + "/" + data.AlbumId;
                         },
                         type: "DELETE"
                     },
                     create: {
-                        url: "/Api/Albums",
+                        url: store.config.albumsUrl,
                         type: "POST",
                         contentType: "application/json"
                     },
@@ -97,8 +97,8 @@
                         id: "AlbumId",
                         fields: {
                             AlbumId: { type: "number", defaultValue: 0 },
-                            GenreId: { type: "number", defaultValue: 1 },
-                            ArtistId: { type: "number", defaultValue: 1 },
+                            GenreId: { type: "number", defaultValue: store.config.newAlbumDefaultGenre },
+                            ArtistId: { type: "number", defaultValue: store.config.newAlbumDefaultArtist },
                             Title: {
                                 validation: {
                                     required: true
@@ -106,7 +106,7 @@
                             },
                             Price: {
                                 type: "number",
-                                defaultValue: 9.99,
+                                defaultValue: store.config.newAlbumDefaultPrice,
                                 validation: {
                                     required: true,
                                     min: 0.01,
@@ -155,7 +155,7 @@
                     multiple: false,
                     showFileList: false,
                     async: {
-                        saveUrl: "/Api/Images",
+                        saveUrl: store.config.imagesUrl,
                         autoUpload: true
                     },
                     success: function (e) {
@@ -167,4 +167,4 @@
 
             initGrid(genres, artists, artistEditor, albumArtEditor);
         });
-})(window, jQuery, kendo);
+})(window, jQuery, kendo, store);
