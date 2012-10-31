@@ -1,5 +1,6 @@
 ﻿@model MvcMusicStore.Models.OrderSubmit
 @using Kendo.Mvc.UI
+@using MvcMusicStore.Helpers
 
 @{
     ViewBag.Title = "Address And Payment";
@@ -15,12 +16,19 @@
 </script>
 
 @using (Html.BeginForm()) {
-    <section class="checkout-info">
+    <section class="checkout-info" data-role="validator">
         <div>
             <h3>Customer Address</h3>
-            @Html.EditorFor(x => x.Order)
+            @Html.KendoTextValidator(x => x.Order.FirstName)
+            @Html.KendoTextValidator(x => x.Order.LastName)
+            @Html.KendoTextValidator(x => x.Order.Address)
+            @Html.KendoTextValidator(x => x.Order.City)
+            @Html.KendoTextValidator(x => x.Order.State)
+            @Html.KendoTextValidator(x => x.Order.PostalCode)
+            @Html.KendoTextValidator(x => x.Order.Country)
+            @Html.KendoTextValidator(x => x.Order.Phone)
+            @Html.KendoTextValidator(x => x.Order.Email)
         </div>
-
         <div>
             <h3>Shipping Details</h3>
             @Html.Label("shippingPriority", "Shipping Priority")
@@ -55,7 +63,7 @@
                 )
             </div>
         </div>
-        <input type="submit" value="Submit Order" class="k-button" />
+        <input type="submit" value="Submit Order" class="k-button" data-bind="click: doValidation" />
     </section>
     <div data-bind="source: cartItems" data-template="cartItemTemplate"></div>
 }

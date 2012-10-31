@@ -13,16 +13,21 @@ namespace MvcMusicStore.Controllers
         MusicStoreEntities storeDB = new MusicStoreEntities();
         private static Regex albumQueryStringMatcher = new Regex(@"^\d+$");
 
-        //
-        // GET: /Checkout/
-        public ActionResult AddressAndPayment()
+        private OrderSubmit GetEmptyOrderSubmit()
         {
-            return View(new OrderSubmit
+            return new OrderSubmit
             {
                 Order = new Order(),
                 ShippingMethod = "1",
                 ShippingMethods = new List<SelectListItem> { new SelectListItem { Value = "1", Text = "Ground", Selected = true }, new SelectListItem { Value = "2", Text = "2nd Day" }, new SelectListItem { Value = "3", Text = "Next Day Air" } }
-            });
+            };
+        }
+
+        //
+        // GET: /Checkout/
+        public ActionResult AddressAndPayment()
+        {
+            return View(GetEmptyOrderSubmit());
         }
 
         //
@@ -56,7 +61,7 @@ namespace MvcMusicStore.Controllers
             catch
             {
                 //Invalid - redisplay with errors
-                return View(orderSubmit);
+                return View(GetEmptyOrderSubmit());
             }
         }
 
