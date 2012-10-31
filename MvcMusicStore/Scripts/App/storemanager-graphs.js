@@ -101,7 +101,7 @@
                     type: "line",
                     name: "Orders",
                     field: "Orders",
-                    color: "#ec5e0a",
+                    color: "#5a5959",
                     axis: "orders",
                     tooltip: {
                         visible: true,

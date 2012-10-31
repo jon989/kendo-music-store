@@ -689,7 +689,7 @@ footer ul li:hover
         color: #888;
     }
 
-.login-small a:link
+.login-small a:link, .login-small a:visited
     {
        color:#D88E2F;
        -webkit-transition: all 0.3s ease-in-out;
@@ -877,6 +877,33 @@ footer ul li:hover
         margin-bottom: 50px;
     }
 
+#revenue-chart text[style], #genre-chart text[style]
+    {
+       font: 12px Open Sans, sans-serif !important;
+    }
+
+#revenue-chart g path:first-child
+    {
+        fill:#D88E2F;
+        stroke:none;
+    }
+
+
+#revenue-chart g path:nth-child(2), #genre-chart g path:nth-child(2)
+    {
+        display: none;
+    }
+
+#revenue-chart g path[fill="none"]
+    {
+        fill: none;
+    }
+
+#revenue-chart g[clip-path] path
+    {
+        stroke:#ccc;
+    }
+
 
 /* Genre Chart
 	------------------------------------------------------- */
@@ -915,20 +942,34 @@ footer ul li:hover
     color: #a33636;
 }
 
-    #genre-chart a
+#genre-chart a:link, #genre-chart a:visited
     {
         color: #a33636;
     }
 
-        #genre-chart a:visited
-        {
-            color: #a33636;
-        }
 
-        #genre-chart a:hover
+#genre-chart a:hover
         {
             color: #a86464;
         }
+
+.k-dropdown-wrap, .k-textbox
+{
+    -webkit-transition: all 0.3s ease-in-out;
+     -moz-transition: all 0.3s ease-in-out;
+     -o-transition: all 0.3s ease-in-out;
+     transition: all 0.3s ease-in-out;
+}
+
+.k-dropdown-wrap.k-state-hover
+    {
+        background-color: #D88E2F;
+    }
+
+.k-textbox:hover
+    {
+        border-color: #D88E2F;
+    }
 
 #albumsGrid img
 {
