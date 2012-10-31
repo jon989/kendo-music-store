@@ -41,8 +41,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FakeO">
-      <HintPath>..\packages\FakeO.1.0.4447.26941\lib\net40\FakeO.dll</HintPath>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\packages\manual\Kendo.Mvc.Wrappers\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -215,6 +215,7 @@
     <Compile Include="Models\MusicStoreEntities.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\OrderSubmit.cs" />
     <Compile Include="Models\SalesByGenre.cs" />
     <Compile Include="Models\SalesRevenue.cs" />
     <Compile Include="Models\SampleData.cs" />
@@ -325,12 +326,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\kendo-logo.png" />
-    <Content Include="Scripts\cart.js" />
-    <Content Include="Scripts\checkout-addressandpayment.js" />
-    <Content Include="Scripts\checkout-complete.js" />
-    <Content Include="Scripts\config.js" />
+    <Content Include="Scripts\App\cart.js" />
+    <Content Include="Scripts\App\checkout-addressandpayment.js" />
+    <Content Include="Scripts\App\checkout-complete.js" />
+    <Content Include="Scripts\App\config.js" />
     <Content Include="Scripts\date.js" />
-    <Content Include="Scripts\home-index.js" />
+    <Content Include="Scripts\App\home-index.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Content\fonts\icomoon.eot" />
@@ -345,16 +346,16 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\kendo-cart-menu-widget.js" />
-    <Content Include="Scripts\kendo-custom-bindings.js" />
+    <Content Include="Scripts\App\kendo-cart-menu-widget.js" />
+    <Content Include="Scripts\App\kendo-custom-bindings.js" />
     <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Scripts\shared-layout.js" />
-    <Content Include="Scripts\shoppingcart-index.js" />
-    <Content Include="Scripts\store.js" />
-    <Content Include="Scripts\store-browse.js" />
-    <Content Include="Scripts\storemanager-graphs.js" />
-    <Content Include="Scripts\storemanager-index.js" />
+    <Content Include="Scripts\App\shared-layout.js" />
+    <Content Include="Scripts\App\shoppingcart-index.js" />
+    <Content Include="Scripts\App\store.js" />
+    <Content Include="Scripts\App\store-browse.js" />
+    <Content Include="Scripts\App\storemanager-graphs.js" />
+    <Content Include="Scripts\App\storemanager-index.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -395,7 +396,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Store\Details.cshtml" />
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Store\GenreMenu.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />

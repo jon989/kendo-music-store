@@ -1,4 +1,5 @@
-﻿@model MvcMusicStore.Models.Order
+﻿@model MvcMusicStore.Models.OrderSubmit
+@using Kendo.Mvc.UI
 
 @{
     ViewBag.Title = "Address And Payment";
@@ -6,7 +7,7 @@
 
 @section scripts {
     <script src="@Url.Content("~/bundles/jqueryval")"></script>
-    <script src="~/Scripts/checkout-addressandpayment.js"></script>
+    <script src="~/Scripts/App/checkout-addressandpayment.js"></script>
 }
 
 <script id="cartItemTemplate" type="text/x-kendo-template">
@@ -14,10 +15,37 @@
 </script>
 
 @using (Html.BeginForm()) {
-    <section class="login">
-        <h3>Address And Payment</h3>
-        @Html.EditorForModel()
-        <div data-bind="source: cartItems" data-template="cartItemTemplate"></div>
+    <section class="checkout-info">
+        <div>
+            <h3>Customer Address</h3>
+            @Html.EditorFor(x => x.Order)
+        </div>
+
+        <div>
+            <h3>Shipping Details</h3>
+            @Html.Label("shippingPriority", "Shipping Priority")
+            <div class="editor-field">
+                @(Html.Kendo().DropDownList()
+                    .Name("shippingPriority")
+                    .DataTextField("Text")
+                    .DataValueField("Value")
+                    .BindTo(Model.ShippingMethods)
+                    .Value(Model.ShippingMethod)
+                )
+            </div>
+
+            @Html.Label("shippingDate", "Select a Ship Date")
+            <div class="editor-field">
+                @(Html.Kendo().Calendar()
+                    .Name("shippingDate")
+                    .Min(DateTime.Today)
+                    .Max(DateTime.Today + TimeSpan.FromDays(60))
+                    .Value(DateTime.Today)
+                    .Footer("Today - #=kendo.toString(data, 'd') #")
+                )
+            </div>
+        </div>
         <input type="submit" value="Submit Order" class="k-button" />
     </section>
+    <div data-bind="source: cartItems" data-template="cartItemTemplate"></div>
 }

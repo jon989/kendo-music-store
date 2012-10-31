@@ -17,7 +17,12 @@ namespace MvcMusicStore.Controllers
         // GET: /Checkout/
         public ActionResult AddressAndPayment()
         {
-            return View();
+            return View(new OrderSubmit
+            {
+                Order = new Order(),
+                ShippingMethod = "1",
+                ShippingMethods = new List<SelectListItem> { new SelectListItem { Value = "1", Text = "Ground", Selected = true }, new SelectListItem { Value = "2", Text = "2nd Day" }, new SelectListItem { Value = "3", Text = "Next Day Air" } }
+            });
         }
 
         //
@@ -25,11 +30,12 @@ namespace MvcMusicStore.Controllers
         [HttpPost]
         public ActionResult AddressAndPayment(FormCollection values)
         {
-            var order = new Order();
-            TryUpdateModel(order);
+            var orderSubmit = new OrderSubmit();
+            TryUpdateModel(orderSubmit);
 
             try
             {
+                var order = orderSubmit.Order;
                 order.Username = User.Identity.Name;
                 order.OrderDate = DateTime.Now;
 
@@ -50,7 +56,7 @@ namespace MvcMusicStore.Controllers
             catch
             {
                 //Invalid - redisplay with errors
-                return View(order);
+                return View(orderSubmit);
             }
         }
 

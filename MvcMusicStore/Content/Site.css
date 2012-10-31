@@ -13,7 +13,7 @@
 }
 
 *
-    {
+{
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -35,6 +35,7 @@ a:link
 .clearfix {
     *zoom: 1;
 }
+
 
 /*	Layout
 	------------------------------------------------------- */
@@ -63,8 +64,10 @@ h3
         font-size:22px;
     }
 
+
 /*	Customer View Header + Logo
 	------------------------------------------------------- */
+
 header
     {
         z-index: 99;
@@ -111,6 +114,7 @@ header h1 a:hover
 
 /*	Global Rounded Buttons
 	------------------------------------------------------- */
+
 .k-button
     {
         background-color: #D88E2F;
@@ -166,10 +170,9 @@ header h1 a:hover
 }
 
 
-
-
 /*	Customer View Global Nav + Kendo Overrides
 	------------------------------------------------------- */
+
 .k-menu
     {
         background-color: transparent;
@@ -251,8 +254,6 @@ header h1 a:hover
 	    transition: all 0.3s ease-in-out;
    }
 
-
-
 .k-menu .k-popup .k-item .k-link:hover
    {
        color: #fff;
@@ -273,12 +274,14 @@ header h1 a:hover
     padding: 10px;
 }
 
-.editor-field /* where does this go? */
+.editor-field
 {
     padding-bottom: 10px;
 }
 
-/* Shopping Cart Menu */
+
+/* Shopping Cart Menu
+	------------------------------------------------------- */
 
 #cart-menu
     {
@@ -315,7 +318,6 @@ header h1 a:hover
             padding: 0;
             border: none;
         }
-
 
 #cart-menu .k-content ul li
     {
@@ -357,7 +359,6 @@ header h1 a:hover
     {
         background-color: transparent;
     }
-
 
 
 /*	Global Search
@@ -402,7 +403,6 @@ header h1 a:hover
         cursor: pointer;
     }
 
-/*#main-search-list img*/
 .album-wide img
     {
         height: 60px;
@@ -433,8 +433,6 @@ header h1 a:hover
     }
 
 
-
-
 /*	Home Page Content
 	------------------------------------------------------- */
 
@@ -458,6 +456,7 @@ header h1 a:hover
     {
         color: #000;
     }
+
 
 /*	Footer
 	------------------------------------------------------- */
@@ -684,8 +683,6 @@ footer ul li:hover
         padding-bottom: 15px;
     }
 
-
-
 .login-small
     {
         font: 11px;
@@ -707,12 +704,9 @@ footer ul li:hover
     }
 
 
-
-
-
-
 /*	Shopping Cart Review
 	------------------------------------------------------- */
+
 .cart-search
 {
     display: inline-block;
@@ -761,16 +755,9 @@ footer ul li:hover
     text-align: right;
 }
 
-    /*.grid-footer .submit
-    {
-        font-size: 1.1em;
-    }*/
 
-
-
-
-
-/* Contact page */
+/* Contact page
+	------------------------------------------------------- */
 
 .contact .label
 {
@@ -804,7 +791,6 @@ footer ul li:hover
 }
 
 
-
 /* Override some general Kendo things */
 
 .k-header,.k-grid-header,.k-toolbar,.k-dropdown-wrap,.k-picker-wrap,.k-grouping-header,.k-tooltip,.k-pager-wrap,.k-button,.k-draghandle,.k-tile,.k-textbox,.k-autocomplete,.k-state-hover,.k-state-selected,.k-state-focused,.k-state-highlight,.k-tabstrip-items .k-item
@@ -812,8 +798,16 @@ footer ul li:hover
     background-image: none;
 }
 
+.k-state-selected
+{
+    background-color: #D88E2F;
+    border:none;
+}
+
+
 /*	List-View (Albums)
 	------------------------------------------------------- */
+
 .k-pager-wrap
 {
     margin: 20px 0;
@@ -823,17 +817,12 @@ footer ul li:hover
     color:#999;
 }
 
-.k-pager-wrap .k-state-selected
-    {
-        background-color: #D88E2F;
-        border:none;
-    }
-
 .k-pager-info 
     {
         float: right;
         padding: 0;
     }
+
 
 /*	Sales Graphs
 	------------------------------------------------------- */
@@ -889,7 +878,8 @@ footer ul li:hover
     }
 
 
-/* Genre Chart */
+/* Genre Chart
+	------------------------------------------------------- */
 
 .selector
 {
@@ -949,4 +939,25 @@ footer ul li:hover
 #albumArtUploadWindow
 {
     display: none;
+}
+
+
+/* Checkout
+	------------------------------------------------------- */
+
+.checkout-info > div
+{
+    float: left;
+    margin-right: 50px;
+}
+
+.checkout-info > input
+{
+    display: block;
+    clear: both;
+}
+
+#shippingPriority-list.k-list-container
+{
+    background-color: rgba(255, 255, 255, 1);
 }

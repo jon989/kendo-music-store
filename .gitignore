@@ -1,6 +1,7 @@
 */packages/*
 /packages/*
 !packages/repositories.config
+!packages/manual/
 obj/
 bin/
 TestResults/

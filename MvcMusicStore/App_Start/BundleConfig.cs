@@ -40,12 +40,12 @@ namespace MvcMusicStore
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                "~/Scripts/kendo-custom-bindings.js",
-                "~/Scripts/kendo-cart-menu-widget.js",
-                "~/Scripts/config.js",
-                "~/Scripts/cart.js",
-                "~/Scripts/store.js",
-                "~/Scripts/shared-layout.js"));
+                "~/Scripts/App/kendo-custom-bindings.js",
+                "~/Scripts/App/kendo-cart-menu-widget.js",
+                "~/Scripts/App/config.js",
+                "~/Scripts/App/cart.js",
+                "~/Scripts/App/store.js",
+                "~/Scripts/App/shared-layout.js"));
         }
     }
 }
