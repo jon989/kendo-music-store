@@ -46,6 +46,9 @@ namespace MvcMusicStore
                 "~/Scripts/App/cart.js",
                 "~/Scripts/App/store.js",
                 "~/Scripts/App/shared-layout.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/libs").Include(
+                "~/Scripts/date.js"));
         }
     }
 }

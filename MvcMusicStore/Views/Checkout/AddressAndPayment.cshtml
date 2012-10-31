@@ -38,10 +38,20 @@
             <div class="editor-field">
                 @(Html.Kendo().Calendar()
                     .Name("shippingDate")
-                    .Min(DateTime.Today)
+                    .Min(DateTime.Today.AddDays(-DateTime.Today.Day+1))
                     .Max(DateTime.Today + TimeSpan.FromDays(60))
                     .Value(DateTime.Today)
                     .Footer("Today - #=kendo.toString(data, 'd') #")
+                    .MonthTemplate("# if(data.date < Date.today()) {# <div class='past'>#=data.value#</div> #} else {# #= data.value# # } #")
+                    .Events(e => e
+                        .Change(@<text>
+                            function(e) {
+                                if(e.sender.value() < Date.today()) {
+                                    e.sender.value(Date.today());
+                                }
+                            }
+                          </text>)
+                    )
                 )
             </div>
         </div>

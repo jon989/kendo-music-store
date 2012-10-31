@@ -9,13 +9,28 @@
      * Widget is bound to a DataSource.
      * Main button flashes orange for a moment when an item is added to the cart (when the DataSource is changed).
      * Provides a button to proceed to checkout screen.
+     * Acts as a drop-target for drag and dropping albums into the cart.
 */
-(function ($) {
+(function ($, kendo) {
     // shorten references to variables.
-    var kendo = window.kendo,
-		ui = kendo.ui,
+    var ui = kendo.ui,
 		Widget = ui.Widget,
 		CHANGE = "change";
+
+    var initDragDrop = function (dropTarget) {
+        dropTarget.kendoDropTarget({
+            dragenter: function (e) {
+                dropTarget.addClass("dragover");
+            },
+            dragleave: function (e) {
+                dropTarget.removeClass("dragover");
+            },
+            drop: function (e) {
+                dropTarget.removeClass("dragover");
+                debugger;
+            }
+        });
+    };
 
     var CartMenu = Widget.extend({
 
@@ -43,6 +58,7 @@
             // init composite widgets
             that._listView = that._menu.find(".k-content > ul");
             that._menu.kendoMenu();
+            initDragDrop(that._menu);
             that._listView.kendoListView({
                 dataSource: that.dataSource,
                 template: that.template
@@ -103,4 +119,4 @@
     });
 
     ui.plugin(CartMenu);
-})(jQuery);
+})(jQuery, kendo);

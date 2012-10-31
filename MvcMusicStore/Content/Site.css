@@ -957,7 +957,17 @@ footer ul li:hover
     clear: both;
 }
 
-#shippingPriority-list.k-list-container
+.k-calendar td.k-state-selected a
 {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #D88E2F;
+}
+
+.k-calendar .past
+{
+    color: #eee;
+}
+
+.dragover
+{
+    border: 5px solid #a33636;
 }
