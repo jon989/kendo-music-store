@@ -40,11 +40,18 @@ a:link
 /*	Layout
 	------------------------------------------------------- */
 
+html 
+    {
+        position: relative;
+        min-height: 100%;
+    }
+
 #wrapper
 {
     width: 100%;
-    max-width: 950px;
+    max-width: 944px;
     margin: 0 auto;
+    margin-bottom: 100px;
 }
 
 .container
@@ -53,6 +60,11 @@ a:link
     width: 944px;
 
 }
+
+#body
+    {
+        padding: 150px 0 50px 0;
+    }
 
 h3
     {
@@ -436,10 +448,6 @@ header h1 a:hover
 /*	Home Page Content
 	------------------------------------------------------- */
 
-#body
-{
-    margin-top: 150px;
-}
 
 #promotion
 {
@@ -463,21 +471,22 @@ header h1 a:hover
 
 footer
     {
-        margin-top: 80px;
-        clear: both;
-        display:block;
-        padding: 20px 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100px;
+        width: 100%;
         border-top: 1px solid #c7c7c7;
     }
 
 
 footer ul
     {
-        padding: 0;
         list-style-type: none;
         margin: 0 auto;
-        width: 220px;
-        padding-bottom: 40px;
+        width: 216px;
+        padding: 40px 0;
         
      
     }
@@ -495,19 +504,18 @@ footer ul li
         -moz-opacity: 0.7;
         -webkit-opacity: 0.7;
     }
-
-footer .smallerlogo
-    {
-       width: 88px;
-    }
-
-          
+ 
 
 footer ul li:hover
     {
         opacity: 1;
         -moz-opacity: 1;
         -webkit-opacity: 1;
+    }
+
+footer ul li img
+    {
+        width: 88px;
     }
 
 
@@ -640,7 +648,7 @@ footer ul li:hover
 
 .album-details .k-button
     {
-        font-size: 17px;
+        font-size: 15px;
     }
 
 .k-window .k-header, .k-window .k-header .k-state-hover:hover
@@ -703,6 +711,11 @@ footer ul li:hover
       color:#5a5959;
     }
 
+.login .k-button
+    {
+        font-size: 15px;
+    }
+
 
 /*	Shopping Cart Review
 	------------------------------------------------------- */
@@ -755,34 +768,57 @@ footer ul li:hover
     text-align: right;
 }
 
+.grid-footer .k-button
+    {
+        font-size: 15px;
+    }
+
 
 /* Contact page
 	------------------------------------------------------- */
 
+.contact
+    {
+        float: left;
+        margin: 0 100px 120px 0;
+    }
+
+.contact p
+    {
+        font-size: 13px;
+    }
+
 .contact .label
-{
-    display: inline-block;
-    margin-left: 10px;
-    width: 120px;
-}
+    {
+        text-transform: uppercase;
+        color: #999;
+    }
 
-.contact a
-{
-    text-decoration: none;
-    color: blue;
-}
+.contact .k-button
+    {
+    margin-top: 30px;
+    font-size: 15px;
+    }
 
-.contact a:hover
-{
-    text-decoration: underline;
-    color: blue;
-}
+.contact span
+    {
+        display: block;
+        clear: left;
+    }
 
-.contact a:visited
-{
-    text-decoration: none;
-    color: blue;
-}
+.contact span a:link, .contact span a:visited
+    {
+       color:#D88E2F;
+       -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	 -o-transition: all 0.3s ease-in-out;
+	  transition: all 0.3s ease-in-out;
+    }
+
+.contact span a:hover
+    {
+      color:#5a5959;
+    }
 
 .demo-information
 {
@@ -1007,3 +1043,9 @@ footer ul li:hover
 {
     color: #eee;
 }
+
+.checkout-complete .k-button
+    {
+        margin-top: 30px;
+        font-size: 15px;
+    }

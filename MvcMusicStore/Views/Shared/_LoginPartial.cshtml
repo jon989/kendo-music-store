@@ -2,7 +2,7 @@
     <text>
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
             @Html.AntiForgeryToken()
-            <span>Hello, @User.Identity.Name!</span> <a href="javascript:document.getElementById('logoutForm').submit()" class="k-button">Log off</a>
+            <span class="hellouser">Hello, @User.Identity.Name!</span> <a href="javascript:document.getElementById('logoutForm').submit()" class="k-button">Log off</a>
             if (User.IsInRole("Administrator")) {
                 <a href="/StoreManager" class="k-button">Manage Store</a>
                 <a href="/StoreManager/Graphs" class="k-button">View Sales Graphs</a>
