@@ -8,8 +8,5 @@
         }
     });
 
-    //$('.checkout-info input').attr('validationMessage', ' ');
-    //$('.checkout-info input').attr('required', '');
-
     kendo.bind($("#body"), viewModel);
 })(jQuery, kendo, store);
