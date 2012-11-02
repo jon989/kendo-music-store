@@ -940,6 +940,14 @@ footer ul li img
         stroke:#ccc;
     }
 
+.cake
+{
+    text-transform: uppercase;
+    display: block;
+    clear:right;
+    padding-bottom: 20px;
+}
+
 
 /* Genre Chart
 	------------------------------------------------------- */
