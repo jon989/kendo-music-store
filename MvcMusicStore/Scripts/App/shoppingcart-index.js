@@ -12,13 +12,8 @@
         total: 0
     });
 
-    var calcTotal = function(e) {
-        var totalPrice = 0.0;
-        var albums = viewModel.cartItems.view();
-        for (var i = 0; i < albums.length; i++) {
-            totalPrice += albums[i].get("Album.Price") * albums[i].get("Quantity");
-        }
-        viewModel.set("total", totalPrice);
+    var calcTotal = function (e) {
+        viewModel.set("total", store.cart.getTotalPrice());
     };
 
     cartDataSource.bind("change", calcTotal);

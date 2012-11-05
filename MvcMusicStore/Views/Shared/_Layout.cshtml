@@ -13,7 +13,6 @@
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/libs")
     </head>
     <body>
         <div id="wrapper">
@@ -73,6 +72,7 @@
         @Html.Partial("_SearchResultTemplatePartial")
 
         <script src="~/Scripts/kendo.all.min.js"></script>
+        @Scripts.Render("~/bundles/libs")
         @Scripts.Render("~/bundles/app")
         @RenderSection("scripts", required: false)
     </body>

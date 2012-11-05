@@ -56,12 +56,10 @@
         },
 
         refresh: function () {
-            // re calculate total price
-            var totalPrice = 0.0;
             var albums = this.dataSource.view();
-            for (var i = 0; i < albums.length; i++) {
-                totalPrice += albums[i].Album.Price * albums[i].Quantity;
-            }
+
+            // update total price
+            var totalPrice = this.dataSource.aggregates().Total ? this.dataSource.aggregates().Total.sum : 0;
             var totalElement = $(this.element).find(".cm-amount");
             totalElement.text(kendo.toString(totalPrice, "c"));
 

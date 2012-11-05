@@ -54,4 +54,11 @@
         that.getCart().data([]);
         _setCartJson();
     };
+
+    this.getTotalPrice = function () {
+        // Return the aggregate of album totals.
+        // When there are no albums in the cart, the '.Total' aggregate does not exist.
+        var aggregates = that.getCart().aggregates();
+        return aggregates.Total ? aggregates.Total.sum : 0;
+    }
 };

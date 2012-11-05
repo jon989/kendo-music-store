@@ -7,7 +7,7 @@
             var window = $(document.createElement('div'));
 
             // Apply template to the placeholder element, and bind the viewmodel.
-            var templateHtml = $(document.getElementById(template)).html();
+            var templateHtml = $(template).html();
             window.html(kendo.template(templateHtml)(viewModel));
             kendo.bind(window, viewModel);
 
@@ -30,7 +30,7 @@
             window.data("kendoWindow").open();
         },
 
-        _getAlbumDetailsViewModel = function (data) {
+        _createAlbumDetailsViewModel = function (data) {
             return kendo.observable({
                 quantity: 1,
                 data: data,
@@ -56,7 +56,7 @@
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
-                    _openWindow("album-details-template", _getAlbumDetailsViewModel(data));
+                    _openWindow("#album-details-template", _createAlbumDetailsViewModel(data));
                 }
             });
         },
