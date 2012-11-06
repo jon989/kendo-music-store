@@ -6,11 +6,11 @@
 
 <script id="rowTemplate" type="text/x-kendo-tmpl">
     <tr>
-        <td class="album-wide" data-album-id="${data.AlbumId}">
-            <img src="${ Album.AlbumArtUrl }" />
+        <td class="album-wide">
+            <img data-bind="attr: {src: Album.AlbumArtUrl }" />
             <div>
-                <span class="title" data-bind="text: Album.Title"></span>
-                <span class="atrist" data-bind="text: Album.Artist.Name"></span>
+                <span data-bind="text: Album.Title"></span>
+                <span data-bind="text: Album.Artist.Name"></span>
             </div>
         </td>
         <td data-bind="textFormatted: Album.Price" data-format="c"></td>
@@ -30,7 +30,13 @@
     data-bind="source: cartItems"
     data-row-template="rowTemplate"
     data-scrollable="false"
-    data-columns="['Item', { title: 'Price', width: '100px' }, { title: 'Quantity', width: '100px' }, { title: 'Remove', width: '100px' }, { title: 'Total', width: '100px' }]"></div>
+    data-columns="[
+        'Item',
+        { title: 'Price', width: '100px' },
+        { title: 'Quantity', width: '100px' },
+        { title: 'Remove', width: '100px' },
+        { title: 'Total', width: '100px' }
+    ]"></div>
 
 <div class="grid-footer">
     Subtotal: <span data-bind="textFormatted: total" data-format="c"></span>

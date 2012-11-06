@@ -61,6 +61,7 @@
             </div>
 
             @Html.Label("shippingDate", "Select a Ship Date")
+            <span class="note">Orders can be set to ship later, up to 60 days in the future.</span>
             <div class="editor-field">
                 @(Html.Kendo().Calendar()
                     .Name("shippingDate")

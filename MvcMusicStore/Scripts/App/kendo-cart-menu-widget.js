@@ -11,21 +11,12 @@
      * Provides a button to proceed to checkout screen.
 */
 (function ($, kendo) {
-    // shorten references to variables.
-    var ui = kendo.ui,
-		Widget = ui.Widget,
-		CHANGE = "change";
-
-    var CartMenu = Widget.extend({
-
-        // composited widgets
-        menu: {},
-        listView: {},
+    var CartMenu = kendo.ui.Widget.extend({
 
         // method called when a new widget is created
         init: function (element, options) {
             var that = this;
-            Widget.fn.init.call(that, element, options);
+            kendo.ui.Widget.fn.init.call(that, element, options);
 
             // create default template
             // Note that the element with class="k-delete-button" will automatically be wired by Kendo to delete the corresponding item from the dataSource.
@@ -55,7 +46,7 @@
             template: ""
         },
 
-        refresh: function () {
+        _refresh: function () {
             var albums = this.dataSource.view();
 
             // update total price
@@ -88,8 +79,8 @@
             that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
 
             // bind to the change event to refresh the widget
-            that.dataSource.bind(CHANGE, function () {
-                that.refresh();
+            that.dataSource.bind("change", function () {
+                that._refresh();
             });
 
             // trigger a read on the dataSource if one hasn't happened yet
@@ -99,5 +90,5 @@
         }
     });
 
-    ui.plugin(CartMenu);
+    kendo.ui.plugin(CartMenu);
 })(jQuery, kendo);

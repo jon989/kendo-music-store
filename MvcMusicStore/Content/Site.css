@@ -1042,6 +1042,24 @@ footer ul li img
     clear: both;
 }
 
+.checkout-info .note
+{
+    display: block;
+    width: 200px;
+    font-size: .9em;
+    font-style: italic;
+    color: #999;
+    margin-bottom: 4px;
+    padding-left: 4px;
+}
+
+.checkout-info .k-tooltip-validation
+{
+    margin-left: -30px;
+    background-color: rgba(255, 0, 0, .2);
+    border: none;
+}
+
 .k-calendar td.k-state-selected a
 {
     background-color: #D88E2F;
