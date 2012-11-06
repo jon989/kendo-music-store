@@ -186,7 +186,7 @@
         selectedGenreChartType = genreChartTypes[$(this.select()[0]).index()];
 
         if (selectedGenreChartType.type === "cake") {
-            $("#genre-chart").html('<a href="http://knowyourmeme.com/memes/the-cake-is-a-lie"><span class="cake">The cake is a lie!</span> <img src="/content/images/cake.png" alt="The Cake is a Lie!" /></a>');
+            $("#genre-chart").html('<a href="http://knowyourmeme.com/memes/the-cake-is-a-lie"><img src="/content/images/cake.png" alt="The Cake is a Lie!" /><span class="cake">The cake is a lie!</span></a>');
         } else {
             $("#genre-chart").text("");
             $("#genre-chart").show();

@@ -945,7 +945,6 @@ footer ul li img
     text-transform: uppercase;
     display: block;
     clear:right;
-    padding-bottom: 20px;
 }
 
 
@@ -981,7 +980,7 @@ footer ul li img
 {
     clear: none;
     min-height: 400px;
-    font-size: 2em;
+    font-size: 1.2em;
     text-align: center;
     color: #a33636;
 }
