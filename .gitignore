@@ -20,3 +20,4 @@ _ReSharper.*
 *.tmp
 ~$*
 MvcMusicStore/App_Data/*
+.JustCode
