@@ -1,9 +1,6 @@
-﻿using MvcMusicStore.Filters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 using System.Web.Security;
+using MvcMusicStore.Filters;
 using WebMatrix.WebData;
 
 namespace MvcMusicStore
@@ -20,7 +17,7 @@ namespace MvcMusicStore
         private static void CreateAdminUser()
         {
             string _username = "Owner";
-            string _password = "p@ssword123";
+            string _password = ConfigurationManager.AppSettings["adminPwd"] ?? "p@ssword123";
             string _role = "Administrator";
 
             new InitializeSimpleMembershipAttribute().OnActionExecuting(null);

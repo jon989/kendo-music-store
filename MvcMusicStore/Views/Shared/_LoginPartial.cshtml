@@ -10,7 +10,7 @@
         }
     </text>
 } else {
-    <ul>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "k-button" })</li>
-    </ul>
+    @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "k-button" })
+    <a href="/StoreManager" class="k-button">Manage Store</a>
+    <a href="/StoreManager/Graphs" class="k-button">View Sales Graphs</a>
 }

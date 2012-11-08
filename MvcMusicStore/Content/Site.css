@@ -1,15 +1,15 @@
 ﻿/*	Global Specifications
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 @font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.svg#icomoon') format('svg'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot');
+    src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.svg#icomoon') format('svg'),
+        url('fonts/icomoon.woff') format('woff'),
+        url('fonts/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 *
@@ -38,7 +38,7 @@ a:link
 
 
 /*	Layout
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 html 
     {
@@ -78,7 +78,7 @@ h3
 
 
 /*	Customer View Header + Logo
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 header
     {
@@ -111,9 +111,9 @@ header h1 a
         display: block;
         background: url(/content/images/awesomesauce-logo.png) no-repeat;
         -webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
 header h1 a:hover
@@ -125,7 +125,7 @@ header h1 a:hover
 
 
 /*	Global Rounded Buttons
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .k-button
     {
@@ -138,9 +138,9 @@ header h1 a:hover
         -webkit-border-radius: 3px;
         text-decoration: none;
         -webkit-transition: all 0.3s ease-in-out;
-	 -moz-transition: all 0.3s ease-in-out;
-	 -o-transition: all 0.3s ease-in-out;
-	  transition: all 0.3s ease-in-out;
+     -moz-transition: all 0.3s ease-in-out;
+     -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
         cursor: pointer;
         border: none;
     }
@@ -153,7 +153,7 @@ header h1 a:hover
 
 
 /*	Login Button
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .login-button
     {
@@ -183,7 +183,7 @@ header h1 a:hover
 
 
 /*	Customer View Global Nav + Kendo Overrides
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .k-menu
     {
@@ -207,9 +207,9 @@ header h1 a:hover
         color: #999;
         background:transparent;
         -webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
     }
 
@@ -236,8 +236,8 @@ header h1 a:hover
    {
        -webkit-transition: all 0.3s ease-in-out;
        -moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
    }
 
 .k-menu .k-item .k-item a.k-link:hover
@@ -262,8 +262,8 @@ header h1 a:hover
        color: #2e2e2e;
        -webkit-transition: all 0.3s ease-in-out;
        -moz-transition: all 0.3s ease-in-out;
-	   -o-transition: all 0.3s ease-in-out;
-	    transition: all 0.3s ease-in-out;
+       -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
    }
 
 .k-menu .k-popup .k-item .k-link:hover
@@ -293,7 +293,7 @@ header h1 a:hover
 
 
 /* Shopping Cart Menu
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 #cart-menu
     {
@@ -374,7 +374,7 @@ header h1 a:hover
 
 
 /*	Global Search
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .k-autocomplete
     {
@@ -382,9 +382,9 @@ header h1 a:hover
         width: 250px;
         margin-top: 15px;
         -webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
 .k-autocomplete.k-state-hover
@@ -402,9 +402,9 @@ header h1 a:hover
     {
         margin: 5px 0;
         -webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
 #main-search-list .k-state-hover
@@ -446,7 +446,7 @@ header h1 a:hover
 
 
 /*	Home Page Content
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 
 #promotion
@@ -467,7 +467,7 @@ header h1 a:hover
 
 
 /*	Footer
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 footer
     {
@@ -497,9 +497,9 @@ footer ul li
         padding-right: 20px;
         float: left;
         -webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
         opacity: 0.7;
         -moz-opacity: 0.7;
         -webkit-opacity: 0.7;
@@ -520,7 +520,7 @@ footer ul li img
 
 
 /*	Albums
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .album
     {
@@ -548,9 +548,9 @@ footer ul li img
         border: 1px solid #c7c7c7;
         padding: 4px;
         -webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
 .album img:hover
@@ -578,7 +578,7 @@ footer ul li img
 
 
 /*	Album Popup Window
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .album-details .image-container
     {
@@ -635,9 +635,9 @@ footer ul li img
         border-color: none;
         background-color: #E9E9E9;
         -webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
 .k-numeric-wrap.k-state-hover
@@ -669,7 +669,7 @@ footer ul li img
 
 
 /*	Login Page
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .login
     {
@@ -701,9 +701,9 @@ footer ul li img
     {
        color:#D88E2F;
        -webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	 -o-transition: all 0.3s ease-in-out;
-	  transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+     -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
 
 .login-small a:hover
@@ -718,7 +718,7 @@ footer ul li img
 
 
 /*	Shopping Cart Review
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .cart-search
 {
@@ -775,7 +775,7 @@ footer ul li img
 
 
 /* Contact page
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .contact
     {
@@ -810,9 +810,9 @@ footer ul li img
     {
        color:#D88E2F;
        -webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	 -o-transition: all 0.3s ease-in-out;
-	  transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+     -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
 
 .contact span a:hover
@@ -842,7 +842,7 @@ footer ul li img
 
 
 /*	List-View (Albums)
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .k-pager-wrap
 {
@@ -861,7 +861,7 @@ footer ul li img
 
 
 /*	Sales Graphs
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 #date-range, #genre-chart-type
 {
@@ -882,9 +882,9 @@ footer ul li img
         -webkit-border-radius: 3px;
         text-decoration: none;
         -webkit-transition: all 0.3s ease-in-out;
-	     -moz-transition: all 0.3s ease-in-out;
-	     -o-transition: all 0.3s ease-in-out;
-	     transition: all 0.3s ease-in-out;
+         -moz-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+         transition: all 0.3s ease-in-out;
         cursor: pointer;
         border: none;
     }
@@ -949,7 +949,7 @@ footer ul li img
 
 
 /* Genre Chart
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .selector
 {
@@ -980,7 +980,7 @@ footer ul li img
 {
     clear: none;
     min-height: 400px;
-    font-size: 1.2em;
+    font-size: .6em;
     text-align: center;
     color: #a33636;
 }
@@ -1027,7 +1027,7 @@ footer ul li img
 
 
 /* Checkout
-	------------------------------------------------------- */
+    ------------------------------------------------------- */
 
 .checkout-info > div
 {
@@ -1043,8 +1043,8 @@ footer ul li img
 
 .checkout-info .note
 {
-    display: block;
     width: 200px;
+    display: block;
     font-size: .9em;
     font-style: italic;
     color: #999;
@@ -1070,7 +1070,33 @@ footer ul li img
 }
 
 .checkout-complete .k-button
-    {
-        margin-top: 30px;
-        font-size: 15px;
-    }
+{
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.demo-note
+{
+    display: block;
+    font-size: .9em;
+    font-style: italic;
+    color: #999;
+    margin-bottom: 4px;
+    padding-left: 4px;
+    text-indent: -18px;
+    margin-left: 18px;
+}
+
+.demo-note:before
+{
+    content: "*";
+    font-size: 2em;
+    font-style: italic;
+    color: #CE6A54;
+}
+
+.demo-note.demo-graph-note
+{
+    float: right;
+    width: 300px;
+}

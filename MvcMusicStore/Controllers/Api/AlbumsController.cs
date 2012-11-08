@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,7 +10,7 @@ namespace MvcMusicStore.Controllers.Api
 {
     public class AlbumsController : ApiController
     {
-        MusicStoreEntities storeDB = new MusicStoreEntities();
+        readonly MusicStoreEntities storeDB = new MusicStoreEntities();
 
         // GET api/albums
         [Queryable]
@@ -38,9 +38,15 @@ namespace MvcMusicStore.Controllers.Api
         }
 
         // POST api/albums
+        [Authorize(Roles = "Administrator")]
         public HttpResponseMessage Post([FromBody]Album value)
         {
             var message = new HttpResponseMessage();
+            if (ConfigurationManager.AppSettings["enableEdits"] == "false")
+            {
+                message.StatusCode = HttpStatusCode.NoContent;
+                return message;
+            }
 
             if (ModelState.IsValid)
             {
@@ -57,9 +63,15 @@ namespace MvcMusicStore.Controllers.Api
         }
 
         // PUT api/albums/5
+        [Authorize(Roles = "Administrator")]
         public HttpResponseMessage Put(Album value)
         {
             var message = new HttpResponseMessage();
+            if (ConfigurationManager.AppSettings["enableEdits"] == "false")
+            {
+                message.StatusCode = HttpStatusCode.NoContent;
+                return message;
+            }
 
             if (ModelState.IsValid)
             {
@@ -81,8 +93,12 @@ namespace MvcMusicStore.Controllers.Api
         }
 
         // DELETE api/albums/5
+        [Authorize(Roles = "Administrator")]
         public void Delete(int id)
         {
+            if (ConfigurationManager.AppSettings["enableEdits"] == "false")
+                return;
+
             var albumToRemove = storeDB.Albums.Single(x => x.AlbumId == id);
             storeDB.Albums.Remove(albumToRemove);
             storeDB.SaveChanges();
