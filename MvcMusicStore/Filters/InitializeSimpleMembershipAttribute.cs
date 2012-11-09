@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
-using WebMatrix.WebData;
 using MvcMusicStore.Models;
+using WebMatrix.WebData;
 
 namespace MvcMusicStore.Filters
 {
@@ -34,8 +33,6 @@ namespace MvcMusicStore.Filters
                         if (!context.Database.Exists())
                         {
                             context.Database.Initialize(true);
-                            // Create the SimpleMembership database without Entity Framework migration schema
-                            //((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                         }
                     }
 

@@ -9,13 +9,6 @@ namespace MvcMusicStore
     {
         public static void Configure()
         {
-            //System.Data.Entity.Database.SetInitializer(new MvcMusicStore.Models.SampleData());
-
-            CreateAdminUser();
-        }
-
-        private static void CreateAdminUser()
-        {
             string _username = "Owner";
             string _password = ConfigurationManager.AppSettings["adminPwd"] ?? "p@ssword123";
             string _role = "Administrator";
