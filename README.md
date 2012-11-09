@@ -9,8 +9,8 @@ The project is based on Microsoft's ASP.NET [MVC Music Store](http://mvcmusicsto
 ## Features:
 
 - Kendo UI Web widgets in action
+- Kendo UI DataViz in action
 - MVVM binding
 - Custom MVVM bindings
 - Custom widget creation
-- Kendo UI DataViz in action
 - ASP.NET MVC web services powered by Entity Framework
