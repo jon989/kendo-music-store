@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MvcMusicStore.Models
 {
-    public class SampleData : CreateDbIfNotExists<MusicStoreEntities>
+    public class SampleData : CreateDatabaseIfNotExists<MusicStoreEntities>
     {
         private static readonly Random random = new Random();
 
@@ -21,6 +21,9 @@ namespace MvcMusicStore.Models
 
         protected override void Seed(MusicStoreEntities context)
         {
+            if (context.Albums.Any())
+                return;
+
             var genres = AddGenres(context);
             var artists = AddArtists(context);
             AddAlbums(context, genres, artists);
@@ -604,7 +607,6 @@ namespace MvcMusicStore.Models
             context.SaveChanges();
             return genres;
         }
-
         //private static void AddOrders(MusicStoreEntities context)
         //{
         //    var now = DateTime.Now;
@@ -613,7 +615,6 @@ namespace MvcMusicStore.Models
         //        AddOrdersForDay(context, day);
         //    }
         //}
-
         //private static void AddOrdersForDay(MusicStoreEntities context, DateTime day)
         //{
         //    var ordersToMake = random.Next(3, 7);
@@ -623,7 +624,6 @@ namespace MvcMusicStore.Models
         //    }
         //    context.SaveChanges();
         //}
-
         //private static void AddFakeOrder(MusicStoreEntities context, DateTime day)
         //{
         //    var order = FakeO.Create.Fake<Order>(x => x.Address = FakeO.Address.StreetAddress(),
@@ -638,14 +638,10 @@ namespace MvcMusicStore.Models
         //        x => x.State = FakeO.Address.UsStateAbbr(),
         //        x => x.Username = "foo",
         //        x => x.OrderDetails = null);
-
         //    context.Orders.Add(order);
-
         //    var details = AddFakeOrderDetails(context, order);
-
         //    order.Total = details.Sum(x => x.UnitPrice * x.Quantity);
         //}
-
         //private static List<OrderDetail> AddFakeOrderDetails(MusicStoreEntities context, Order order)
         //{
         //    var albumsInOrder = random.Next(1, 2);
