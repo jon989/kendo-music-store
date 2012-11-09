@@ -30,10 +30,7 @@ namespace MvcMusicStore.Filters
                 {
                     using (var context = new MusicStoreEntities())
                     {
-//                        if (!context.Database.Exists())
-//                        {
-                            context.Database.Initialize(true);
-//                        }
+                        context.Database.Initialize(true);
                     }
 
                     WebSecurity.InitializeDatabaseConnection("MusicStoreEntities", "UserProfile", "UserId", "UserName", autoCreateTables: true);
