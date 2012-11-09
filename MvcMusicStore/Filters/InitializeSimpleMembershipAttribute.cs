@@ -25,20 +25,21 @@ namespace MvcMusicStore.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer(new SampleData());
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new MusicStoreEntities())
                     {
                         if (!context.Database.Exists())
                         {
+                            context.Database.Initialize(true);
                             // Create the SimpleMembership database without Entity Framework migration schema
-                            ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
+                            //((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("MusicStoreEntities", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

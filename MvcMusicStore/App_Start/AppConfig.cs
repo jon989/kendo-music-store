@@ -9,7 +9,7 @@ namespace MvcMusicStore
     {
         public static void Configure()
         {
-            System.Data.Entity.Database.SetInitializer(new MvcMusicStore.Models.SampleData());
+            //System.Data.Entity.Database.SetInitializer(new MvcMusicStore.Models.SampleData());
 
             CreateAdminUser();
         }

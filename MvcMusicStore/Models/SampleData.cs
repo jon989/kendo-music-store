@@ -7,7 +7,7 @@ namespace MvcMusicStore.Models
 {
     public class SampleData : DropCreateDatabaseIfModelChanges<MusicStoreEntities>
     {
-        private static Random random = new Random();
+        private static readonly Random random = new Random();
 
         private static string AlbumImg()
         {
