@@ -52,7 +52,7 @@
 
         viewAlbumDetails = function (albumId) {
             $.ajax({
-                url: config.albumsUrl + "/" + albumId,
+                url: config.albumsUrl + "(" + albumId + ")",
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
