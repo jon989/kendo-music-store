@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MvcMusicStore.Models
 {
-    public class SampleData : CreateDatabaseIfNotExists<MusicStoreEntities>
+    public class SampleData : CreateDbIfNotExists<MusicStoreEntities>
     {
         private static readonly Random random = new Random();
 
