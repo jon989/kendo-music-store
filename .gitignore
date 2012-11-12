@@ -21,3 +21,4 @@ _ReSharper.*
 ~$*
 MvcMusicStore/App_Data/*
 .JustCode
+.DS_Store
