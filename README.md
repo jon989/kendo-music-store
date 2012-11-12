@@ -1,4 +1,4 @@
-# Telerik Kendo UI Music Store Sample Project
+# Kendo UI Music Store Sample Project
 
 This project demonstrates the usage of [Kendo UI](http://www.kendoui.com) in a real-world scenario.
 The project is based on Microsoft's ASP.NET [MVC Music Store](http://mvcmusicstore.codeplex.com/).
