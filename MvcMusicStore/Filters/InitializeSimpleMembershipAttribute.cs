@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Threading;
 using System.Web.Mvc;
+using MvcMusicStore.Migrations;
 using MvcMusicStore.Models;
 using WebMatrix.WebData;
 
@@ -24,7 +25,7 @@ namespace MvcMusicStore.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer(new SampleData());
+                Database.SetInitializer(new MigrateDatabaseToLatestVersion<MusicStoreEntities, SampleData>());
 
                 try
                 {
