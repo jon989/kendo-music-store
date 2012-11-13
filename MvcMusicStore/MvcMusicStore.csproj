@@ -268,6 +268,7 @@
     <Content Include="Content\Images\AlbumArt\CD9.png" />
     <Content Include="Content\Images\AlbumArt\Uploaded.png" />
     <Content Include="Content\Images\awesomesauce-logo.png" />
+    <Content Include="Content\Images\cake.png" />
     <Content Include="Content\Images\Feature1.png" />
     <Content Include="Content\Images\Feature2.png" />
     <Content Include="Content\Images\Feature3.png" />
