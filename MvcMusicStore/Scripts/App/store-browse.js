@@ -30,7 +30,7 @@
 
     // Load the Genre data from the server.
     $.ajax({
-        url: store.config.genresUrl + "/" + genreId,
+        url: store.config.genresUrl + "(" + genreId + ")",
         type: "GET",
         dataType: "json",
         success: function (data) {
