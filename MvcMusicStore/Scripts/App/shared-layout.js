@@ -19,24 +19,11 @@
             serverPaging: true,
             pageSize: store.config.searchMaxResults,
             transport: {
-                read: {
-                    url: store.config.albumsUrl,
-                    dataType: "json"
-                },
-                parameterMap: function (options, type) {
-                    var paramMap = kendo.data.transports.odata.parameterMap(options);
-                    delete paramMap.$inlinecount;
-                    delete paramMap.$format;
-                    return paramMap;
-                }
+                read: store.config.albumsWithArtistsUrl
             },
             schema: {
-                data: function (data) {
-                    return data;
-                },
-                total: function (data) {
-                    return data.length;
-                }
+                data: store.config.wcfSchemaData,
+                total: store.config.wcfSchemaTotal
             }
         },
 

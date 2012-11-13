@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using MvcMusicStore.Models;
 
@@ -10,10 +8,9 @@ namespace MvcMusicStore.Controllers.Api
 {
     public class StoreSalesRevenueController : ApiController
     {
-        MusicStoreEntities storeDB = new MusicStoreEntities();
+        readonly MusicStoreEntities storeDB = new MusicStoreEntities();
 
         // GET api/storesalesrevenue
-        [Queryable]
         public IQueryable<SalesRevenue> Get(string start, string end)
         {
             storeDB.Configuration.ProxyCreationEnabled = false;

@@ -13,8 +13,13 @@
 
             loadGenres = function () {
                 new kendo.data.DataSource({
+                    type: "odata",
                     transport: {
-                        read: store.config.genresUrl
+                        read: store.config.genresUrl + "?$select=GenreId,Name"
+                    },
+                    schema: {
+                        data: store.config.wcfSchemaData,
+                        total: store.config.wcfSchemaTotal
                     }
                 }).fetch(function (data) {
                     translateGenres(data);
@@ -39,8 +44,13 @@
             
             loadArtists = function() {
                 new kendo.data.DataSource({
+                    type: "odata",
                     transport: {
-                        read: store.config.artistsUrl
+                        read: store.config.artistsUrl + "?$select=ArtistId,Name"
+                    },
+                    schema: {
+                        data: store.config.wcfSchemaData,
+                        total: store.config.wcfSchemaTotal
                     }
                 }).fetch(function(data) {
                     translateArtists(data);
@@ -61,38 +71,37 @@
             toolbar: ["create"],
 
             dataSource: {
+                type: "odata",
                 pageSize: store.config.manageAlbumsGridPageSize,
-                serverPaging: false,
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true,
                 transport: {
                     type: "odata",
                     read: {
-                        url: store.config.albumsUrl + "?noartist=true",
+                        url: store.config.albumsUrl,
                         type: "GET"
                     },
                     update: {
-                        url: store.config.albumsUrl,
-                        type: "PUT",
-                        contentType: "application/json",
+                        url: function (data) {
+                            return store.config.albumsUrl + "(" + data.AlbumId + ")"
+                        },
+                        type: "PUT"
                     },
                     destroy: {
                         url: function (data) {
-                            return store.config.albumsUrl + "/" + data.AlbumId;
+                            return store.config.albumsUrl + "(" + data.AlbumId + ")";
                         },
                         type: "DELETE"
                     },
                     create: {
                         url: store.config.albumsUrl,
-                        type: "POST",
-                        contentType: "application/json"
-                    },
-                    parameterMap: function (options, type) {
-                        if (type === "update" || type === "create") {
-                            return kendo.stringify(options);
-                        }
-                        return options;
+                        type: "POST"
                     }
                 },
                 schema: {
+                    data: store.config.wcfSchemaData,
+                    total: store.config.wcfSchemaTotal,
                     model:{
                         id: "AlbumId",
                         fields: {

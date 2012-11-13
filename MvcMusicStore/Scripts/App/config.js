@@ -1,8 +1,9 @@
 ﻿function Config() {
     // URLs to WebAPI Controllers
-    this.albumsUrl = "/Api/Albums";
-    this.artistsUrl = "/Api/Artists";
-    this.genresUrl = "/Api/Genres";
+    this.albumsUrl = "/Services/MusicStore.svc/Albums";
+    this.albumsWithArtistsUrl = "/Services/MusicStore.svc/Albums?$expand=Artist";
+    this.artistsUrl = "/Services/MusicStore.svc/Artists";
+    this.genresUrl = "/Services/MusicStore.svc/Genres";
     this.imagesUrl = "/Api/Images";
     this.salesByGenreUrl = "/Api/StoreSalesGenre";
     this.salesAndRevenueUrl = "/Api/StoreSalesRevenue";
@@ -23,4 +24,12 @@
     this.newAlbumDefaultGenre = 1;
     this.newAlbumDefaultArtist = 1;
     this.newAlbumDefaultPrice = 9.99;
+
+    // functions for reading results from WCF OData service.
+    this.wcfSchemaData = function (data) {
+        return data.value;
+    };
+    this.wcfSchemaTotal = function (data) {
+        return data["odata.count"];
+    };
 }
