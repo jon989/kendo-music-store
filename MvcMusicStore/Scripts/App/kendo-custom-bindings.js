@@ -8,7 +8,12 @@
         binding.doImageRotation = function () {
             var imageArray = binding.get();
             var nextImageUrl = imageArray[binding.imageIndex];
-            target.fadeTo('slow', 0, function () { target.attr('src', nextImageUrl).fadeTo('slow', 1); });
+
+            kendo.fx(target).fadeOut().play().then(function(){ 
+                target.attr("src", nextImageUrl);
+                kendo.fx(target).fadeIn().play();
+            });
+
             binding.imageIndex++;
             if (binding.imageIndex >= imageArray.length) {
                 binding.imageIndex = 0;
