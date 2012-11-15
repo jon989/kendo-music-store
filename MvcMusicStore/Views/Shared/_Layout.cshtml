@@ -26,15 +26,16 @@
                 </section>
 
                 <nav>
-                    <ul id="menu">
+
+                    <ul id="menu" data-role="menu" class="k-widget k-reset k-header k-menu k-menu-horizontal" style="opacity:0;">
              
-                        <li>Genres
-                            <ul>
+                        <li class="k-item k-state-default k-first">Genres
+                            <ul style="display:none;">
                                 @{Html.RenderAction("GenreMenu", "Store");}
                             </ul>
                         </li>
-                        <li>About
-                            <ul>
+                        <li class="k-item k-state-default">About
+                            <ul style="display:none;">
                                 <li>
                                     <div class="k-content menu-content">
                                         <img src="~/Images/kendo-logo.png" />
@@ -44,18 +45,20 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li class="k-item k-state-default k-last">@Html.ActionLink("Contact", "Contact", "Home", new { @class="k-link" })</li>
                     </ul>
                 </nav>
            
-                <section class="cart-search">
-                    <input id="main-search"/>
-                    <ul id="cart-menu"></ul>
+                <section class="cart-search" id="cart-search" style="opacity:0;">
+                    <span class="k-widget k-autocomplete k-header k-input k-state-default">
+                        <input id="main-search" class="k-input" placeholder="Search music..." />
+                    </span>
+                    <ul id="cart-menu" class="k-widget k-reset k-header k-menu k-menu-horizontal"></ul>
                 </section>
             </div>
         </header>
 
-        <div id="body">
+        <div id="body" style="opacity:0;">
             @RenderBody()
         </div>
     </div>
@@ -75,5 +78,10 @@
         @Scripts.Render("~/bundles/libs")
         @Scripts.Render("~/bundles/app")
         @RenderSection("scripts", required: false)
+
+        <script>
+            //FOUJUI FIX - Reveal body after UI initilization completes
+            $("#body").css("opacity", 1);
+        </script>
     </body>
 </html>

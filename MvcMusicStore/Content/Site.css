@@ -36,6 +36,15 @@ a:link
     *zoom: 1;
 }
 
+/*  Global CSS Transitions
+    ------------------------------------------------------- */
+
+* { 
+    -webkit-transition:opacity 1s;
+    -moz-transition:opacity 1s;
+    transition:opacity 1s;
+}
+
 
 /*	Layout
     ------------------------------------------------------- */

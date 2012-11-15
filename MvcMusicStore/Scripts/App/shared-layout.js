@@ -34,4 +34,7 @@
             store.viewAlbumDetails(albumId);
         }
     });
+
+    //FOUJUI FIX - Reveal body after UI initilization completes
+    $("#menu, #cart-search").css("opacity", 1);
 })(jQuery, kendo, store);
