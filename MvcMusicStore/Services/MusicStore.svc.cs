@@ -1,3 +1,4 @@
+using System.Configuration;
 using System.Data.Services;
 using System.Data.Services.Common;
 using System.Web;
@@ -20,6 +21,8 @@ namespace MvcMusicStore.Services
         {
             if (!HttpContext.Current.User.Identity.IsAuthenticated || !HttpContext.Current.User.IsInRole("Administrator"))
                 throw new DataServiceException(401, "Unauthorized");
+            if (ConfigurationManager.AppSettings["enableEdits"] != "true")
+                throw new DataServiceException(200, "Success");
         }
     }
 }
