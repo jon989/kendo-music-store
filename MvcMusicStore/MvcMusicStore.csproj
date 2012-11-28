@@ -217,6 +217,7 @@
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\Api\AccountApiController.cs" />
     <Compile Include="Controllers\Api\ImagesController.cs" />
     <Compile Include="Controllers\Api\StoreSalesGenreController.cs" />
     <Compile Include="Controllers\Api\StoreSalesRevenueController.cs" />
