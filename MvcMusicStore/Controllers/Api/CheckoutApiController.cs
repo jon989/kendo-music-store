@@ -37,11 +37,11 @@ namespace MvcMusicStore.Controllers.Api
                     error = ""
                 };
             }
-            catch
+            catch (Exception ex)
             {
                 return new
                 {
-                    error = "There was an error submitting your order."
+                    error = "There was an error submitting your order. " + ex.Message
                 };
             }
         }
