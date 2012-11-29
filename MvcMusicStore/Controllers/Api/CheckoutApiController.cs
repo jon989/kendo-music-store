@@ -17,6 +17,9 @@ namespace MvcMusicStore.Controllers.Api
         {
             try
             {
+                if (!User.Identity.IsAuthenticated)
+                    throw new Exception("You are not logged in.");
+
                 var order = orderSubmit.Order;
                 order.Username = User.Identity.Name;
                 order.OrderDate = DateTime.Now;
