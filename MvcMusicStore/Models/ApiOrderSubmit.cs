@@ -11,5 +11,6 @@ namespace MvcMusicStore.Models
     {
         public Order Order { get; set; }
         public ApiOrderItem[] Items { get; set; }
+        public LoginModel Login { get; set; }
     }
 }

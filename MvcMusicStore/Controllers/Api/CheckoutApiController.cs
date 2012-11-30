@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using MvcMusicStore.Models;
+using WebMatrix.WebData;
 
 namespace MvcMusicStore.Controllers.Api
 {
@@ -17,22 +18,18 @@ namespace MvcMusicStore.Controllers.Api
         {
             try
             {
-                if (!User.Identity.IsAuthenticated)
+                if (!(orderSubmit.Login != null && WebSecurity.Login(orderSubmit.Login.UserName, orderSubmit.Login.Password)))
                     throw new Exception("You are not logged in.");
 
+                var cartItems = BuildCartItems(orderSubmit.Items);
+
                 var order = orderSubmit.Order;
-                order.Username = User.Identity.Name;
+                order.Username = orderSubmit.Login.UserName;
                 order.OrderDate = DateTime.Now;
 
-                //Add the Order
                 storeDB.Orders.Add(order);
-
-                //Process the order
-                var cart = ShoppingCart.GetCart(storeDB, HttpContext.Current);
-                var cartItems = BuildCartItems(orderSubmit.Items);
-                cart.CreateOrder(order, cartItems);
-
-                // Save all changes
+                
+                CreateOrder(order, cartItems);
                 storeDB.SaveChanges();
 
                 return new
@@ -52,6 +49,30 @@ namespace MvcMusicStore.Controllers.Api
         private List<Cart> BuildCartItems(ApiOrderItem[] orderItems)
         {
             return orderItems.Select(x => new Cart { AlbumId = x.albumId, Count = x.quantity }).ToList();
+        }
+
+        private void CreateOrder(Order order, List<Cart> cartItems)
+        {
+            decimal orderTotal = 0;
+
+            foreach (var item in cartItems)
+            {
+                var album = storeDB.Albums.Find(item.AlbumId);
+
+                var orderDetail = new OrderDetail
+                {
+                    AlbumId = item.AlbumId,
+                    OrderId = order.OrderId,
+                    UnitPrice = album.Price,
+                    Quantity = item.Count,
+                };
+
+                orderTotal += (item.Count * album.Price);
+
+                storeDB.OrderDetails.Add(orderDetail);
+            }
+
+            order.Total = orderTotal;
         }
     }
 }
