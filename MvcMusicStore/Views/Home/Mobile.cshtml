@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Get Music Store Mobile";
+}
+
+@section scripts
+{
+    <script src="~/Scripts/App/home-mobile.js"></script>
+}
+
+<img id="android-screenshot" src="~/Content/Images/Mobile/android-screenshot.png" /><img id="ios-screenshot" src="~/Content/Images/Mobile/ios-screenshot.png" />
+
+<h3>Get the Mobile Music Store</h3>
+
+<p>The mobile music store was built using <span class="product-name">Icenium</span> and Kendo <span class="product-name">UI Mobile</span>.</p>
+<p><a href="http://www.icenium.com"><img src="~/Content/Images/Mobile/icenium-logo.png" /></a></p>
+
+<select id="mobile-device-selection">
+    <option value="none">Select your device...</option>
+    <option value="ios">iOS</option>
+    <option value="android">Android</option>
+</select>
+
+<div id="get-mobile-ios" class="get-mobile-panel" style="display:none;">
+    <p>
+        iOS users must first install <span class="product-name">Icenium Ion</span> from the App Store by scanning this QR code:
+        <img class="qr-code" src="~/Content/Images/Mobile/ion-qr.png" />
+    </p>
+
+    <p>
+        Once Ion is installed, scan this QR code to install the Music Store app:
+        <img class="qr-code" src="~/Content/Images/Mobile/ios-qr.png" />
+    </p>
+</div>
+
+<div id="get-mobile-android" class="get-mobile-panel" style="display:none;">
+    <p>
+        Scan this QR code to install the Music Store app:
+        <img class="qr-code" src="~/Content/Images/Mobile/android-qr.png" />
+    </p>
+</div>

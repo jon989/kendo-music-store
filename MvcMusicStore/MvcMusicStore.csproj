@@ -369,6 +369,7 @@
     <Content Include="Scripts\App\checkout-addressandpayment.js" />
     <Content Include="Scripts\App\checkout-complete.js" />
     <Content Include="Scripts\App\config.js" />
+    <Content Include="Scripts\App\home-mobile.js" />
     <Content Include="Scripts\date.js" />
     <Content Include="Scripts\App\home-index.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -448,6 +449,7 @@
     <Content Include="Views\Shared\_AlbumListTemplatePartial.cshtml" />
     <Content Include="Views\StoreManager\Graphs.cshtml" />
     <Content Include="Views\Shared\_SearchResultTemplatePartial.cshtml" />
+    <Content Include="Views\Home\Mobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

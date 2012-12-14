@@ -1111,3 +1111,42 @@ footer ul li img
     float: right;
     width: 300px;
 }
+
+.qr-code
+{
+    display: block;
+    margin: 2em 0;
+}
+
+.get-mobile-panel p
+{
+    margin: 40px 0px;
+    font-size: 1.1em;
+}
+
+.product-name
+{
+    color: #D88E2F;
+}
+
+#ios-screenshot
+{
+    float: right;
+    -moz-transform:rotate(-10deg);
+    -webkit-transform:rotate(-10deg);
+    -o-transform:rotate(-10deg);
+    -ms-transform:rotate(-10deg);
+    rotation: -10deg;
+    z-index: 10;
+}
+
+#android-screenshot
+{
+    float: right;
+    -moz-transform:rotate(10deg);
+    -webkit-transform:rotate(10deg);
+    -o-transform:rotate(10deg);
+    -ms-transform:rotate(10deg);
+    rotation: 10deg;
+    z-index: 5;
+}
