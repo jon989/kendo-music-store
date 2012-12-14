@@ -1150,3 +1150,11 @@ footer ul li img
     rotation: 10deg;
     z-index: 5;
 }
+
+#icenium-logo
+{
+    float: right;
+    clear: both;
+    margin-top: 20px;
+    margin-right: 33px;
+}
