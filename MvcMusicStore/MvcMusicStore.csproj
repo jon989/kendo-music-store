@@ -289,7 +289,13 @@
     <Content Include="Content\Images\Feature1.png" />
     <Content Include="Content\Images\Feature2.png" />
     <Content Include="Content\Images\Feature3.png" />
+    <Content Include="Content\Images\icenium-logo.png" />
     <Content Include="Content\Images\kendo-ui-logo.png" />
+    <Content Include="Content\Images\Mobile\android-screenshot.png" />
+    <Content Include="Content\Images\Mobile\ion-qr.png" />
+    <Content Include="Content\Images\Mobile\android-qr.png" />
+    <Content Include="Content\Images\Mobile\ios-qr.png" />
+    <Content Include="Content\Images\Mobile\ios-screenshot.png" />
     <Content Include="Content\Images\telerik-logo.png" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\themes\base\Default\editor.png" />
