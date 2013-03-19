@@ -1158,3 +1158,65 @@ footer ul li img
     margin-top: 20px;
     margin-right: 33px;
 }
+
+#device-wrapper
+{
+    height: 460px;
+    overflow: hidden;
+    position: relative;
+    width: 320px;
+    background-image: url(/Content/Images/Mobile/iphone.png);
+    background-size: cover;
+    padding: 132px 72px 188px 66px;
+    margin: 0;
+}
+
+    #device-wrapper iframe
+    {
+        border: none;
+        height: 460px;
+        width: 320px;
+    }
+
+div.old-browser
+{
+    display: block;
+    background: #333;
+    height: 460px;
+    width: 320px;
+}
+
+.old-browser .content
+{
+    width: 100%;
+    height: 120%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.old-browser .content:before
+{
+    content: "\a0";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+
+.old-browser .centered
+{
+    margin: 20px;
+    color: #eee;
+    font-size: 12px;
+    display: inline-block;
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(255,255,255,.3);
+}
+
+.old-browser .centered strong
+{
+    font-size: 16px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}

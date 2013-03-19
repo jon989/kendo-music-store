@@ -5,6 +5,13 @@
 @section scripts
 {
     <script src="~/Scripts/App/home-mobile.js"></script>
+    <script type="text/javascript">
+        if (!(kendo.support.browser.webkit || kendo.support.browser.mozilla)) {
+            $("#device-wrapper")
+                .empty()
+                .html("<div class='old-browser'><div class='content'><span class='centered'><strong>Kendo UI Mobile</strong><span>is fully supported only in WebKit based browsers.</span><br><br>Please use a compatible desktop browser or open the examples in a mobile WebKit based browser.</span></div></div>");
+        }
+    </script>
 }
 
 <img id="android-screenshot" src="~/Content/Images/Mobile/android-screenshot.png" />
@@ -17,6 +24,7 @@
     The source code for the mobile app is available <a class="product-name" href="http://www.github.com/telerik/kendo-mobile-music-store">on GitHub</a>.
 </p>
 
+<h2>Run on a Device:</h2>
 <select id="mobile-device-selection">
     <option value="none">Select your device...</option>
     <option value="ios">iOS</option>
@@ -40,4 +48,9 @@
         Scan this QR code to install the Music Store app:
         <img class="qr-code" src="~/Content/Images/Mobile/android-qr.png" />
     </p>
+</div>
+
+<h2>Run in Simulator:</h2>
+<div id="device-wrapper" class="ios km-root km-phone">
+    <iframe src="/Mobile/Kendo%20Music%20Store/index.html"></iframe>
 </div>

@@ -11,6 +11,7 @@ namespace MvcMusicStore
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("Services/{resource}.svc/{*pathInfo}");
             routes.IgnoreRoute("*.html");
+            routes.IgnoreRoute("Mobile/{*pathInfo}");
 
             routes.MapRoute(
                 name: "Default",
