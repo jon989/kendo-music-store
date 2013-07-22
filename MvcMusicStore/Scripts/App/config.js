@@ -27,7 +27,11 @@
 
     // functions for reading results from WCF OData service.
     this.wcfSchemaData = function (data) {
-        return data.value;
+        if (data.value) {
+            return data.value;
+        }
+        delete data["odata.metadata"];
+        return [data];
     };
     this.wcfSchemaTotal = function (data) {
         return data["odata.count"];

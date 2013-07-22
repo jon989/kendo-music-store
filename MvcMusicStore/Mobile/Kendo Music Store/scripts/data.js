@@ -1,6 +1,10 @@
 define(["jQuery", "kendo", "config", "utils"], function ($, kendo, config, utils) {
     var _wcfSchemaData = function (data) {
-            return data.value;
+            if (data.value) {
+                return data.value;
+            }
+            delete data["odata.metadata"];
+            return [data];
         },
 
         _wcfSchemaTotal = function (data) {
