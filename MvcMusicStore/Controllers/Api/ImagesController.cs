@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web.Hosting;
 using System.Web.Http;
 
@@ -32,8 +34,13 @@ namespace MvcMusicStore.Controllers.Api
                 throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.UnsupportedMediaType));
             }
             Request.Content.LoadIntoBufferAsync().Wait();
-            var task = Request.Content.ReadAsMultipartAsync();
-            var result = task.Result;
+            var result = Task.Factory
+                             .StartNew(() => Request.Content.ReadAsMultipartAsync().Result,
+                                       CancellationToken.None,
+                                       TaskCreationOptions.LongRunning, // guarantees separate thread http://stackoverflow.com/questions/15201255/request-content-readasmultipartasync-never-returns
+                                       TaskScheduler.Default).Result;
+
+            
             var contents = result.Contents;
             HttpContent httpContent = contents.First();
             string uploadedFileMediaType = httpContent.Headers.ContentType.MediaType;
