@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Hosting;
 using System.Web.Http;
 
@@ -23,7 +22,7 @@ namespace MvcMusicStore.Controllers.Api
             {"image/gif", "gif"}
         };
 
-        public async Task<HttpResponseMessage> Post()
+        public HttpResponseMessage Post()
         {
             if (ConfigurationManager.AppSettings["enableEdits"] == "false")
                 return ControllerContext.Request.CreateResponse(HttpStatusCode.Created, Path.Combine(IMAGE_BASE_PATH, "Uploaded.png").Replace('\\', '/'));
@@ -32,9 +31,9 @@ namespace MvcMusicStore.Controllers.Api
             {
                 throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.UnsupportedMediaType));
             }
-            await Request.Content.LoadIntoBufferAsync();
+            Request.Content.LoadIntoBufferAsync().Wait();
             var task = Request.Content.ReadAsMultipartAsync();
-            var result = await task;
+            var result = task.Result;
             var contents = result.Contents;
             HttpContent httpContent = contents.First();
             string uploadedFileMediaType = httpContent.Headers.ContentType.MediaType;
