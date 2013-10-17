@@ -345,6 +345,7 @@
     <Content Include="Mobile\Kendo Music Store\kendo\styles\images\KendoUI.ttf" />
     <Content Include="Mobile\Kendo Music Store\kendo\styles\images\KendoUI.woff" />
     <Content Include="Mobile\README.md" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
