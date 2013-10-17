@@ -1156,7 +1156,7 @@ footer ul li img
     overflow: hidden;
     position: relative;
     width: 320px;
-    background-image: url(/Content/Images/Mobile/iphone.png);
+    background-image: url(Images/Mobile/iphone.png);
     background-size: cover;
     padding: 132px 72px 188px 66px;
     margin: 0;

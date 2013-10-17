@@ -4,7 +4,7 @@
 
 @section scripts
 {
-    <script src="~/Scripts/App/home-mobile.js"></script>
+    <script src=@Url.Content("~/Scripts/App/home-mobile.js")></script>
     <script type="text/javascript">
         if (!(kendo.support.browser.webkit || kendo.support.browser.mozilla)) {
             $("#device-wrapper")
@@ -14,9 +14,9 @@
     </script>
 }
 
-<img id="android-screenshot" src="~/Content/Images/Mobile/android-screenshot.png" />
-<img id="ios-screenshot" src="~/Content/Images/Mobile/ios-screenshot.png" />
-<a id="icenium-logo" href="http://www.icenium.com"><img src="~/Content/Images/icenium-logo.png" /></a>
+<img id="android-screenshot" src=@Url.Content("~/Content/Images/Mobile/android-screenshot.png") />
+<img id="ios-screenshot" src=@Url.Content("~/Content/Images/Mobile/ios-screenshot.png") />
+<a id="icenium-logo" href="http://www.icenium.com"><img src=@Url.Content("~/Content/Images/icenium-logo.png") /></a>
 
 <h3>Get the Mobile Music Store</h3>
 
@@ -34,23 +34,23 @@
 <div id="get-mobile-ios" class="get-mobile-panel" style="display:none;">
     <p>
         iOS users must first install <a class="product-name" href="http://icenium.com/mobile-app-platform/features/say-goodbye-to-provisioning">Icenium Ion</a> from the App Store by scanning this QR code:
-        <img class="qr-code" src="~/Content/Images/Mobile/ion-qr.png" />
+        <img class="qr-code" src=@Url.Content("~/Content/Images/Mobile/ion-qr.png") />
     </p>
 
     <p>
         Once Ion is installed, scan this QR code to install the Music Store app:
-        <img class="qr-code" src="~/Content/Images/Mobile/ios-qr.png" />
+        <img class="qr-code" src=@Url.Content("~/Content/Images/Mobile/ios-qr.png") />
     </p>
 </div>
 
 <div id="get-mobile-android" class="get-mobile-panel" style="display:none;">
     <p>
         Scan this QR code to install the Music Store app:
-        <img class="qr-code" src="~/Content/Images/Mobile/android-qr.png" />
+        <img class="qr-code" src=@Url.Content("~/Content/Images/Mobile/android-qr.png") />
     </p>
 </div>
 
 <h2>Run in Simulator:</h2>
 <div id="device-wrapper" class="ios km-root km-phone">
-    <iframe src="/Mobile/Kendo%20Music%20Store/index.html"></iframe>
+    <iframe src=@Url.Content("~/Mobile/Kendo%20Music%20Store/index.html")></iframe>
 </div>
