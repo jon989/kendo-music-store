@@ -24,7 +24,8 @@
 
             // append menu elements
             that._menu = $(element);
-            var subMenu = $("<li><span class='cm-count'></span><ul><li><div class='k-content'><ul></ul><div class='cm-checkout'><span class='cm-total'>Total: <span class='cm-amount'></span></span><a href='/ShoppingCart/' class='k-button'>Checkout</a></div></div></li></ul></li>");
+            var cartUrl = baseUrl + '/ShoppingCart';
+            var subMenu = $("<li><span class='cm-count'></span><ul><li><div class='k-content'><ul></ul><div class='cm-checkout'><span class='cm-total'>Total: <span class='cm-amount'></span></span><a href='" + cartUrl + "' class='k-button'>Checkout</a></div></div></li></ul></li>");
             that._menu.append(subMenu);
 
             // initialize or create dataSource

@@ -118,7 +118,7 @@ header h1 a
         height: 77px;
         text-indent: -9999px;
         display: block;
-        background: url(/content/images/awesomesauce-logo.png) no-repeat;
+        background: url(images/awesomesauce-logo.png) no-repeat;
         -webkit-transition: all 0.3s ease-in-out;
         -moz-transition: all 0.3s ease-in-out;
         -o-transition: all 0.3s ease-in-out;
