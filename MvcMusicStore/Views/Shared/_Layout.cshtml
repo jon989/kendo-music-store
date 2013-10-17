@@ -22,17 +22,14 @@
         <div id="wrapper">
         <header>
             <div class="container">
-                <h1><a href="/">Awesome Sauce Music Store</a></h1>
-
+                <h1><a href=@Url.Content("~/")>Awesome Sauce Music Store</a></h1>
 
                 <section class="login-button">
                     @Html.Partial("_LoginPartial")
                 </section>
 
                 <nav>
-
                     <ul id="menu" data-role="menu" class="k-widget k-reset k-header k-menu k-menu-horizontal" style="opacity:0;">
-             
                         <li class="k-item k-state-default k-first">Genres
                             <ul style="display:none;">
                                 @{Html.RenderAction("GenreMenu", "Store");}
