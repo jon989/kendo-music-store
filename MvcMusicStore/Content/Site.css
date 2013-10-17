@@ -167,20 +167,11 @@ header h1 a:hover
 .login-button
     {
         text-align: right;
-       
     }
 
-.login-button ul
+    .login-button a
     {
-        list-style-type: none;
-        margin: 0;
-
-    }
-
-.login-button ul li
-    {
-        display: inline;
-         
+        margin-left: 4px;
     }
 
 .hellouser
