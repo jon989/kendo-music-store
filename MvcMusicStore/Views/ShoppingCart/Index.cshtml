@@ -7,7 +7,7 @@
 <script id="rowTemplate" type="text/x-kendo-tmpl">
     <tr>
         <td class="album-wide">
-            <img data-bind="attr: {src: Album.AlbumArtUrl }" />
+            <img src="${baseUrl + Album.AlbumArtUrl}" />
             <div>
                 <span data-bind="text: Album.Title"></span>
                 <span data-bind="text: Album.Artist.Name"></span>

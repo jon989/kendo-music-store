@@ -133,7 +133,7 @@
             },
 
             columns: [
-                { title: "Album Art", field: "AlbumArtUrl", template: '<img src="#= AlbumArtUrl #" />', width: "110px", editor: albumArtEditor, filterable: false, sortable: false, groupable: false },
+                { title: "Album Art", field: "AlbumArtUrl", template: '<img src="#= baseUrl + AlbumArtUrl #" />', width: "110px", editor: albumArtEditor, filterable: false, sortable: false, groupable: false },
                 { title: "Genre", field: "GenreId", values: genres },
                 { title: "Artist", field: "ArtistId", values: artists, editor: artistEditor },
                 { field: "Title", groupable: false },
@@ -157,7 +157,7 @@
             
             var albumArtEditor = function (container, options) {
                 if (options.model.AlbumArtUrl) {
-                    $('<img src="' + options.model.AlbumArtUrl + '" />').appendTo(container);
+                    $('<img src="' + baseUrl + options.model.AlbumArtUrl + '" />').appendTo(container);
                 }
 
                 $('<input name="files" type="file" />').appendTo(container).kendoUpload({
