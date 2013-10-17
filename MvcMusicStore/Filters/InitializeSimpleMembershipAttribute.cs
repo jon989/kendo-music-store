@@ -25,7 +25,7 @@ namespace MvcMusicStore.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer(new MigrateDatabaseToLatestVersion<MusicStoreEntities, SampleData>());
+                //Database.SetInitializer(new MigrateDatabaseToLatestVersion<MusicStoreEntities, SampleData>());
 
                 try
                 {
