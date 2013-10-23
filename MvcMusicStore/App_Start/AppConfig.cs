@@ -1,8 +1,6 @@
 ﻿using System.Configuration;
-using System.Data.Entity;
 using System.Web.Security;
 using MvcMusicStore.Filters;
-using MvcMusicStore.Models;
 using WebMatrix.WebData;
 
 namespace MvcMusicStore
@@ -11,9 +9,6 @@ namespace MvcMusicStore
     {
         public static void Configure()
         {
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<MusicStoreEntities, SampleData>());
-            Database.SetInitializer<MusicStoreEntities>(null);
-
             string _username = "Owner";
             string _password = ConfigurationManager.AppSettings["adminPwd"] ?? "p@ssword123";
             string _role = "Administrator";

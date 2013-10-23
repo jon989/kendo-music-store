@@ -27,6 +27,15 @@ namespace MvcMusicStore.Filters
             {
                 try
                 {
+                    #if DEBUG
+                        Database.SetInitializer(new MigrateDatabaseToLatestVersion<MusicStoreEntities, SampleData>());
+                        using (var context = new MusicStoreEntities())
+                        {
+                            context.Database.Initialize(true);
+                        }
+                    #else
+                        Database.SetInitializer<MusicStoreEntities>(null);
+                    #endif
                     WebSecurity.InitializeDatabaseConnection("MusicStoreEntities", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
