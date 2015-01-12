@@ -28,7 +28,7 @@ namespace MvcMusicStore.Filters
                 try
                 {
                     #if DEBUG
-                        Database.SetInitializer(new MigrateDatabaseToLatestVersion<MusicStoreEntities, SampleData>());
+                        Database.SetInitializer(new MigrateDatabaseToLatestVersion<MusicStoreEntities, Configuration>());
                         using (var context = new MusicStoreEntities())
                         {
                             context.Database.Initialize(true);
