@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts
+{
+    <script src="~/Scripts/App/storemanager-index.js"></script>
+}
+
+@if (System.Configuration.ConfigurationManager.AppSettings["enableEdits"] == "false")
+{
+    <span class="demo-note">Data editing and image upload are disabled. You can modify rows in the grid, but changes will not be saved to the server.</span> 
+}
+
+<h3>Manage Albums</h3>
+<div id="albumsGrid"></div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbumId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtistId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArtistId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenreId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+        </tr>
+    }
+
+</table>

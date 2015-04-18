@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2C38EE9-01B7-4929-B7E9-086077D1AB58}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcMusicStore</RootNamespace>
+    <AssemblyName>MvcMusicStore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AppfailReporting, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Appfail.WebForms.1.1.0\lib\35\AppfailReporting.dll</HintPath>
+    </Reference>
+    <Reference Include="AppfailReporting.Mvc">
+      <HintPath>..\packages\Appfail.Mvc.1.1.0\lib\35\AppfailReporting.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\lib\KENDOUIMVC\2014.3.1119.440\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.1.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.1.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.5.1.0\lib\net40\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.1.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.1.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebActivator.1.5.2\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\AppConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\Api\AccountApiController.cs" />
+    <Compile Include="Controllers\Api\CheckoutApiController.cs" />
+    <Compile Include="Controllers\Api\ImagesController.cs" />
+    <Compile Include="Controllers\Api\StoreSalesGenreController.cs" />
+    <Compile Include="Controllers\Api\StoreSalesRevenueController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\HomeController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\OrderHistoryController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\StoreManagerController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\KendoTextValidator.cs" />
+    <Compile Include="Migrations\201211091923495_InitialCreate.cs" />
+    <Compile Include="Migrations\201211091923495_InitialCreate.Designer.cs">
+      <DependentUpon>201211091923495_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\ApiOrderSubmit.cs" />
+    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\MusicStoreEntities.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\OrderSubmit.cs" />
+    <Compile Include="Models\SalesByGenre.cs" />
+    <Compile Include="Models\SalesRevenue.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\MusicStore.svc.cs">
+      <DependentUpon>MusicStore.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\icomoon.svg" />
+    <Content Include="Content\Images\AlbumArt\CD1.png" />
+    <Content Include="Content\Images\AlbumArt\CD10.png" />
+    <Content Include="Content\Images\AlbumArt\CD11.png" />
+    <Content Include="Content\Images\AlbumArt\CD12.png" />
+    <Content Include="Content\Images\AlbumArt\CD13.png" />
+    <Content Include="Content\Images\AlbumArt\CD14.png" />
+    <Content Include="Content\Images\AlbumArt\CD15.png" />
+    <Content Include="Content\Images\AlbumArt\CD16.png" />
+    <Content Include="Content\Images\AlbumArt\CD17.png" />
+    <Content Include="Content\Images\AlbumArt\CD18.png" />
+    <Content Include="Content\Images\AlbumArt\CD19.png" />
+    <Content Include="Content\Images\AlbumArt\CD2.png" />
+    <Content Include="Content\Images\AlbumArt\CD20.png" />
+    <Content Include="Content\Images\AlbumArt\CD3.png" />
+    <Content Include="Content\Images\AlbumArt\CD4.png" />
+    <Content Include="Content\Images\AlbumArt\CD5.png" />
+    <Content Include="Content\Images\AlbumArt\CD6.png" />
+    <Content Include="Content\Images\AlbumArt\CD7.png" />
+    <Content Include="Content\Images\AlbumArt\CD8.png" />
+    <Content Include="Content\Images\AlbumArt\CD9.png" />
+    <Content Include="Content\Images\AlbumArt\Uploaded.png" />
+    <Content Include="Content\Images\awesomesauce-logo.png" />
+    <Content Include="Content\Images\cake.png" />
+    <Content Include="Content\Images\Feature1.png" />
+    <Content Include="Content\Images\Feature2.png" />
+    <Content Include="Content\Images\Feature3.png" />
+    <Content Include="Content\Images\icenium-logo.png" />
+    <Content Include="Content\Images\kendo-ui-logo.png" />
+    <Content Include="Content\Images\Mobile\android-screenshot.png" />
+    <Content Include="Content\Images\Mobile\ion-qr.png" />
+    <Content Include="Content\Images\Mobile\android-qr.png" />
+    <Content Include="Content\Images\Mobile\ios-qr.png" />
+    <Content Include="Content\Images\Mobile\ios-screenshot.png" />
+    <Content Include="Content\Images\Mobile\iphone.png" />
+    <Content Include="Content\Images\telerik-logo.png" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\themes\base\Default\editor.png" />
+    <Content Include="Content\themes\base\Default\imagebrowser.png" />
+    <Content Include="Content\themes\base\Default\loading-image.gif" />
+    <Content Include="Content\themes\base\Default\loading.gif" />
+    <Content Include="Content\themes\base\Default\slider-h.gif" />
+    <Content Include="Content\themes\base\Default\slider-v.gif" />
+    <Content Include="Content\themes\base\Default\sprite.png" />
+    <Content Include="Content\themes\base\kendo.common.min.css" />
+    <Content Include="Content\themes\base\kendo.default.min.css" />
+    <Content Include="Content\themes\base\textures\glass.png" />
+    <Content Include="Content\themes\base\textures\highlight.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\kendo-logo.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\Android\drawable-hdpi\icon.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\Android\drawable-ldpi\icon.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\Android\drawable-mdpi\icon.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Default%402x.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Default-Landscape%402x.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Default-Landscape.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Default-Portrait%402x.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Default-Portrait.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Default.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\icon%402x.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\icon-72%402x.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\icon-72.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Icon-Small%402x.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Icon-Small-50%402x.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Icon-Small-50.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\Icon-Small.png" />
+    <Content Include="Mobile\Kendo Music Store\App_Resources\iOS\icon.png" />
+    <Content Include="Mobile\Kendo Music Store\cordova.android.js" />
+    <Content Include="Mobile\Kendo Music Store\cordova.ios.js" />
+    <Content Include="Mobile\Kendo Music Store\Images\awesomesauce-logo.png" />
+    <Content Include="Mobile\Kendo Music Store\Images\footer-logos.png" />
+    <Content Include="Mobile\Kendo Music Store\Images\icon.png" />
+    <Content Include="Mobile\Kendo Music Store\Images\kendo-ui-logo.png" />
+    <Content Include="Mobile\Kendo Music Store\Images\rays-background-horizontal.png" />
+    <Content Include="Mobile\Kendo Music Store\Images\rays-background.png" />
+    <Content Include="Mobile\Kendo Music Store\Images\telerik-logo.png" />
+    <Content Include="Mobile\Kendo Music Store\index.html" />
+    <Content Include="Mobile\Kendo Music Store\kendo\js\jquery.min.js" />
+    <Content Include="Mobile\Kendo Music Store\kendo\js\kendo.indexedlistview.js" />
+    <Content Include="Mobile\Kendo Music Store\kendo\js\kendo.mobile.min.js" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\images\android-sprite.png" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\images\back.png" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\images\iconmasks.svg" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\images\icons.png" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\images\ios-sprite.png" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\kendo.indexedlistview.css" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\kendo.mobile.all.min.css" />
+    <Content Include="Mobile\Kendo Music Store\scripts\about-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\account-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\account.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\albums-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\albums.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\app.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\artists-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\base-layout.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\cart-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\cart.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\checkout-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\config.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\data.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\genres-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\home-layout.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\main.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\require.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\search-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\splash-view.js" />
+    <Content Include="Mobile\Kendo Music Store\scripts\utils.js" />
+    <Content Include="Mobile\Kendo Music Store\styles\main.css" />
+    <Content Include="Scripts\App\cart.js" />
+    <Content Include="Scripts\App\checkout-addressandpayment.js" />
+    <Content Include="Scripts\App\checkout-complete.js" />
+    <Content Include="Scripts\App\config.js" />
+    <Content Include="Scripts\App\home-mobile.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\App\home-index.js" />
+    <Content Include="Content\fonts\icomoon.eot" />
+    <Content Include="Content\fonts\icomoon.ttf" />
+    <Content Include="Content\fonts\icomoon.woff" />
+    <Content Include="Mobile\Kendo Music Store\Kendo Music Store.proj" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\images\KendoUI.ttf" />
+    <Content Include="Mobile\Kendo Music Store\kendo\styles\images\KendoUI.woff" />
+    <Content Include="Mobile\README.md" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\TestSite.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\App\kendo-cart-menu-widget.js" />
+    <Content Include="Scripts\App\kendo-custom-bindings.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\App\shared-layout.js" />
+    <Content Include="Scripts\App\shoppingcart-index.js" />
+    <Content Include="Scripts\App\store.js" />
+    <Content Include="Scripts\App\store-browse.js" />
+    <Content Include="Scripts\App\storemanager-graphs.js" />
+    <Content Include="Scripts\App\storemanager-index.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Services\MusicStore.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Store\Browse.cshtml" />
+    <Content Include="Views\Store\GenreMenu.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Checkout\Complete.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\StoreManager\Index.cshtml" />
+    <Content Include="Views\Shared\_AlbumDetailsTemplatePartial.cshtml" />
+    <Content Include="Views\Shared\_AlbumListTemplatePartial.cshtml" />
+    <Content Include="Views\StoreManager\Graphs.cshtml" />
+    <Content Include="Views\Shared\_SearchResultTemplatePartial.cshtml" />
+    <Content Include="Views\Home\Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201211091923495_InitialCreate.resx">
+      <DependentUpon>201211091923495_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59537/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+</Project>

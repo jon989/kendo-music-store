@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Get Music Store Mobile";
+}
+
+@section scripts
+{
+    <script src=@Url.Content("~/Scripts/App/home-mobile.js")></script>
+    <script type="text/javascript">
+        if (!(kendo.support.browser.webkit || kendo.support.browser.mozilla)) {
+            $("#device-wrapper")
+                .empty()
+                .html("<div class='old-browser'><div class='content'><span class='centered'><strong>Kendo UI Mobile</strong><span>is fully supported only in WebKit based browsers.</span><br><br>Please use a compatible desktop browser or open the examples in a mobile WebKit based browser.</span></div></div>");
+        }
+    </script>
+}
+
+<img id="android-screenshot" src=@Url.Content("~/Content/Images/Mobile/android-screenshot.png") />
+<img id="ios-screenshot" src=@Url.Content("~/Content/Images/Mobile/ios-screenshot.png") />
+<a id="icenium-logo" href="http://www.icenium.com"><img src=@Url.Content("~/Content/Images/icenium-logo.png") /></a>
+
+<h3>Get the Mobile Music Store</h3>
+
+<p>The mobile music store was built using <a class="product-name" href="http://www.icenium.com">Icenium</a> and <a class="product-name" href="http://www.kendoui.com/mobile">Kendo UI Mobile</a>.<br />
+    The source code for the mobile app is available <a class="product-name" href="http://www.github.com/telerik/kendo-mobile-music-store">on GitHub</a>.
+</p>
+
+<h2>Run on a Device:</h2>
+<select id="mobile-device-selection">
+    <option value="none">Select your device...</option>
+    <option value="ios">iOS</option>
+    <option value="android">Android</option>
+</select>
+
+<div id="get-mobile-ios" class="get-mobile-panel" style="display:none;">
+    <p>
+        iOS users must first install <a class="product-name" href="http://icenium.com/mobile-app-platform/features/say-goodbye-to-provisioning">Icenium Ion</a> from the App Store by scanning this QR code:
+        <img class="qr-code" src=@Url.Content("~/Content/Images/Mobile/ion-qr.png") />
+    </p>
+
+    <p>
+        Once Ion is installed, scan this QR code to install the Music Store app:
+        <img class="qr-code" src=@Url.Content("~/Content/Images/Mobile/ios-qr.png") />
+    </p>
+</div>
+
+<div id="get-mobile-android" class="get-mobile-panel" style="display:none;">
+    <p>
+        Scan this QR code to install the Music Store app:
+        <img class="qr-code" src=@Url.Content("~/Content/Images/Mobile/android-qr.png") />
+    </p>
+</div>
+
+<h2>Run in Simulator:</h2>
+<div id="device-wrapper" class="ios km-root km-phone">
+    <iframe src=@Url.Content("~/Mobile/Kendo%20Music%20Store/index.html")></iframe>
+</div>

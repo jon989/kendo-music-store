@@ -1,0 +1,837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/AppfailReporting.dll">
+      <publishTime>10/15/2013 14:09:09</publishTime>
+    </File>
+    <File Include="bin/AppfailReporting.Mvc.dll">
+      <publishTime>10/15/2013 14:09:09</publishTime>
+    </File>
+    <File Include="bin/bg-BG/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/da-DK/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/de-DE/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/de/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/15/2013 14:09:07</publishTime>
+    </File>
+    <File Include="bin/es-ES/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/es/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/fr-FR/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/fr/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/it/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ja/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/Kendo.Mvc.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ko/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Edm.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.OData.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Services.Client.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Services.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/15/2013 14:09:11</publishTime>
+    </File>
+    <File Include="bin/MvcMusicStore.dll">
+      <publishTime>10/17/2013 11:05:05</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/nl-NL/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/pl-PL/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/pt-BR/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/pt-PT/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/ru-RU/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/ru/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/10/2012 22:52:12</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>10/15/2013 14:09:09</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>07/10/2012 22:52:12</publishTime>
+    </File>
+    <File Include="bin/System.Spatial.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/15/2013 14:09:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>10/15/2013 14:09:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>10/15/2013 14:09:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/15/2013 14:09:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/15/2013 14:09:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/15/2013 14:09:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/15/2013 14:09:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/15/2013 14:09:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/15/2013 14:09:10</publishTime>
+    </File>
+    <File Include="bin/uk-UA/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/WebActivator.dll">
+      <publishTime>10/15/2013 14:09:12</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>10/15/2013 14:09:09</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>10/15/2013 14:09:10</publishTime>
+    </File>
+    <File Include="bin/zh-CN/Kendo.Mvc.resources.dll">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.Edm.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.OData.resources.dll">
+      <publishTime>10/15/2013 14:09:16</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.Services.Client.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.Services.resources.dll">
+      <publishTime>10/15/2013 14:09:15</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/System.Spatial.resources.dll">
+      <publishTime>10/15/2013 14:09:14</publishTime>
+    </File>
+    <File Include="Content/fonts/icomoon.eot">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/fonts/icomoon.svg">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/fonts/icomoon.ttf">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/fonts/icomoon.woff">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD1.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD10.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD11.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD12.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD13.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD14.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD15.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD16.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD17.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD18.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD19.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD2.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD20.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD3.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD4.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD5.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD6.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD7.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD8.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/CD9.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/AlbumArt/Uploaded.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/awesomesauce-logo.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/cake.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Feature1.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Feature2.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Feature3.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/icenium-logo.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/kendo-ui-logo.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Mobile/android-qr.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Mobile/android-screenshot.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Mobile/ion-qr.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Mobile/ios-qr.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Mobile/ios-screenshot.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/Mobile/iphone.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Images/telerik-logo.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/normalize.css">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/Default/editor.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/Default/imagebrowser.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/Default/loading-image.gif">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/Default/loading.gif">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/Default/slider-h.gif">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/Default/slider-v.gif">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/Default/sprite.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/kendo.common.min.css">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/kendo.default.min.css">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/textures/glass.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Content/themes/base/textures/highlight.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/accent.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/bullet.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/heroAccent.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/kendo-logo.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList0.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList1.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList2.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList3.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList4.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList5.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList6.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList7.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList8.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Images/orderedList9.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/Android/drawable-hdpi/icon.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/Android/drawable-ldpi/icon.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/Android/drawable-mdpi/icon.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Default%402x.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Default-Landscape%402x.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Default-Landscape.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Default-Portrait%402x.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Default-Portrait.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Default.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/icon%402x.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/icon-72%402x.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/icon-72.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Icon-Small%402x.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Icon-Small-50%402x.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Icon-Small-50.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/Icon-Small.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/App_Resources/iOS/icon.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/cordova.android.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/cordova.ios.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/Images/awesomesauce-logo.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/Images/footer-logos.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/Images/icon.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/Images/kendo-ui-logo.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/Images/rays-background-horizontal.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/Images/rays-background.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/Images/telerik-logo.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/index.html">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/Kendo Music Store.proj">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/js/jquery.min.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/js/kendo.indexedlistview.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/js/kendo.mobile.min.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/images/android-sprite.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/images/back.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/images/iconmasks.svg">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/images/icons.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/images/ios-sprite.png">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/images/KendoUI.ttf">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/images/KendoUI.woff">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/kendo.indexedlistview.css">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/kendo/styles/kendo.mobile.all.min.css">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/about-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/account-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/account.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/albums-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/albums.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/app.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/artists-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/base-layout.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/cart-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/cart.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/checkout-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/config.js">
+      <publishTime>10/15/2013 14:11:04</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/data.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/genres-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/home-layout.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/main.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/require.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/search-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/splash-view.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/scripts/utils.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/Kendo Music Store/styles/main.css">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Mobile/README.md">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/App/cart.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/checkout-addressandpayment.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/checkout-complete.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/config.js">
+      <publishTime>10/15/2013 14:09:06</publishTime>
+    </File>
+    <File Include="Scripts/App/home-index.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/home-mobile.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/kendo-cart-menu-widget.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/kendo-custom-bindings.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/shared-layout.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/shoppingcart-index.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/store-browse.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/store.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/storemanager-graphs.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/App/storemanager-index.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/date.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.map">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/kendo.all.min.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.5.3.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>10/15/2013 09:59:09</publishTime>
+    </File>
+    <File Include="Services/MusicStore.svc">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginFailure.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/Manage.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/_ChangePasswordPartial.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/_RemoveExternalLoginsPartial.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Account/_SetPasswordPartial.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Checkout/AddressAndPayment.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Checkout/Complete.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Home/Mobile.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Shared/_AlbumDetailsTemplatePartial.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Shared/_AlbumListTemplatePartial.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/15/2013 14:14:57</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Shared/_SearchResultTemplatePartial.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/ShoppingCart/Index.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Store/Browse.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Store/GenreMenu.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Store/Index.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/StoreManager/Graphs.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/StoreManager/Index.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/15/2013 09:59:10</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/17/2013 11:18:11</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
